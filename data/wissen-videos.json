@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-03-10T16:54:56.950Z",
+  "description": "Speichert YouTube-Video-Verknüpfungen für Wissen-Artikel",
+  "articles": {
+    "zelle-gewebe": {
+      "id": "zelle-gewebe",
+      "name": "Zelle & Gewebe",
+      "videos": [
+        {
+          "id": 1773161646713,
+          "videoId": "3-ThvWwOLio",
+          "url": "https://www.youtube.com/watch?v=3-ThvWwOLio",
+          "title": "Aufgaben des Blutes - Blut-Special 1",
+          "channel": "Biologie - simpleclub",
+          "description": "",
+          "addedAt": "2026-03-10T16:54:06.713Z"
+        },
+        {
+          "id": 1773161696949,
+          "videoId": "3ZOodK_0O4U",
+          "url": "https://www.youtube.com/watch?v=3ZOodK_0O4U",
+          "title": "Aufbau und Funktion des Blutes - Blut Teil 1",
+          "channel": "Biologie - simpleclub",
+          "description": "",
+          "addedAt": "2026-03-10T16:54:56.949Z"
+        }
+      ]
+    },
+    "blut": {
+      "id": "blut",
+      "name": "Blut",
+      "videos": []
+    }
+  }
+}

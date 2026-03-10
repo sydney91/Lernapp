@@ -1,0 +1,73 @@
+{
+  "version": "1.0",
+  "lastUpdated": "2026-03-10T16:49:08.606Z",
+  "description": "Speichert die Relation zwischen Wissen-Artikeln und deren Anhängen",
+  "articles": {
+    "zelle-gewebe": {
+      "id": "zelle-gewebe",
+      "name": "Zelle & Gewebe",
+      "anhaenge": [
+        {
+          "id": 1773156073814,
+          "name": "ARBEITSBLATT NERVENZELLE.PDF",
+          "type": "application/pdf",
+          "size": 337167,
+          "filename": "1773156073809-77504099.PDF",
+          "path": "/data/uploads/zelle-gewebe/1773156073809-77504099.PDF",
+          "addedAt": "2026-03-10T15:21:13.814Z"
+        },
+        {
+          "id": 1773156073819,
+          "name": "BILD1 EPITHELARTEN.PDF",
+          "type": "application/pdf",
+          "size": 169549,
+          "filename": "1773156073818-983632319.PDF",
+          "path": "/data/uploads/zelle-gewebe/1773156073818-983632319.PDF",
+          "addedAt": "2026-03-10T15:21:13.819Z"
+        },
+        {
+          "id": 1773156073822,
+          "name": "BILD2 EPITHELARTEN.PDF",
+          "type": "application/pdf",
+          "size": 231296,
+          "filename": "1773156073821-167436929.PDF",
+          "path": "/data/uploads/zelle-gewebe/1773156073821-167436929.PDF",
+          "addedAt": "2026-03-10T15:21:13.822Z"
+        },
+        {
+          "id": 1773156073825,
+          "name": "SKRIPT ZELLEGEWEBE.PDF",
+          "type": "application/pdf",
+          "size": 189074,
+          "filename": "1773156073824-809605255.PDF",
+          "path": "/data/uploads/zelle-gewebe/1773156073824-809605255.PDF",
+          "addedAt": "2026-03-10T15:21:13.825Z"
+        },
+        {
+          "id": 1773156073828,
+          "name": "Zelle_und_Gewebe_Heilpraktiker.pptx",
+          "type": "application/vnd.openxmlformats-officedocument.presentationml.presentation",
+          "size": 277794,
+          "filename": "1773156073827-553067971.pptx",
+          "path": "/data/uploads/zelle-gewebe/1773156073827-553067971.pptx",
+          "addedAt": "2026-03-10T15:21:13.828Z"
+        }
+      ]
+    },
+    "blut": {
+      "id": "blut",
+      "name": "Blut",
+      "anhaenge": [
+        {
+          "id": 1773161348606,
+          "name": "BLUTANTOMIEPHYSIOLOGIEDPSPDF.pdf",
+          "type": "application/pdf",
+          "size": 4801759,
+          "filename": "1773161348594-476679828.pdf",
+          "path": "/data/uploads/blut/1773161348594-476679828.pdf",
+          "addedAt": "2026-03-10T16:49:08.606Z"
+        }
+      ]
+    }
+  }
+}

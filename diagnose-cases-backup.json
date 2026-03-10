@@ -1,0 +1,3231 @@
+{
+  "version": "2.0",
+  "lastUpdated": "2026-03-10",
+  "categories": [
+    {
+      "id": "herz-kreislauf",
+      "name": "Herz, Kreislauf, Gefäße",
+      "icon": "🫀",
+      "color": "#C0392B"
+    },
+    {
+      "id": "infektionslehre",
+      "name": "Infektionslehre",
+      "icon": "🦠",
+      "color": "#8E44AD"
+    },
+    {
+      "id": "git",
+      "name": "GIT, Harntrakt",
+      "icon": "🫁",
+      "color": "#E67E22"
+    },
+    {
+      "id": "psychiatrie",
+      "name": "Psychiatrie",
+      "icon": "🧠",
+      "color": "#2980B9"
+    },
+    {
+      "id": "haematologie",
+      "name": "Hämatologie",
+      "icon": "🩸",
+      "color": "#922B21"
+    },
+    {
+      "id": "neurologie",
+      "name": "Neurologie",
+      "icon": "⚡",
+      "color": "#1A5276"
+    },
+    {
+      "id": "leber-galle-pankreas",
+      "name": "Leber, Gallenblase, Pankreas (D.m.)",
+      "icon": "🫘",
+      "color": "#A04000"
+    },
+    {
+      "id": "harnapparat",
+      "name": "Harnapparat",
+      "icon": "💧",
+      "color": "#1F618D"
+    },
+    {
+      "id": "bewegungsapparat",
+      "name": "Bewegungsapparat",
+      "icon": "🦴",
+      "color": "#6E2F1A"
+    },
+    {
+      "id": "respirationstrakt",
+      "name": "Respirationstrakt",
+      "icon": "🫁",
+      "color": "#148F77"
+    },
+    {
+      "id": "haut",
+      "name": "Haut",
+      "icon": "🧴",
+      "color": "#D35400"
+    },
+    {
+      "id": "endokrinum",
+      "name": "Endokrinum",
+      "icon": "⚗️",
+      "color": "#117A65"
+    },
+    {
+      "id": "genital",
+      "name": "Weibl. & Männl. Genital, Schwangerschaft, Geburt",
+      "icon": "🌸",
+      "color": "#C0392B"
+    },
+    {
+      "id": "notfall",
+      "name": "Notfall",
+      "icon": "🚨",
+      "color": "#E74C3C"
+    },
+    {
+      "id": "ohr",
+      "name": "Ohr",
+      "icon": "👂",
+      "color": "#7D6608"
+    },
+    {
+      "id": "auge",
+      "name": "Auge",
+      "icon": "👁️",
+      "color": "#1A5276"
+    },
+    {
+      "id": "paediatrie",
+      "name": "Pädiatrie",
+      "icon": "👶",
+      "color": "#1E8BC3"
+    },
+    {
+      "id": "onkologie",
+      "name": "Onkologie",
+      "icon": "🔬",
+      "color": "#6C3483"
+    },
+    {
+      "id": "pharmakologie",
+      "name": "Pharmakologie",
+      "icon": "💊",
+      "color": "#186A3B"
+    }
+  ],
+  "cases": [
+    {
+      "id": "arterielle-hypertonie",
+      "name": "Arterielle Hypertonie",
+      "subtitle": "Dauerhaft erhöhter Blutdruck",
+      "icon": "🩺",
+      "category": "Herz-Kreislauf",
+      "categoryId": "herz-kreislauf",
+      "schweregrad": "mittel",
+      "scenario": "Ein 58-jähriger Mann kommt zur Routineuntersuchung. Blutdruck 165/100 mmHg. Er berichtet von gelegentlichen Kopfschmerzen morgens und Schwindel. Er raucht, trinkt regelmäßig Alkohol und ist übergewichtig (BMI 29).",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für eine arterielle Hypertonie? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Meist keine (asymptomatisch)",
+              "correct": true
+            },
+            {
+              "text": "Kopfschmerzen, v.a. morgens",
+              "correct": true
+            },
+            {
+              "text": "Schwindel",
+              "correct": true
+            },
+            {
+              "text": "Nervosität, rotes Gesicht",
+              "correct": true
+            },
+            {
+              "text": "Nasenbluten, Augenflimmern, Ohrensausen",
+              "correct": true
+            },
+            {
+              "text": "Evtl. Atemnot, pektanginöse Beschwerden",
+              "correct": true
+            },
+            {
+              "text": "Starke Gewichtsabnahme",
+              "correct": false
+            },
+            {
+              "text": "Gelbsucht (Ikterus)",
+              "correct": false
+            }
+          ],
+          "feedback": "Die Hypertonie wird oft als 'stiller Killer' bezeichnet, da sie häufig jahrelang symptomlos verläuft. Wenn Symptome auftreten, sind morgendliche Kopfschmerzen, Schwindel und Nasenbluten typisch."
+        },
+        {
+          "id": "ursachen",
+          "title": "Ursachen & Risikofaktoren",
+          "question": "Welche Ursachen und Risikofaktoren gehören zur arteriellen Hypertonie? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Essentielle (primäre) Hypertonie: >90% der Fälle, Ursache unbekannt",
+              "correct": true
+            },
+            {
+              "text": "Rauchen, Alkohol, Übergewicht",
+              "correct": true
+            },
+            {
+              "text": "Hyperlipidämie, Diabetes mellitus",
+              "correct": true
+            },
+            {
+              "text": "Genetische Prädisposition",
+              "correct": true
+            },
+            {
+              "text": "Sekundär: Nierenerkrankungen (5%)",
+              "correct": true
+            },
+            {
+              "text": "Sekundär: Endokrin (Phäochromozytom, Conn-Syndrom)",
+              "correct": true
+            },
+            {
+              "text": "Sekundär: Schlafapnoesyndrom",
+              "correct": true
+            },
+            {
+              "text": "Vitamin-C-Mangel",
+              "correct": false
+            },
+            {
+              "text": "Häufige Erkältungen",
+              "correct": false
+            }
+          ],
+          "feedback": "Über 90% der Hypertonien sind essentiell (primär) – Ursache unbekannt. Sekundäre Hypertonien haben identifizierbare Ursachen: renal, endokrin (Phäochromozytom, Conn, Hyperthyreose, Morbus Cushing) oder kardiovaskulär."
+        },
+        {
+          "id": "komplikationen",
+          "title": "Komplikationen",
+          "question": "Welche Komplikationen kann eine unbehandelte Hypertonie verursachen? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Plötzliches Herzversagen",
+              "correct": true
+            },
+            {
+              "text": "Hypertensive Krise",
+              "correct": true
+            },
+            {
+              "text": "Linksherzinsuffizienz",
+              "correct": true
+            },
+            {
+              "text": "Arteriosklerose",
+              "correct": true
+            },
+            {
+              "text": "Hirnblutungen, Apoplex",
+              "correct": true
+            },
+            {
+              "text": "Aneurysmen, Aortendissektion",
+              "correct": true
+            },
+            {
+              "text": "Fundus hypertonicus",
+              "correct": true
+            },
+            {
+              "text": "Nierenschädigung mit Proteinurie",
+              "correct": true
+            },
+            {
+              "text": "Hepatitis",
+              "correct": false
+            },
+            {
+              "text": "Gallensteinen",
+              "correct": false
+            }
+          ],
+          "feedback": "Langfristig schädigt Hypertonie Herz, Gehirn, Nieren und Augen. Zielorgane sind besonders gefährdet: Apoplex, Herzinfarkt, Nierenversagen und Fundus hypertonicus sind gefürchtete Folgen."
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik",
+          "question": "Welche diagnostischen Maßnahmen sind bei Hypertonie angezeigt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Blutdruckmessung mind. 3× an mind. 2 verschiedenen Terminen",
+              "correct": true
+            },
+            {
+              "text": "24-Stunden-Blutdruckmessung",
+              "correct": true
+            },
+            {
+              "text": "Spiegelung Augenhintergrund",
+              "correct": true
+            },
+            {
+              "text": "Angiografie",
+              "correct": true
+            },
+            {
+              "text": "Labor (Niere, Elektrolyte, Blutbild)",
+              "correct": true
+            },
+            {
+              "text": "Einmalige Messung reicht aus",
+              "correct": false
+            },
+            {
+              "text": "Ausschließlich EKG genügt",
+              "correct": false
+            }
+          ],
+          "feedback": "Hypertonie wird erst nach mehrfachen Messungen an verschiedenen Tagen diagnostiziert. Eine 24h-Messung erfasst Tagesschwankungen. Augenhintergrundspiegelung zeigt Gefäßschäden (Fundus hypertonicus)."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen",
+          "question": "Welche Maßnahmen sind bei arterieller Hypertonie indiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Lebensstiländerung: Gewichtsreduktion, Nikotinverzicht, weniger Alkohol",
+              "correct": true
+            },
+            {
+              "text": "Kochsalzreduktion, mediterrane Kost",
+              "correct": true
+            },
+            {
+              "text": "Ausdauersport (30 min, 5×/Woche)",
+              "correct": true
+            },
+            {
+              "text": "ACE-Hemmer, Calciumantagonisten, Betablocker, Diuretika",
+              "correct": true
+            },
+            {
+              "text": "Bei hypertensiver Krise: Notfall! RR langsam senken",
+              "correct": true
+            },
+            {
+              "text": "Hochsalzdiät zur Entspannung der Gefäße",
+              "correct": false
+            },
+            {
+              "text": "Körperliche Schonung dauerhaft",
+              "correct": false
+            }
+          ],
+          "feedback": "Erste Maßnahme ist immer Lebensstiländerung. Medikamentös: ACE-Hemmer/AT1-Blocker, Calciumantagonisten, Betablocker, Thiazide. Bei hypertensiver Krise (>180/120 mmHg) ist sofortiges Handeln nötig – aber RR nicht zu schnell senken (Apoplex-Gefahr)!"
+        }
+      ],
+      "hints": [
+        "Die essentielle Hypertonie hat keine Ursachen, nur Risikofaktoren.",
+        "Hypertonie Grad 1: 140–159/90–99 mmHg | Grad 2: 160–179/100–109 mmHg | Grad 3: ≥180/>110 mmHg",
+        "In Deutschland leiden 10–20% der Bevölkerung an Hypertonie.",
+        "Fundus hypertonicus steht für Veränderungen der Netzhautgefäße durch Hochdruck."
+      ]
+    },
+    {
+      "id": "herzinsuffizienz",
+      "name": "Herzinsuffizienz",
+      "subtitle": "Vermindertes Herzminutenvolumen",
+      "icon": "💔",
+      "category": "Herz-Kreislauf",
+      "categoryId": "herz-kreislauf",
+      "schweregrad": "schwer",
+      "scenario": "Eine 74-jährige Patientin kommt mit zunehmender Atemnot bei Belastung und geschwollenen Unterschenkeln. Sie schläft seit Wochen mit 3 Kissen und muss nachts oft aufstehen, weil sie keine Luft bekommt.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für eine Herzinsuffizienz? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Dyspnoe (Belastungs- bis Ruhedyspnoe)",
+              "correct": true
+            },
+            {
+              "text": "Orthopnoe (Atemnot im Liegen)",
+              "correct": true
+            },
+            {
+              "text": "Nykturie (nächtlicher Harndrang)",
+              "correct": true
+            },
+            {
+              "text": "Ödeme (Beine, Knöchel)",
+              "correct": true
+            },
+            {
+              "text": "Zyanose, Leistungsminderung",
+              "correct": true
+            },
+            {
+              "text": "Aszites bei Rechtsherzinsuffizienz",
+              "correct": true
+            },
+            {
+              "text": "Stauungsleber (Hepatomegalie)",
+              "correct": true
+            },
+            {
+              "text": "Starkes Fieber",
+              "correct": false
+            },
+            {
+              "text": "Schmerzen beim Wasserlassen",
+              "correct": false
+            }
+          ],
+          "feedback": "Linksherzinsuffizienz: Lungenstauung → Dyspnoe, Orthopnoe, Asthma cardiale. Rechtsherzinsuffizienz: Systemstauung → Ödeme, Hepatomegalie, Aszites, Halsvenenstauung."
+        },
+        {
+          "id": "ursachen",
+          "title": "Ursachen & Risikofaktoren",
+          "question": "Welche Erkrankungen können zu einer Herzinsuffizienz führen? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Koronare Herzkrankheit (KHK) / Herzinfarkt",
+              "correct": true
+            },
+            {
+              "text": "Arterielle Hypertonie",
+              "correct": true
+            },
+            {
+              "text": "Herzklappenfehler",
+              "correct": true
+            },
+            {
+              "text": "Kardiomyopathien",
+              "correct": true
+            },
+            {
+              "text": "Herzrhythmusstörungen",
+              "correct": true
+            },
+            {
+              "text": "Myokarditis",
+              "correct": true
+            },
+            {
+              "text": "Eisenmangel allein",
+              "correct": false
+            },
+            {
+              "text": "Nierensteine",
+              "correct": false
+            }
+          ],
+          "feedback": "Die häufigsten Ursachen sind KHK/Herzinfarkt und arterielle Hypertonie. Auch Herzklappenfehler, Kardiomyopathien und Myokarditis führen zur Herzinsuffizienz."
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik",
+          "question": "Welche Untersuchungen sind bei Herzinsuffizienz wichtig? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Echokardiografie (Ejektionsfraktion)",
+              "correct": true
+            },
+            {
+              "text": "BNP / NT-proBNP (Herzmarker)",
+              "correct": true
+            },
+            {
+              "text": "EKG",
+              "correct": true
+            },
+            {
+              "text": "Röntgen Thorax (Herzgröße, Lungenstauung)",
+              "correct": true
+            },
+            {
+              "text": "Labor (Niere, Elektrolyte, Blutbild)",
+              "correct": true
+            },
+            {
+              "text": "Blutzucker nüchtern genügt allein",
+              "correct": false
+            }
+          ],
+          "feedback": "BNP/NT-proBNP sind spezifische Herzmarker. Die Echokardiografie zeigt Ejektionsfraktion und Wandbewegungsstörungen. Thorax-Röntgen zeigt Kardiomegalie und Lungenstauung."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen",
+          "question": "Welche Therapiemaßnahmen gibt es bei Herzinsuffizienz? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "ACE-Hemmer / AT1-Blocker (Vorlast/Nachlast ↓)",
+              "correct": true
+            },
+            {
+              "text": "Betablocker (Herzfrequenz ↓)",
+              "correct": true
+            },
+            {
+              "text": "Diuretika (Ödeme ↓, Vorlast ↓)",
+              "correct": true
+            },
+            {
+              "text": "Flüssigkeits- und Kochsalzrestriktion",
+              "correct": true
+            },
+            {
+              "text": "Körperliche Aktivität (dosiert)",
+              "correct": true
+            },
+            {
+              "text": "Digitalis bei Vorhofflimmern",
+              "correct": true
+            },
+            {
+              "text": "Hochsalzdiät zum Ausgleich",
+              "correct": false
+            },
+            {
+              "text": "Bettruhe dauerhaft",
+              "correct": false
+            }
+          ],
+          "feedback": "NYHA-Klassifikation beschreibt den Schweregrad (I–IV). Therapie: ACE-Hemmer + Betablocker + Diuretika als Basistherapie. Wichtig: tägliche Gewichtskontrolle (Wassereinlagerungen)!"
+        }
+      ],
+      "hints": [
+        "NYHA I: keine Beschwerden | NYHA II: bei stärkerer Belastung | NYHA III: bei leichter Belastung | NYHA IV: in Ruhe",
+        "Asthma cardiale = nächtliche Atemnot durch Linksherzinsuffizienz",
+        "Ejektionsfraktion normal: >55% | HFrEF: <40% (Heart Failure reduced Ejection Fraction)"
+      ]
+    },
+    {
+      "id": "herzinfarkt",
+      "name": "Myokardinfarkt",
+      "subtitle": "Akuter Herzinfarkt (Koronarverschluss)",
+      "icon": "💥",
+      "category": "Herz-Kreislauf",
+      "categoryId": "herz-kreislauf",
+      "schweregrad": "schwer",
+      "scenario": "Ein 62-jähriger Mann ruft den Notarzt. Er hat seit 30 Minuten starke, vernichtende Brustschmerzen, die in den linken Arm und Kiefer ausstrahlen. Er schwitzt stark, ist blass und hat Angst zu sterben.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für einen akuten Myokardinfarkt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Vernichtungsschmerz hinter dem Brustbein (>20 min)",
+              "correct": true
+            },
+            {
+              "text": "Ausstrahlung in linken Arm, Kiefer, Schulter, Rücken",
+              "correct": true
+            },
+            {
+              "text": "Kaltschweißigkeit, Blässe",
+              "correct": true
+            },
+            {
+              "text": "Todesangst",
+              "correct": true
+            },
+            {
+              "text": "Übelkeit, Erbrechen",
+              "correct": true
+            },
+            {
+              "text": "Atemnot",
+              "correct": true
+            },
+            {
+              "text": "Stummer Infarkt (v.a. bei Diabetikern, Frauen)",
+              "correct": true
+            },
+            {
+              "text": "Hohe Körpertemperatur (>39°C)",
+              "correct": false
+            },
+            {
+              "text": "Starker Juckreiz",
+              "correct": false
+            }
+          ],
+          "feedback": "Klassisch: vernichtender retrosternaler Schmerz >20 min + Ausstrahlung. Atypisch: Oberbauchschmerzen, Rückenschmerzen, Schwindel, stumme Infarkte (Diabetiker, Frauen, ältere Patienten)!"
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik",
+          "question": "Welche Untersuchungen sichern die Diagnose Herzinfarkt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "EKG: ST-Hebung (STEMI) oder ST-Senkung (NSTEMI)",
+              "correct": true
+            },
+            {
+              "text": "Troponin I/T (hochsensitiv, nach 3h erhöht)",
+              "correct": true
+            },
+            {
+              "text": "CK-MB (Herzmuskelenzym)",
+              "correct": true
+            },
+            {
+              "text": "LDH (nach 1-2 Tagen erhöht)",
+              "correct": true
+            },
+            {
+              "text": "Koronarangiografie (Goldstandard)",
+              "correct": true
+            },
+            {
+              "text": "Urin-Stix genügt zur Diagnose",
+              "correct": false
+            }
+          ],
+          "feedback": "Troponin ist der spezifischste Herzmarker (steigt nach 3–6h). EKG: STEMI zeigt ST-Hebungen. Ziel: Door-to-Balloon-Zeit <90 Minuten bei STEMI!"
+        },
+        {
+          "id": "massnahmen",
+          "title": "Notfallmaßnahmen",
+          "question": "Welche Sofortmaßnahmen sind beim akuten Herzinfarkt notwendig? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Notruf 112",
+              "correct": true
+            },
+            {
+              "text": "Oberkörper hochlagern, Beine tief",
+              "correct": true
+            },
+            {
+              "text": "Sauerstoffgabe (nur bei SpO2 <94%)",
+              "correct": true
+            },
+            {
+              "text": "Aspirin 300 mg (ASS)",
+              "correct": true
+            },
+            {
+              "text": "Nitroglyzerin (wenn RR >90 mmHg systolisch)",
+              "correct": true
+            },
+            {
+              "text": "Morphin bei starken Schmerzen",
+              "correct": true
+            },
+            {
+              "text": "Patienten alleine lassen und warten",
+              "correct": false
+            },
+            {
+              "text": "Reichlich zu trinken geben",
+              "correct": false
+            }
+          ],
+          "feedback": "MONA-Schema: Morphin, Oxygen, Nitro, Aspirin. Ziel: schnellstmögliche Reperfusion (PCI/Lyse). Reanimationsbereitschaft! Zeit = Herzmuskel!"
+        }
+      ],
+      "hints": [
+        "Zeit ist Herzmuskel: Jede Minute Verschluss = abgestorbene Herzmuskelzellen",
+        "STEMI = ST-Elevation Myocardial Infarction (kompletter Verschluss)",
+        "NSTEMI = Non-STEMI (inkompletter Verschluss, aber Troponin positiv)",
+        "Stumme Infarkte besonders bei Diabetikern, Frauen und älteren Patienten"
+      ]
+    },
+    {
+      "id": "pneumonie",
+      "name": "Pneumonie",
+      "subtitle": "Lungenentzündung",
+      "icon": "🫁",
+      "category": "Respirationstrakt",
+      "categoryId": "respirationstrakt",
+      "schweregrad": "mittel",
+      "scenario": "Ein 45-jähriger Patient kommt mit Fieber (39,5°C), produktivem Husten mit gelblich-grünem Auswurf, Atemnot und stechenden Brustschmerzen. Die Beschwerden begannen vor 3 Tagen plötzlich.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für eine Pneumonie? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Hohes Fieber (>38,5°C) mit Schüttelfrost",
+              "correct": true
+            },
+            {
+              "text": "Produktiver Husten (gelblich-grüner Auswurf)",
+              "correct": true
+            },
+            {
+              "text": "Dyspnoe (Atemnot)",
+              "correct": true
+            },
+            {
+              "text": "Stechende Brustschmerzen (pleuritisch)",
+              "correct": true
+            },
+            {
+              "text": "Tachykardie, Tachypnoe",
+              "correct": true
+            },
+            {
+              "text": "Auskultation: Rasselgeräusche, Bronchialatmen",
+              "correct": true
+            },
+            {
+              "text": "Atypische Pneumonie (Mykoplasmen): schleichender Verlauf",
+              "correct": true
+            },
+            {
+              "text": "Starker Durchfall als Hauptsymptom",
+              "correct": false
+            }
+          ],
+          "feedback": "Klassische Pneumonie (z.B. Pneumokokken): akuter Beginn, Schüttelfrost, rostfarbener Auswurf. Atypische Pneumonie (Mykoplasmen, Chlamydien): schleichender Verlauf, trockener Husten, klinischer Befund besser als Röntgen."
+        },
+        {
+          "id": "ursachen",
+          "title": "Erreger & Risikofaktoren",
+          "question": "Welche Erreger und Risikofaktoren sind relevant bei Pneumonie? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Streptococcus pneumoniae (häufigster Erreger)",
+              "correct": true
+            },
+            {
+              "text": "Haemophilus influenzae",
+              "correct": true
+            },
+            {
+              "text": "Mykoplasmen (atypische Pneumonie)",
+              "correct": true
+            },
+            {
+              "text": "Legionellen (Urlaubsanamnese, Klimaanlagen)",
+              "correct": true
+            },
+            {
+              "text": "Viren (Influenza, COVID-19)",
+              "correct": true
+            },
+            {
+              "text": "Risiko: Immunsuppression, Alkohol, Alter",
+              "correct": true
+            },
+            {
+              "text": "Candida als häufigste Ursache bei Immunkompetenten",
+              "correct": false
+            }
+          ],
+          "feedback": "Ambulant erworbene Pneumonie (CAP): häufigste Erreger Pneumokokken. Nosokomiale Pneumonie (HAP): Pseudomonas, Staphylokokken. Legionellen-Pneumonie: nach Reisen, Klimaanlagen, Rauchwasser!"
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik",
+          "question": "Welche diagnostischen Maßnahmen sind bei Pneumonie indiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Röntgen Thorax (Infiltrate, Verschattung)",
+              "correct": true
+            },
+            {
+              "text": "Labor: CRP, Leukozyten, PCT (Procalcitonin)",
+              "correct": true
+            },
+            {
+              "text": "Blutkultur (bei schwerer Pneumonie)",
+              "correct": true
+            },
+            {
+              "text": "Sputumkultur (Erregernachweis)",
+              "correct": true
+            },
+            {
+              "text": "Pulsoximetrie / Blutgasanalyse",
+              "correct": true
+            },
+            {
+              "text": "EKG ist der Goldstandard der Diagnose",
+              "correct": false
+            }
+          ],
+          "feedback": "CRB-65 Score bestimmt den Schweregrad und die Behandlungsnotwendigkeit (Krankenhaus vs. ambulant): Confusion, Respiratory rate >30, Blood pressure <90/60, Age >65."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Welche Maßnahmen sind bei Pneumonie angezeigt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Antibiotikatherapie (Amoxicillin, Makrolide)",
+              "correct": true
+            },
+            {
+              "text": "Bettruhe, ausreichend Flüssigkeit",
+              "correct": true
+            },
+            {
+              "text": "Antipyretika (Fiebersenkung)",
+              "correct": true
+            },
+            {
+              "text": "Sauerstoffgabe bei SpO2 <94%",
+              "correct": true
+            },
+            {
+              "text": "Atemübungen, Sekretmobilisation",
+              "correct": true
+            },
+            {
+              "text": "Impfung (Pneumokokken, Influenza) als Prävention",
+              "correct": true
+            },
+            {
+              "text": "Antibiotika nicht nötig – nur Hausmittel",
+              "correct": false
+            }
+          ],
+          "feedback": "Bei leichter ambulanter Pneumonie: Amoxicillin oral. Bei atypischer Pneumonie: Makrolide (Azithromycin). Bei schwerer Pneumonie: stationäre Aufnahme, i.v.-Antibiotika, intensivmedizinische Überwachung."
+        }
+      ],
+      "hints": [
+        "CRB-65 Score: 0 Punkte → ambulant; 1-2 Punkte → Krankenhaus erwägen; 3-4 Punkte → Intensiv",
+        "Rostfarbener (rostrotes) Auswurf typisch für Pneumokokken-Pneumonie",
+        "Legionellose: Meldepflicht! Typisch: hohes Fieber, Diarrhö, Hyponatriämie",
+        "Pneumonie häufigste Todesursache durch Infektionen weltweit"
+      ]
+    },
+    {
+      "id": "asthma-bronchiale",
+      "name": "Asthma bronchiale",
+      "subtitle": "Chronisch-entzündliche Atemwegserkrankung",
+      "icon": "💨",
+      "category": "Respirationstrakt",
+      "categoryId": "respirationstrakt",
+      "schweregrad": "mittel",
+      "scenario": "Ein 22-jähriger Student kommt mit anfallsartigem Husten, pfeifendem Atemgeräusch und Atemnot, die v.a. nachts und beim Sport auftreten. Er hat eine Katze zuhause und Heuschnupfen.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome charakterisieren das Asthma bronchiale? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Anfallsartige Atemnot (Dyspnoe)",
+              "correct": true
+            },
+            {
+              "text": "Giemen, Pfeifen (exspiratorisch)",
+              "correct": true
+            },
+            {
+              "text": "Husten, v.a. nachts und morgens",
+              "correct": true
+            },
+            {
+              "text": "Brustengegeühl",
+              "correct": true
+            },
+            {
+              "text": "Hypersonorer Klopfschall",
+              "correct": true
+            },
+            {
+              "text": "Verlängertes Exspirium",
+              "correct": true
+            },
+            {
+              "text": "Symptomfreiheit zwischen den Anfällen möglich",
+              "correct": true
+            },
+            {
+              "text": "Purulenter (eitriger) Auswurf als Hauptmerkmal",
+              "correct": false
+            }
+          ],
+          "feedback": "Asthma = reversible Obstruktion. Typisch: anfallsartige exspiratorische Dyspnoe mit Giemen. Trigger: Allergene, Kälte, Anstrengung, Infekte, ASS (Analgetika-Asthma)."
+        },
+        {
+          "id": "ursachen",
+          "title": "Ursachen & Auslöser",
+          "question": "Was sind typische Auslöser und Ursachen von Asthma? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Allergisches Asthma: Pollen, Hausstaubmilben, Tierhaare",
+              "correct": true
+            },
+            {
+              "text": "Infektasthma: nach Atemwegsinfekten",
+              "correct": true
+            },
+            {
+              "text": "Anstrengungsasthma: körperliche Belastung",
+              "correct": true
+            },
+            {
+              "text": "Analgetika-Asthma: ASS, NSAR",
+              "correct": true
+            },
+            {
+              "text": "Berufliches Asthma: Mehl, Latex, Chemikalien",
+              "correct": true
+            },
+            {
+              "text": "Genetische Prädisposition (atopische Diathese)",
+              "correct": true
+            },
+            {
+              "text": "Ausschließlich durch Bakterien verursacht",
+              "correct": false
+            }
+          ],
+          "feedback": "Allergisches Asthma ist häufig mit Rhinitis und Neurodermitis vergesellschaftet (atopische Trias). Analgetika-Asthma: Vorsicht bei ASS und NSAR → können schwere Anfälle auslösen!"
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik",
+          "question": "Welche Untersuchungen dienen der Asthma-Diagnostik? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Spirometrie: FEV1/FVC erniedrigt (Obstruktion)",
+              "correct": true
+            },
+            {
+              "text": "Reversibilitätstest: FEV1-Verbesserung >12% nach Bronchodilatator",
+              "correct": true
+            },
+            {
+              "text": "Peak-Flow-Messung (Tagesvariabilität)",
+              "correct": true
+            },
+            {
+              "text": "Allergietests (Prick-Test, spez. IgE)",
+              "correct": true
+            },
+            {
+              "text": "NO-Messung in der Ausatemluft (FeNO)",
+              "correct": true
+            },
+            {
+              "text": "Röntgen nur zum Ausschluss anderer Erkrankungen",
+              "correct": true
+            },
+            {
+              "text": "Nur Blutbild reicht zur Diagnose",
+              "correct": false
+            }
+          ],
+          "feedback": "Goldstandard: Spirometrie mit Reversibilitätstest. Peak-Flow-Protokoll über Wochen zeigt die typische Tagesvariabilität. Eosinophile im Blut/Sputum als Entzündungsmarker."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Welche Maßnahmen sind bei Asthma bronchiale indiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Bedarfstherapie: kurzwirksame Beta-2-Mimetika (SABA)",
+              "correct": true
+            },
+            {
+              "text": "Dauertherapie: inhalative Kortikosteroide (ICS)",
+              "correct": true
+            },
+            {
+              "text": "Langwirksame Beta-2-Mimetika (LABA) als Add-on",
+              "correct": true
+            },
+            {
+              "text": "Auslöser meiden (Allergene, Rauchen)",
+              "correct": true
+            },
+            {
+              "text": "Hyposensibilisierung bei allergischem Asthma",
+              "correct": true
+            },
+            {
+              "text": "Asthmaanfall: Oberkörper aufrecht, Lippenbremse",
+              "correct": true
+            },
+            {
+              "text": "ASS und NSAR bei Analgetika-Asthma",
+              "correct": false
+            }
+          ],
+          "feedback": "Stufentherapie nach GINA-Leitlinie: Stufe 1 (SABA bei Bedarf) bis Stufe 5 (Biologika wie Omalizumab). Status asthmaticus = lebensbedrohlicher Daueranfall → Notfall!"
+        }
+      ],
+      "hints": [
+        "COPD vs. Asthma: COPD = irreversibel, Raucher, >40J | Asthma = reversibel, oft jung, atopisch",
+        "Lippenbremse: Ausatmen gegen locker aufeinanderliegende Lippen → erhöht Gegendruck, öffnet Bronchien",
+        "Status asthmaticus: Anfall >24h, spricht nicht auf Therapie an → Intensivstation!"
+      ]
+    },
+    {
+      "id": "copd",
+      "name": "COPD",
+      "subtitle": "Chronisch obstruktive Lungenerkrankung",
+      "icon": "🚬",
+      "category": "Respirationstrakt",
+      "categoryId": "respirationstrakt",
+      "schweregrad": "schwer",
+      "scenario": "Ein 65-jähriger Raucher (40 Packyears) klagt über zunehmende Belastungsdyspnoe, chronischen Husten mit morgendlichem Auswurf und häufige Infekte. Er ist fassförmig und hat eine tonnenförmige Brust.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für COPD? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Chronischer Husten mit Auswurf (>3 Mo. in 2 aufeinanderfolgenden Jahren)",
+              "correct": true
+            },
+            {
+              "text": "Belastungsdyspnoe, später Ruhedyspnoe",
+              "correct": true
+            },
+            {
+              "text": "Fassthorax (Überblähung)",
+              "correct": true
+            },
+            {
+              "text": "Giemen, Brummen (Rhonchi)",
+              "correct": true
+            },
+            {
+              "text": "Hypersonorer Klopfschall (Emphysem)",
+              "correct": true
+            },
+            {
+              "text": "Pink Puffer (Emphysem-Typ) vs. Blue Bloater (Bronchitis-Typ)",
+              "correct": true
+            },
+            {
+              "text": "Vollständige Reversibilität nach Bronchodilatator",
+              "correct": false
+            }
+          ],
+          "feedback": "COPD ist irreversibel! Pink Puffer: Emphysem, schlank, keucht, Lippenbremse, SpO2 normal. Blue Bloater: chron. Bronchitis, zyanotisch, übergewichtig, Cor pulmonale."
+        },
+        {
+          "id": "ursachen",
+          "title": "Ursachen & Risikofaktoren",
+          "question": "Was sind die wichtigsten Risikofaktoren für COPD? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Rauchen (>90% der Fälle)",
+              "correct": true
+            },
+            {
+              "text": "Passivrauchen, Luftverschmutzung",
+              "correct": true
+            },
+            {
+              "text": "Alpha-1-Antitrypsin-Mangel (genetisch)",
+              "correct": true
+            },
+            {
+              "text": "Berufsbedingte Stäube (Bergbau, Bau)",
+              "correct": true
+            },
+            {
+              "text": "Häufige Atemwegsinfekte in Kindheit",
+              "correct": true
+            },
+            {
+              "text": "Ausschließlich genetische Ursache",
+              "correct": false
+            }
+          ],
+          "feedback": "Rauchen ist mit >90% die Hauptursache. Alpha-1-Antitrypsin-Mangel: selten, führt zu Emphysem bei jungen Nichtrauchern. 1 Packyear = 20 Zigaretten/Tag × 1 Jahr."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Welche Maßnahmen sind bei COPD indiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Nikotinstopp (wichtigste Maßnahme!)",
+              "correct": true
+            },
+            {
+              "text": "Bronchodilatatoren: LAMA, LABA",
+              "correct": true
+            },
+            {
+              "text": "Inhalative Kortikosteroide (bei häufigen Exazerbationen)",
+              "correct": true
+            },
+            {
+              "text": "Langzeit-Sauerstofftherapie (>15h/Tag bei pO2 <55 mmHg)",
+              "correct": true
+            },
+            {
+              "text": "Influenza- und Pneumokokken-Impfung",
+              "correct": true
+            },
+            {
+              "text": "Atemphysiotherapie",
+              "correct": true
+            },
+            {
+              "text": "Rauchen reduzieren reicht aus",
+              "correct": false
+            }
+          ],
+          "feedback": "Nikotinstopp ist die einzige Maßnahme, die das Fortschreiten verlangsamt! GOLD-Stadien I–IV nach FEV1. Exazerbation: Antibiotika + systemische Steroide + verstärkte Bronchodilatation."
+        }
+      ],
+      "hints": [
+        "GOLD-Stadien nach FEV1/FVC <70% und FEV1: I >80%, II 50-80%, III 30-50%, IV <30%",
+        "Exazerbation = akute Verschlechterung: Husten↑, Dyspnoe↑, Auswurf↑ → häufig durch Infekte",
+        "Cor pulmonale = Rechtsherzbelastung/-versagen durch Lungenhochdruck bei COPD"
+      ]
+    },
+    {
+      "id": "diabetes-mellitus-typ2",
+      "name": "Diabetes mellitus Typ 2",
+      "subtitle": "Insulinresistenz und relativer Insulinmangel",
+      "icon": "🍬",
+      "category": "Leber, Gallenblase, Pankreas (D.m.)",
+      "categoryId": "leber-galle-pankreas",
+      "schweregrad": "mittel",
+      "scenario": "Eine 58-jährige adipöse Frau (BMI 34) kommt mit Müdigkeit, häufigem Wasserlassen, starkem Durst und schlecht heilenden Wunden. Blutzucker nüchtern: 140 mg/dl.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für Diabetes mellitus Typ 2? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Häufig asymptomatisch, Zufallsbefund",
+              "correct": true
+            },
+            {
+              "text": "Polyurie (häufiges Wasserlassen)",
+              "correct": true
+            },
+            {
+              "text": "Polydipsie (starker Durst)",
+              "correct": true
+            },
+            {
+              "text": "Müdigkeit, Leistungsminderung",
+              "correct": true
+            },
+            {
+              "text": "Schlecht heilende Wunden",
+              "correct": true
+            },
+            {
+              "text": "Sehstörungen (osmotische Linsenquellung)",
+              "correct": true
+            },
+            {
+              "text": "Häufige Infektionen (Candida, HWI)",
+              "correct": true
+            },
+            {
+              "text": "Gewichtszunahme trotz Hungergefühl",
+              "correct": false
+            }
+          ],
+          "feedback": "Typ 2 beginnt schleichend, oft asymptomatisch. Klassische Symptome: Polyurie, Polydipsie, Müdigkeit. Komplikation: diabetisches Koma (hyperosmolar), diabetischer Fuß."
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik",
+          "question": "Wie wird Diabetes mellitus diagnostiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Nüchternblutzucker ≥126 mg/dl (2× gemessen)",
+              "correct": true
+            },
+            {
+              "text": "Gelegenheitsblutzucker ≥200 mg/dl + Symptome",
+              "correct": true
+            },
+            {
+              "text": "HbA1c ≥6,5% (48 mmol/mol)",
+              "correct": true
+            },
+            {
+              "text": "Oraler Glukosetoleranztest (oGTT): 2h-Wert ≥200 mg/dl",
+              "correct": true
+            },
+            {
+              "text": "Urin-Glukose allein reicht zur Diagnose",
+              "correct": false
+            }
+          ],
+          "feedback": "HbA1c spiegelt den Langzeitblutzucker der letzten 3 Monate wider (Glykosylierung der Erythrozyten). Ziel-HbA1c: <7% (53 mmol/mol) für die meisten Patienten."
+        },
+        {
+          "id": "komplikationen",
+          "title": "Komplikationen",
+          "question": "Welche Komplikationen entstehen durch Diabetes? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Diabetische Retinopathie (häufigste Erblindungsursache)",
+              "correct": true
+            },
+            {
+              "text": "Diabetische Nephropathie (häufigste Dialyse-Ursache)",
+              "correct": true
+            },
+            {
+              "text": "Diabetische Neuropathie (Polyneuropathie)",
+              "correct": true
+            },
+            {
+              "text": "Diabetischer Fuß",
+              "correct": true
+            },
+            {
+              "text": "KHK, Herzinfarkt, Apoplex (Makroangiopathie)",
+              "correct": true
+            },
+            {
+              "text": "Diabetisches Koma (hyperosmolar)",
+              "correct": true
+            },
+            {
+              "text": "Keine Komplikationen bei Typ 2",
+              "correct": false
+            }
+          ],
+          "feedback": "Mikroangiopathie (Retino-, Nephro-, Neuropathie) durch chronische Hyperglykämie. Makroangiopathie: KHK, Herzinfarkt, Apoplex, pAVK. Diabetischer Fuß = Neuropathie + pAVK + Infektion."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Welche Therapiemaßnahmen sind bei Typ-2-Diabetes indiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Gewichtsreduktion, Diät, Bewegung (Basistherapie)",
+              "correct": true
+            },
+            {
+              "text": "Metformin (1. Wahl, Biguanid)",
+              "correct": true
+            },
+            {
+              "text": "SGLT2-Hemmer (kardio- und nephroprotektiv)",
+              "correct": true
+            },
+            {
+              "text": "GLP-1-Agonisten (Gewichtsreduktion)",
+              "correct": true
+            },
+            {
+              "text": "Insulin (bei Versagen oraler Antidiabetika)",
+              "correct": true
+            },
+            {
+              "text": "Ausschließlich Insulintherapie von Anfang an",
+              "correct": false
+            }
+          ],
+          "feedback": "Stufentherapie: Lebensstiländerung → Metformin → Kombination → Insulin. Metformin ist kontraindiziert bei: GFR <30, Laktatazidose-Risiko, Kontrastmittel (vorher absetzen)."
+        }
+      ],
+      "hints": [
+        "Typ 1 = absoluter Insulinmangel (Autoimmun, jung) | Typ 2 = relativer Insulinmangel (Lebensstil, >40J)",
+        "HbA1c = 'Blutzucker-Gedächtnis' der letzten 3 Monate",
+        "Metformin: kontraindiziert bei Niereninsuffizienz (GFR <30) und vor Kontrastmittelgabe",
+        "Diabetischer Fuß: Grad 0-5 nach Wagner-Klassifikation"
+      ]
+    },
+    {
+      "id": "appendizitis",
+      "name": "Appendizitis",
+      "subtitle": "Entzündung des Wurmfortsatzes",
+      "icon": "🔥",
+      "category": "GIT, Harntrakt",
+      "categoryId": "git",
+      "schweregrad": "schwer",
+      "scenario": "Ein 19-jähriger Mann kommt mit Schmerzen, die vor 12 Stunden periumbilikal begannen und jetzt in den rechten Unterbauch gewandert sind. Er hat Fieber (38,2°C), Übelkeit und Appetitlosigkeit.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche klinischen Zeichen sprechen für eine Appendizitis? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Druckschmerz im McBurney-Punkt (Mitte zwischen Nabel und Spina iliaca)",
+              "correct": true
+            },
+            {
+              "text": "Loslassschmerz (Blumberg-Zeichen)",
+              "correct": true
+            },
+            {
+              "text": "Schmerzmigration: periumbilikal → rechter Unterbauch",
+              "correct": true
+            },
+            {
+              "text": "Psoas-Zeichen (Schmerz bei Bein-Anheben rechts)",
+              "correct": true
+            },
+            {
+              "text": "Rovsing-Zeichen (Gegendruck linker Unterbauch → Schmerz rechts)",
+              "correct": true
+            },
+            {
+              "text": "Subfebril bis febril (37,5–38,5°C)",
+              "correct": true
+            },
+            {
+              "text": "Schmerz nach Essen besser",
+              "correct": false
+            }
+          ],
+          "feedback": "Klassischer Verlauf: Schmerz beginnt periumbilikal, wandert nach rechts unten (McBurney). Loslassschmerz = peritoneale Reizung. Cave: atypische Lage der Appendix (retrozökal, pelvin) → untypische Symptome!"
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik",
+          "question": "Welche Untersuchungen helfen bei Appendizitis? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Labor: Leukozyten >10.000, CRP erhöht",
+              "correct": true
+            },
+            {
+              "text": "Sonografie Abdomen (erste Wahl)",
+              "correct": true
+            },
+            {
+              "text": "CT Abdomen (bei Unklarheit)",
+              "correct": true
+            },
+            {
+              "text": "Alvarado-Score (klinisches Scoring-System)",
+              "correct": true
+            },
+            {
+              "text": "Urin-Stix (Ausschluss HWI)",
+              "correct": true
+            },
+            {
+              "text": "Appendizitis nur durch MRT diagnostizierbar",
+              "correct": false
+            }
+          ],
+          "feedback": "Alvarado-Score: Schmerz rechts, Loslassschmerz, Druckschmerz McBurney, Leukozytose, Linksverschiebung, Übelkeit, Fieber, Anorexie. ≥7 Punkte → OP-Indikation."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Wie wird eine Appendizitis behandelt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Appendektomie (laparoskopisch bevorzugt)",
+              "correct": true
+            },
+            {
+              "text": "Perioperative Antibiotika",
+              "correct": true
+            },
+            {
+              "text": "Konservativ mit Antibiotika (bei unkomplizierter Form möglich)",
+              "correct": true
+            },
+            {
+              "text": "Bei Perforation: sofortige Notfall-OP",
+              "correct": true
+            },
+            {
+              "text": "Abwarten ohne Therapie ist sicher",
+              "correct": false
+            },
+            {
+              "text": "Analgesie (Schmerzmittel) kontraindiziert",
+              "correct": false
+            }
+          ],
+          "feedback": "Perforierte Appendizitis → Peritonitis → lebensbedrohlich! Cave: Wärme (Wärmflasche) ist kontraindiziert bei akutem Abdomen. Diagnose bleibt klinisch! Analgesie ist erlaubt und verändert die Diagnose nicht."
+        }
+      ],
+      "hints": [
+        "Lanz-Punkt: Grenze rechtes/mittleres Drittel zwischen beiden Spinae iliacae",
+        "McBurney-Punkt: Mitte der Verbindungslinie Nabel–rechte Spina iliaca anterior superior",
+        "Cave: Schwangere, Kinder und Ältere können atypische Symptome haben",
+        "Peritonitis-Zeichen: brettharte Bauchdecke = chirurgischer Notfall!"
+      ]
+    },
+    {
+      "id": "depression",
+      "name": "Depression",
+      "subtitle": "Affektive Störung mit gedrückter Stimmung",
+      "icon": "🌧️",
+      "category": "Psychiatrie",
+      "categoryId": "psychiatrie",
+      "schweregrad": "mittel",
+      "scenario": "Eine 38-jährige Frau berichtet, dass sie seit 6 Wochen antriebslos ist, kaum schläft, sich wertlos fühlt und keine Freude mehr empfindet. Sie hat aufgehört zu arbeiten und zieht sich sozial zurück.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für eine depressive Episode? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Gedrückte, depressive Stimmung",
+              "correct": true
+            },
+            {
+              "text": "Interessen- und Freudlosigkeit (Anhedonie)",
+              "correct": true
+            },
+            {
+              "text": "Antriebsmangel, Erschöpfung",
+              "correct": true
+            },
+            {
+              "text": "Konzentrationsschwäche, Entscheidungsunfähigkeit",
+              "correct": true
+            },
+            {
+              "text": "Schlafstörungen (Ein-/Durchschlafstörung, Früherwachen)",
+              "correct": true
+            },
+            {
+              "text": "Gefühle der Wertlosigkeit, Schuldgefühle",
+              "correct": true
+            },
+            {
+              "text": "Suizidgedanken oder -handlungen",
+              "correct": true
+            },
+            {
+              "text": "Somatische Symptome (Gewichtsveränderung, Libidoverlust)",
+              "correct": true
+            },
+            {
+              "text": "Gehobene Stimmung, Größenwahn",
+              "correct": false
+            }
+          ],
+          "feedback": "Hauptsymptome (mind. 2): gedrückte Stimmung, Anhedonie, Antriebsminderung. Dauer >2 Wochen. Schweregrad: leicht (2 Haupt + 2 Neben), mittel (2+3), schwer (3+4+evtl. Psychose)."
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik & Schweregradbeurteilung",
+          "question": "Wie wird Depression diagnostiziert und bewertet? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "ICD-10-Kriterien: Haupt- und Nebensymptome",
+              "correct": true
+            },
+            {
+              "text": "PHQ-9 (Fragebogen zur Selbsteinschätzung)",
+              "correct": true
+            },
+            {
+              "text": "Hamilton-Depressionsskala",
+              "correct": true
+            },
+            {
+              "text": "Ausschluss somatischer Ursachen (Schilddrüse, Anämie)",
+              "correct": true
+            },
+            {
+              "text": "Suizidrisiko-Einschätzung (immer!)",
+              "correct": true
+            },
+            {
+              "text": "EEG reicht als alleinige Diagnostik",
+              "correct": false
+            }
+          ],
+          "feedback": "Immer organische Ursachen ausschließen: Hypothyreose, Anämie, Schlafapnoe. Suizidrisiko IMMER ansprechen (Enttabuisierung)! Ansprechen erhöht nicht das Risiko."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Welche Therapiemaßnahmen sind bei Depression indiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Psychotherapie (kognitive Verhaltenstherapie, tiefenpsychologisch)",
+              "correct": true
+            },
+            {
+              "text": "Antidepressiva: SSRI (erste Wahl)",
+              "correct": true
+            },
+            {
+              "text": "Körperliche Aktivität (Ausdauersport)",
+              "correct": true
+            },
+            {
+              "text": "Schlafhygiene, Lichttherapie (bei saisonaler Depression)",
+              "correct": true
+            },
+            {
+              "text": "Elektrokrampftherapie (EKT) bei schwerer therapieresistenter Depression",
+              "correct": true
+            },
+            {
+              "text": "Bei Suizidalität: stationäre Aufnahme",
+              "correct": true
+            },
+            {
+              "text": "Antidepressiva wirken sofort am ersten Tag",
+              "correct": false
+            }
+          ],
+          "feedback": "SSRIs (Fluoxetin, Sertralin): Wirklatenz 2–4 Wochen. Kombination Psychotherapie + Pharmakotherapie wirksamer als beides allein. Suizidale Patienten: Schutz vor sich selbst, evtl. Unterbringung."
+        }
+      ],
+      "hints": [
+        "Depression ≠ Traurigkeit: pathologisch wenn >2 Wochen, mehrere Symptome, Funktionsverlust",
+        "SSRI-Wirklatenz: 2–4 Wochen – Patienten aufklären, nicht vorzeitig absetzen!",
+        "Früherwachen (2–3 Uhr morgens) ist typisch für endogene Depression",
+        "Bipolares Spektrum beachten: vor Antidepressiva-Gabe Manie-Anamnese erheben!"
+      ]
+    },
+    {
+      "id": "schlaganfall-apoplex",
+      "name": "Apoplex / Schlaganfall",
+      "subtitle": "Zerebrovaskuläre Erkrankung",
+      "icon": "🧠",
+      "category": "Neurologie",
+      "categoryId": "neurologie",
+      "schweregrad": "schwer",
+      "scenario": "Ein 70-jähriger Mann wird mit plötzlicher Gesichtslähmung links, Armlähmung links und Sprachstörung in die Notaufnahme gebracht. Symptome bestehen seit 2 Stunden.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome (FAST)",
+          "question": "Welche Symptome sind typisch für einen Schlaganfall? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "F – Face: Gesichtslähmung (Mund hängt schief)",
+              "correct": true
+            },
+            {
+              "text": "A – Arms: Armlähmung (ein Arm sinkt ab)",
+              "correct": true
+            },
+            {
+              "text": "S – Speech: Sprachstörung (Aphasie, Dysarthrie)",
+              "correct": true
+            },
+            {
+              "text": "T – Time: Sofort Notruf 112!",
+              "correct": true
+            },
+            {
+              "text": "Plötzlicher Sehverlust auf einem Auge",
+              "correct": true
+            },
+            {
+              "text": "Plötzlicher starker Kopfschmerz ('Vernichtungskopfschmerz')",
+              "correct": true
+            },
+            {
+              "text": "Schleichende Symptome über Wochen",
+              "correct": false
+            }
+          ],
+          "feedback": "Schlaganfall = PLÖTZLICH! FAST-Test: Face, Arms, Speech, Time. Vernichtungskopfschmerz → Subarachnoidalblutung (SAB). TIA: Symptome <24h, aber ernstes Warnsignal!"
+        },
+        {
+          "id": "ursachen",
+          "title": "Ursachen & Typen",
+          "question": "Welche Formen und Ursachen des Schlaganfalls gibt es? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Ischämischer Infarkt (85%): Thrombose oder Embolie",
+              "correct": true
+            },
+            {
+              "text": "Hämorrhagischer Infarkt (15%): Hirnblutung",
+              "correct": true
+            },
+            {
+              "text": "Risikofaktoren: Hypertonie, Vorhofflimmern, Arteriosklerose",
+              "correct": true
+            },
+            {
+              "text": "Diabetes, Rauchen, Hypercholesterinämie",
+              "correct": true
+            },
+            {
+              "text": "TIA = Transitorische ischämische Attacke (<24h)",
+              "correct": true
+            },
+            {
+              "text": "Schlaganfall ist ausschließlich eine Alterserkrankung",
+              "correct": false
+            }
+          ],
+          "feedback": "Häufigste Ursache ischämischer Schlaganfall: Embolie bei Vorhofflimmern oder Arteriosklerose. Hypertonie ist der wichtigste Risikofaktor für beide Formen."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Notfallmaßnahmen",
+          "question": "Welche Sofortmaßnahmen sind beim Schlaganfall entscheidend? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Notruf 112 (Stroke Unit!)",
+              "correct": true
+            },
+            {
+              "text": "Lyse-Therapie bei ischämischem Schlaganfall (bis 4,5h)",
+              "correct": true
+            },
+            {
+              "text": "Thrombektomie (mechanisch, bis 24h)",
+              "correct": true
+            },
+            {
+              "text": "Vitalzeichen, Blutzucker kontrollieren",
+              "correct": true
+            },
+            {
+              "text": "Blutdruck NICHT aggressiv senken (außer >220/120)",
+              "correct": true
+            },
+            {
+              "text": "Patienten schlafen lassen und morgen Arzt anrufen",
+              "correct": false
+            },
+            {
+              "text": "Aspirin sofort bei V.a. Hirnblutung geben",
+              "correct": false
+            }
+          ],
+          "feedback": "Zeit ist Hirn! Lyse nur bei ischämischem Schlaganfall (nicht bei Blutung!). Vorher: CT zum Ausschluss Blutung. Stroke Unit: spezialisierte Schlaganfall-Intensivstation → verbessert Prognose deutlich."
+        }
+      ],
+      "hints": [
+        "Time is Brain: Pro Minute Schlaganfall sterben ~1,9 Millionen Neuronen",
+        "TIA = Transitorische ischämische Attacke: Symptome <24h – aber ABCD²-Score für Folgerisiko berechnen!",
+        "Lyse-Kontraindikationen: Blutung, Antikoagulation, Symptombeginn >4,5h, unkontrollierte Hypertonie",
+        "Vorhofflimmern → Antikoagulation zur Schlaganfall-Prophylaxe!"
+      ]
+    },
+    {
+      "id": "anämie-eisenmangel",
+      "name": "Eisenmangelanämie",
+      "subtitle": "Häufigste Anämieform weltweit",
+      "icon": "🩸",
+      "category": "Hämatologie",
+      "categoryId": "haematologie",
+      "schweregrad": "leicht",
+      "scenario": "Eine 28-jährige Frau klagt über Müdigkeit, Blässe, Haarausfall und brüchige Nägel. Sie menstruiert stark. Hb: 9,5 g/dl, MCH erniedrigt, Ferritin 4 µg/l.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für Eisenmangelanämie? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Müdigkeit, Schwäche, Erschöpfung",
+              "correct": true
+            },
+            {
+              "text": "Blässe (Haut, Schleimhäute, Konjunktiven)",
+              "correct": true
+            },
+            {
+              "text": "Haarausfall, brüchige Nägel",
+              "correct": true
+            },
+            {
+              "text": "Mundwinkelrhagaden, Glossitis (Hunter-Glossitis)",
+              "correct": true
+            },
+            {
+              "text": "Pica (Verlangen nach Erde, Eis, Kreide)",
+              "correct": true
+            },
+            {
+              "text": "Tachykardie, Belastungsdyspnoe",
+              "correct": true
+            },
+            {
+              "text": "Plummer-Vinson-Syndrom (Schluckbeschwerden)",
+              "correct": true
+            },
+            {
+              "text": "Ikterus (Gelbsucht)",
+              "correct": false
+            }
+          ],
+          "feedback": "Eisenmangel entwickelt sich in 3 Stadien: 1) Speichereisenmangel (Ferritin↓), 2) Eisenmangelzustand (Transferrin↑, Eisen↓), 3) Eisenmangelanämie (Hb↓, MCH↓, mikrozytäre Anämie)."
+        },
+        {
+          "id": "ursachen",
+          "title": "Ursachen",
+          "question": "Welche Ursachen kann eine Eisenmangelanämie haben? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Blutverlust: Menstruation, GI-Blutung",
+              "correct": true
+            },
+            {
+              "text": "Erhöhter Bedarf: Schwangerschaft, Wachstum",
+              "correct": true
+            },
+            {
+              "text": "Mangelernährung (Veganer, Vegetarier)",
+              "correct": true
+            },
+            {
+              "text": "Malabsorption (Zöliakie, Magenresektion)",
+              "correct": true
+            },
+            {
+              "text": "Chronische Erkrankungen (Entzündung)",
+              "correct": true
+            },
+            {
+              "text": "Eisenmangel kann nicht durch Ernährung entstehen",
+              "correct": false
+            }
+          ],
+          "feedback": "Wichtig: Ursache suchen! GI-Blutung (Tumorausschluss) bei Männern und postmenopausalen Frauen! Ferritin ist der beste Speicherparameter, aber als Akute-Phase-Protein auch bei Entzündung erhöht."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Wie wird Eisenmangelanämie behandelt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Orale Eisenpräparate (z.B. Ferro-Gradumet, Fe2+)",
+              "correct": true
+            },
+            {
+              "text": "Nüchtern einnehmen oder mit Vitamin C (Resorption↑)",
+              "correct": true
+            },
+            {
+              "text": "i.v.-Eisen bei Malabsorption oder Unverträglichkeit",
+              "correct": true
+            },
+            {
+              "text": "Ursache behandeln (GI-Blutung etc.)",
+              "correct": true
+            },
+            {
+              "text": "Therapiedauer: bis Ferritin normalisiert (mehrere Monate)",
+              "correct": true
+            },
+            {
+              "text": "Milch fördert Eisenresorption",
+              "correct": false
+            }
+          ],
+          "feedback": "Resorption: Fe2+ (zweiwertig) wird besser resorbiert als Fe3+. Hemmung durch Milch, Tee, Kaffee, Phytate. Förderung durch Vitamin C. Therapie mind. 3–6 Monate nach Hb-Normalisierung fortführen!"
+        }
+      ],
+      "hints": [
+        "Ferritin: bester Marker für Speichereisen, aber Akute-Phase-Protein (falsch hoch bei Entzündung)",
+        "Mikrozytäre, hypochrome Anämie: MCH <28 pg, MCV <80 fl",
+        "Thalassämie: auch mikrozytär – aber Ferritin normal/erhöht und keine klinischen Eisenmangel-Zeichen",
+        "Männer + postmenopausale Frauen mit Eisenmangel → immer GI-Tumor ausschließen!"
+      ]
+    },
+    {
+      "id": "hyperthyreose",
+      "name": "Hyperthyreose",
+      "subtitle": "Überproduktion von Schilddrüsenhormonen",
+      "icon": "⚡",
+      "category": "Endokrinum",
+      "categoryId": "endokrinum",
+      "schweregrad": "mittel",
+      "scenario": "Eine 35-jährige Frau klagt über Herzrasen, Nervosität, Zittern, Gewichtsabnahme trotz gutem Appetit, Schwitzen und Schlaflosigkeit. Ihr Hals ist leicht vergrößert.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für eine Hyperthyreose? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Tachykardie, Herzrasen, Vorhofflimmern",
+              "correct": true
+            },
+            {
+              "text": "Nervosität, Unruhe, Reizbarkeit",
+              "correct": true
+            },
+            {
+              "text": "Tremor (feinschlägiges Zittern)",
+              "correct": true
+            },
+            {
+              "text": "Gewichtsabnahme bei gesteigertem Appetit",
+              "correct": true
+            },
+            {
+              "text": "Wärmeintoleranz, übermäßiges Schwitzen",
+              "correct": true
+            },
+            {
+              "text": "Durchfall, häufiger Stuhlgang",
+              "correct": true
+            },
+            {
+              "text": "Struma (Schilddrüsenvergrößerung)",
+              "correct": true
+            },
+            {
+              "text": "Exophthalmus (bei M. Basedow)",
+              "correct": true
+            },
+            {
+              "text": "Kälteempfindlichkeit, Gewichtszunahme",
+              "correct": false
+            }
+          ],
+          "feedback": "Merker: alles läuft schneller! Herz schneller, Darm schneller, Stoffwechsel schneller. Morbus Basedow: Trias Struma + Exophthalmus + Tachykardie (Merseburger Trias)."
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik",
+          "question": "Welche Untersuchungen sichern die Hyperthyreose-Diagnose? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "TSH basal (erniedrigt bei Hyperthyreose)",
+              "correct": true
+            },
+            {
+              "text": "fT3, fT4 (erhöht)",
+              "correct": true
+            },
+            {
+              "text": "TSH-Rezeptor-Antikörper (TRAK) bei M. Basedow",
+              "correct": true
+            },
+            {
+              "text": "Sonografie Schilddrüse",
+              "correct": true
+            },
+            {
+              "text": "Szintigrafie (heißer Knoten = Autonomie)",
+              "correct": true
+            },
+            {
+              "text": "TSH erhöht bei Hyperthyreose",
+              "correct": false
+            }
+          ],
+          "feedback": "TSH ist der beste Screeningparameter! TSH↓ + fT3/fT4↑ = Hyperthyreose. TRAK positiv = M. Basedow (Autoimmun). Heißer Knoten in der Szintigrafie = autonomes Adenom."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Wie wird Hyperthyreose behandelt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Thyreostatika: Thiamazol, Carbimazol (Ersttherapie)",
+              "correct": true
+            },
+            {
+              "text": "Betablocker (symptomatisch: Herzrasen, Tremor)",
+              "correct": true
+            },
+            {
+              "text": "Radiojodtherapie (definitiv)",
+              "correct": true
+            },
+            {
+              "text": "Operation (Thyreoidektomie)",
+              "correct": true
+            },
+            {
+              "text": "Schilddrüsenhormone geben (als Therapie)",
+              "correct": false
+            }
+          ],
+          "feedback": "Thyreotoxische Krise: lebensbedrohlich! Hohes Fieber, Tachyarrhythmie, Bewusstseinsstörung → Intensivstation! Auslöser: Stress, Jodkontrastmittel, OP. Behandlung: Thyreostatika + Betablocker + Steroide."
+        }
+      ],
+      "hints": [
+        "Merseburger Trias (M. Basedow): Struma + Exophthalmus + Tachykardie",
+        "TSH = Thyreoidea-stimulierendes Hormon: bei Hyper↓, bei Hypo↑",
+        "Thyreotoxische Krise: Notfall! Letalität bis 30% ohne Behandlung",
+        "Jodkontrastmittel kann Hyperthyreose verschlimmern/auslösen → vorher Thyreostatika!"
+      ]
+    },
+    {
+      "id": "harnwegsinfektion",
+      "name": "Harnwegsinfektion (HWI)",
+      "subtitle": "Bakterielle Infektion der Harnwege",
+      "icon": "💧",
+      "category": "Harnapparat",
+      "categoryId": "harnapparat",
+      "schweregrad": "leicht",
+      "scenario": "Eine 24-jährige Frau kommt mit Brennen beim Wasserlassen, häufigem Harndrang und trübem, übel riechendem Urin seit 2 Tagen. Kein Fieber, kein Flankenschmerz.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome charakterisieren einen unkomplizierten Harnwegsinfekt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Dysurie (Brennen beim Wasserlassen)",
+              "correct": true
+            },
+            {
+              "text": "Pollakisurie (häufiges Wasserlassen, geringe Mengen)",
+              "correct": true
+            },
+            {
+              "text": "Imperativer Harndrang",
+              "correct": true
+            },
+            {
+              "text": "Trüber, übelriechender Urin",
+              "correct": true
+            },
+            {
+              "text": "Hämaturie (Blut im Urin möglich)",
+              "correct": true
+            },
+            {
+              "text": "Kein Fieber (bei unkomplizierter Zystitis)",
+              "correct": true
+            },
+            {
+              "text": "Flankenschmerz + Fieber = Pyelonephritis!",
+              "correct": true
+            },
+            {
+              "text": "Starke Rückenschmerzen ohne Fieber",
+              "correct": false
+            }
+          ],
+          "feedback": "Unterer HWI (Zystitis): kein Fieber, kein Flankenschmerz. Oberer HWI (Pyelonephritis): Fieber >38°C, Flankenschmerz, Klopfschmerz. Wichtige Unterscheidung, da verschiedene Therapie-Dauer!"
+        },
+        {
+          "id": "ursachen",
+          "title": "Erreger & Risikofaktoren",
+          "question": "Was sind typische Erreger und Risikofaktoren für HWI? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "E. coli (>80% aller HWI)",
+              "correct": true
+            },
+            {
+              "text": "Staphylococcus saprophyticus (junge Frauen)",
+              "correct": true
+            },
+            {
+              "text": "Risiko: weibliches Geschlecht (kurze Urethra)",
+              "correct": true
+            },
+            {
+              "text": "Sexuelle Aktivität ('Honeymoon-Zystitis')",
+              "correct": true
+            },
+            {
+              "text": "Diabetes mellitus, Katheter, Schwangerschaft",
+              "correct": true
+            },
+            {
+              "text": "Herpes-Viren als häufigster Auslöser",
+              "correct": false
+            }
+          ],
+          "feedback": "Frauen erkranken 10× häufiger als Männer (kürzere Urethra). Männer mit HWI → immer Ursache suchen (Prostatahyperplasie, Steine). Rezidivierende HWI → Zystoskopie und Bildgebung!"
+        },
+        {
+          "id": "massnahmen",
+          "title": "Diagnostik & Therapie",
+          "question": "Wie wird ein HWI diagnostiziert und behandelt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Urin-Stix: Nitrit, Leukozyten positiv",
+              "correct": true
+            },
+            {
+              "text": "Urinkultur (bei Rezidiv, Schwangerschaft, Männer)",
+              "correct": true
+            },
+            {
+              "text": "Unkomplizierte Zystitis: Fosfomycin (3g, einmalig)",
+              "correct": true
+            },
+            {
+              "text": "Oder: Nitrofurantoin 5–7 Tage",
+              "correct": true
+            },
+            {
+              "text": "Pyelonephritis: Fluorchinolon oder Cephalosporin 7–14 Tage",
+              "correct": true
+            },
+            {
+              "text": "Viel trinken, Blasentee",
+              "correct": true
+            },
+            {
+              "text": "Antibiotika nur bei Männern notwendig",
+              "correct": false
+            }
+          ],
+          "feedback": "Wichtig: Schwangere mit bakterieller Asymptomatischer Bakteriurie → immer behandeln (Frühgeburtrisiko)! Bei Männern immer Urinkultur und Ursachensuche."
+        }
+      ],
+      "hints": [
+        "Nitrit im Urin-Stix: gramnegative Bakterien (E. coli) produzieren Nitrit aus Nitrat",
+        "Pyelonephritis = oberer HWI: Fieber, Flankenschmerz, Nierenlagerungsschmerz",
+        "Schwangerschaft + asymptomatische Bakteriurie → MUSS behandelt werden!",
+        "Männer mit HWI: immer anatomische Ursache ausschließen"
+      ]
+    },
+    {
+      "id": "gonarthrose",
+      "name": "Gonarthrose",
+      "subtitle": "Degenerative Kniegelenkerkrankung",
+      "icon": "🦴",
+      "category": "Bewegungsapparat",
+      "categoryId": "bewegungsapparat",
+      "schweregrad": "leicht",
+      "scenario": "Ein 68-jähriger Mann klagt über zunehmende Knieschmerzen, die sich beim Treppensteigen verschlimmern, morgens steif sind (<30 min) und nach Ruhe besser werden. Er ist übergewichtig.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für Gonarthrose? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Anlaufschmerz (nach Ruhepause)",
+              "correct": true
+            },
+            {
+              "text": "Belastungsschmerz, Entlastungsbesserung",
+              "correct": true
+            },
+            {
+              "text": "Morgensteifigkeit <30 Minuten",
+              "correct": true
+            },
+            {
+              "text": "Krepitation (Kneirschen im Gelenk)",
+              "correct": true
+            },
+            {
+              "text": "Bewegungseinschränkung, Beinachsenfehlstellung",
+              "correct": true
+            },
+            {
+              "text": "Erguss bei aktivierter Arthrose",
+              "correct": true
+            },
+            {
+              "text": "Morgensteifigkeit >1 Stunde (eher RA)",
+              "correct": false
+            }
+          ],
+          "feedback": "Arthrose vs. rheumatoide Arthritis: Arthrose = mechanisch, Morgensteifigkeit <30 min, bei Belastung schlimmer. RA = entzündlich, Morgensteifigkeit >1h, symmetrisch, MCP/PIP-Gelenke."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Welche Maßnahmen sind bei Gonarthrose indiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Gewichtsreduktion (senkt Gelenkbelastung)",
+              "correct": true
+            },
+            {
+              "text": "Physiotherapie, Muskelkräftigung",
+              "correct": true
+            },
+            {
+              "text": "Analgesie: Paracetamol, NSAR (topisch/oral)",
+              "correct": true
+            },
+            {
+              "text": "Intraartikuläre Injektion (Kortison, Hyaluronsäure)",
+              "correct": true
+            },
+            {
+              "text": "Gelenkersatz (TEP) bei schwerer Arthrose",
+              "correct": true
+            },
+            {
+              "text": "Vollständige körperliche Schonung dauerhaft",
+              "correct": false
+            }
+          ],
+          "feedback": "Konservative Therapie zuerst! Bewegung ist wichtig (Knorpelernährung durch Diffusion). Gelenkschutz: gelenkschonende Sportarten (Schwimmen, Radfahren). OP (TEP) erst nach Versagen der konservativen Therapie."
+        }
+      ],
+      "hints": [
+        "Gonarthrose: Knie | Coxarthrose: Hüfte | Spondylarthrose: Wirbelsäule",
+        "Aktivierte Arthrose: Entzündungszeichen + Erguss → NSAR, Kühlung, Ruhigstellung",
+        "Morgensteifigkeit <30 min: Arthrose | >1h: Rheumatoide Arthritis",
+        "Kellgren & Lawrence Klassifikation Grad 0–4 (Röntgen)"
+      ]
+    },
+    {
+      "id": "sepsis",
+      "name": "Sepsis",
+      "subtitle": "Lebensbedrohliche Organdysfunktion durch Infektion",
+      "icon": "🚨",
+      "category": "Notfall",
+      "categoryId": "notfall",
+      "schweregrad": "schwer",
+      "scenario": "Ein 72-jähriger Mann wird mit Fieber 39,8°C, Hypotonie (RR 85/50 mmHg), Verwirrtheit, Tachykardie (130/min) und Oligurie eingeliefert. Vorbekannt: Pneumonie seit 3 Tagen, ambulant behandelt.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Diagnosekriterien & Symptome",
+          "question": "Welche Kriterien definieren eine Sepsis (Sepsis-3)? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Infektionsherd (nachgewiesen oder vermutet)",
+              "correct": true
+            },
+            {
+              "text": "Akute Organdysfunktion (SOFA-Score ≥2)",
+              "correct": true
+            },
+            {
+              "text": "qSOFA: Bewusstseinsstörung, AF ≥22/min, RR syst. ≤100",
+              "correct": true
+            },
+            {
+              "text": "Septischer Schock: Vasopressoren + Laktat >2 mmol/l trotz Volumen",
+              "correct": true
+            },
+            {
+              "text": "Fieber ist zwingend notwendig für Diagnose",
+              "correct": false
+            },
+            {
+              "text": "Sepsis = nur bei positiver Blutkultur",
+              "correct": false
+            }
+          ],
+          "feedback": "Sepsis-3 (2016): Sepsis = lebensbedrohliche Organdysfunktion durch Infektion (SOFA ≥2). Septischer Schock = Sepsis + Vasopressor-Bedarf + Laktat >2 mmol/l (Mortalität >40%)."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Sofortmaßnahmen (Sepsis Bundle)",
+          "question": "Welche Maßnahmen gehören zum Sepsis-Bundle (1h-Bundle)? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Blutkulturen (2× vor Antibiotika-Gabe)",
+              "correct": true
+            },
+            {
+              "text": "Breitspektrum-Antibiotika innerhalb 1 Stunde",
+              "correct": true
+            },
+            {
+              "text": "Laktat messen",
+              "correct": true
+            },
+            {
+              "text": "Volumenbolus 30 ml/kg Kristalloide bei Hypotonie",
+              "correct": true
+            },
+            {
+              "text": "Vasopressoren (Noradrenalin) bei therapierefraktärer Hypotonie",
+              "correct": true
+            },
+            {
+              "text": "Stunden warten auf Kulturen vor Antibiotika-Start",
+              "correct": false
+            }
+          ],
+          "feedback": "Sepsis Hour-1 Bundle: Laktat + Blutkultur + Antibiotika + Volumen + Vasopressor. Jede Stunde Verzögerung bei Antibiotika erhöht Mortalität um ~7%! Intensivstation obligat."
+        }
+      ],
+      "hints": [
+        "Sepsis-3 Definition 2016: ersetzt SIRS-Kriterien. SOFA-Score misst Organdysfunktion.",
+        "Septischer Schock: Mortalität ~40-50%",
+        "qSOFA (Screening außerhalb ICU): GCS <15, AF >22/min, RR syst. <100 mmHg – 2/3 Punkte = Sepsisverdacht",
+        "Häufigste Sepsisherde: Lunge, Abdomen, Harnwege, Haut"
+      ]
+    },
+    {
+      "id": "otitis-media",
+      "name": "Otitis media acuta",
+      "subtitle": "Akute Mittelohrentzündung",
+      "icon": "👂",
+      "category": "Ohr",
+      "categoryId": "ohr",
+      "schweregrad": "leicht",
+      "scenario": "Ein 4-jähriges Kind wird von der Mutter gebracht. Es zieht sich am Ohr, hat Fieber 38,8°C, schläft schlecht und weint viel. Otoskopie: gerötetes, vorgewölbtes Trommelfell rechts.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für akute Otitis media? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Ohrsschmerzen (Otalgie)",
+              "correct": true
+            },
+            {
+              "text": "Fieber",
+              "correct": true
+            },
+            {
+              "text": "Schwerhörigkeit, Druckgefühl",
+              "correct": true
+            },
+            {
+              "text": "Bei Perforation: Sekretfluss, Schmerzlinderung",
+              "correct": true
+            },
+            {
+              "text": "Kleinkinder: Ohrgreifen, Unruhe, Trinkunlust",
+              "correct": true
+            },
+            {
+              "text": "Otoskopie: gerötetes, vorgewölbtes Trommelfell",
+              "correct": true
+            },
+            {
+              "text": "Schmerzloser Ausfluss ohne Fieber (eher Otitis externa)",
+              "correct": false
+            }
+          ],
+          "feedback": "Häufigste Ursache: Virusinfekt der oberen Atemwege → bakterielle Superinfektion (S. pneumoniae, H. influenzae). Kinder häufiger betroffen (horizontale Eustachische Röhre, häufige Infekte)."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Wie wird die akute Otitis media behandelt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Analgesie/Antipyretika: Ibuprofen, Paracetamol",
+              "correct": true
+            },
+            {
+              "text": "Abschwellende Nasentropfen",
+              "correct": true
+            },
+            {
+              "text": "Antibiotika: Amoxicillin (bei <2J, starken Schmerzen, hohem Fieber)",
+              "correct": true
+            },
+            {
+              "text": "Watchful Waiting: 48–72h beobachten bei mildem Verlauf",
+              "correct": true
+            },
+            {
+              "text": "Parazentese (Trommelfell-Inzision) bei Komplikationen",
+              "correct": true
+            },
+            {
+              "text": "Immer sofort Antibiotika unabhängig vom Alter",
+              "correct": false
+            }
+          ],
+          "feedback": "Komplikationen: Mastoiditis (retroaurikuläre Schwellung, Schmerz), Meningitis, Labyrinthitis. Bei Säuglingen und Kleinkindern <2J: immer Antibiotika. Rezidivierende Otitis: Paukenröhrchen."
+        }
+      ],
+      "hints": [
+        "Otitis media vs. externa: Media = innen (hinter Trommelfell), Externa = Gehörgang",
+        "Mastoiditis: gefürchtete Komplikation, Schwellung hinter dem Ohr → sofort HNO!",
+        "Eustachische Röhre bei Kindern horizontal → schlechtere Drainage → häufiger Mittelohrentzündung",
+        "Rezidivierende OM: Paukenröhrchen (Tympanostomie) zur Belüftung"
+      ]
+    },
+    {
+      "id": "glaukom",
+      "name": "Glaukom (Grüner Star)",
+      "subtitle": "Erhöhter Augeninnendruck mit Sehnervschaden",
+      "icon": "👁️",
+      "category": "Auge",
+      "categoryId": "auge",
+      "schweregrad": "mittel",
+      "scenario": "Ein 65-jähriger Patient kommt zur Routinekontrolle. Er bemerkt seit Monaten eine Einengung seines Gesichtsfelds von außen nach innen. Augeninnendruck 26 mmHg beidseits.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome und Formen des Glaukoms gibt es? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Offenwinkelglaukom: langsam, schmerzlos, häufig asymptomatisch",
+              "correct": true
+            },
+            {
+              "text": "Gesichtsfeldausfall (Tunnelblick im Spätstadium)",
+              "correct": true
+            },
+            {
+              "text": "Winkelblockglaukom (akuter Anfall): starke Schmerzen, Rötung, Sehminderung",
+              "correct": true
+            },
+            {
+              "text": "Übelkeit, Erbrechen beim akuten Anfall",
+              "correct": true
+            },
+            {
+              "text": "Halos (Farbinge um Lichtquellen) beim akuten Anfall",
+              "correct": true
+            },
+            {
+              "text": "Plötzliche Sehverbesserung",
+              "correct": false
+            }
+          ],
+          "feedback": "Chronisches Offenwinkelglaukom: häufigste Form, schleichend, schmerzlos → Früherkennung durch Augendruckmessung! Akuter Glaukomanfall: Notfall! Sofortige Drucksenkung nötig."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Diagnostik & Therapie",
+          "question": "Wie wird Glaukom diagnostiziert und behandelt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Tonometrie (Augendruckmessung, normal <21 mmHg)",
+              "correct": true
+            },
+            {
+              "text": "Perimetrie (Gesichtsfeldmessung)",
+              "correct": true
+            },
+            {
+              "text": "Papillenbeurteilung (C/D-Ratio, Exkavation)",
+              "correct": true
+            },
+            {
+              "text": "Tropfen: Betablocker (Timolol), Prostaglandine",
+              "correct": true
+            },
+            {
+              "text": "Laser-Trabekuloplastik, OP bei Versagen",
+              "correct": true
+            },
+            {
+              "text": "Akuter Glaukomanfall: Pilocarpin + i.v. Acetazolamid",
+              "correct": true
+            },
+            {
+              "text": "Hoher Augendruck ist immer symptomatisch",
+              "correct": false
+            }
+          ],
+          "feedback": "Normaldruck-Glaukom: Sehnervschaden trotz normalem Augeninnendruck (Durchblutungsstörung)! Ziel: Augeninnendruck <18 mmHg. Akuter Glaukomanfall = augenärztlicher Notfall."
+        }
+      ],
+      "hints": [
+        "Grüner Star (Glaukom) vs. Grauer Star (Katarakt): Glaukom = Nervenschaden, Katarakt = Linsentrübung",
+        "Normaler Augendruck: 10–21 mmHg",
+        "C/D-Ratio: Cup-to-Disc-Ratio > 0,6 verdächtig für Glaukom",
+        "Glaukom = häufigste Ursache für irreversible Erblindung weltweit"
+      ]
+    },
+    {
+      "id": "impetigo",
+      "name": "Impetigo contagiosa",
+      "subtitle": "Bakterielle Hautinfektion (Eiterflechte)",
+      "icon": "🧴",
+      "category": "Haut",
+      "categoryId": "haut",
+      "schweregrad": "leicht",
+      "scenario": "Eine Mutter bringt ihr 6-jähriges Kind mit honigfarbenen Krusten um den Mund und an der Nase. Das Kind kratzt sich häufig. Im Kindergarten gab es ähnliche Fälle.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für Impetigo contagiosa? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Honiggelbe, honigfarbene Krusten",
+              "correct": true
+            },
+            {
+              "text": "Vesikel und Pusteln, die aufplatzen",
+              "correct": true
+            },
+            {
+              "text": "Prädilektionsstellen: Gesicht, Nase, Mund, Hände",
+              "correct": true
+            },
+            {
+              "text": "Starker Juckreiz",
+              "correct": true
+            },
+            {
+              "text": "Hochkontagiös (meldepflichtig bei Schulkindern)",
+              "correct": true
+            },
+            {
+              "text": "Bullöse Form durch S. aureus",
+              "correct": true
+            },
+            {
+              "text": "Hohe Körpertemperatur ist obligat",
+              "correct": false
+            }
+          ],
+          "feedback": "Erreger: S. aureus (bullöse Form) und S. pyogenes (nicht-bullöse Form). Hochkontagiös → Kindergarten-/Schulausschluss bis Abheilung! Seltene Komplikation: Post-Streptokokken-Glomerulonephritis."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen & Therapie",
+          "question": "Wie wird Impetigo behandelt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Lokale Antibiotika: Mupirocin-Salbe (topisch)",
+              "correct": true
+            },
+            {
+              "text": "Systemische Antibiotika bei ausgedehntem Befall: Cephalexin, Amoxicillin+Clavulansäure",
+              "correct": true
+            },
+            {
+              "text": "Hygienemaßnahmen (Händewaschen, eigene Handtücher)",
+              "correct": true
+            },
+            {
+              "text": "Ausschluss aus Gemeinschaftseinrichtung",
+              "correct": true
+            },
+            {
+              "text": "Krusten täglich desinfizieren und ablösen",
+              "correct": true
+            },
+            {
+              "text": "Kortisoncreme als Ersttherapie",
+              "correct": false
+            }
+          ],
+          "feedback": "Kortison ist bei Impetigo kontraindiziert (fördert Keimwachstum)! Ausschluss aus Gemeinschaftseinrichtungen bis vollständige Abheilung oder 24h nach Antibiotika-Beginn."
+        }
+      ],
+      "hints": [
+        "Honiggelbe Krusten = Pathognomonisch für Impetigo!",
+        "Komplikation: Post-Streptokokken-Glomerulonephritis (2–4 Wochen nach Infektion)",
+        "Schulausschluss bis vollständige Abheilung oder nach 24h Antibiotika-Therapie",
+        "Kortison NIE bei Impetigo – verschlimmert die Infektion!"
+      ]
+    },
+    {
+      "id": "leukämie-ALL",
+      "name": "Akute Lymphatische Leukämie (ALL)",
+      "subtitle": "Maligne Entartung lymphatischer Vorläuferzellen",
+      "icon": "🔬",
+      "category": "Onkologie",
+      "categoryId": "onkologie",
+      "schweregrad": "schwer",
+      "scenario": "Ein 8-jähriger Junge wird mit Blässe, Müdigkeit, häufigen Infekten, vergrößerten Lymphknoten und Knochenschmerzen vorgestellt. Blutbild: Leukozyten 95.000/µl, Hb 7 g/dl, Thrombozyten 40.000/µl.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome können auf eine Leukämie hinweisen? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Blasse Haut (Anämie)",
+              "correct": true
+            },
+            {
+              "text": "Häufige Infekte (Leukopenie/Funktionsverlust)",
+              "correct": true
+            },
+            {
+              "text": "Petechien, Hämatome (Thrombozytopenie)",
+              "correct": true
+            },
+            {
+              "text": "Lymphknotenvergrößerung, Hepato-/Splenomegalie",
+              "correct": true
+            },
+            {
+              "text": "Knochenschmerzen (Knochenmarkinfiltration)",
+              "correct": true
+            },
+            {
+              "text": "B-Symptomatik: Fieber, Nachtschweiß, Gewichtsverlust",
+              "correct": true
+            },
+            {
+              "text": "Beschwerdefreiheit ist typisch für Leukämie",
+              "correct": false
+            }
+          ],
+          "feedback": "ALL ist die häufigste Krebserkrankung im Kindesalter (Gipfel 3–5 Jahre). Gute Prognose: >80% Heilungsrate bei Kindern. AML: häufiger bei Erwachsenen, schlechtere Prognose."
+        },
+        {
+          "id": "diagnostik",
+          "title": "Diagnostik",
+          "question": "Welche Untersuchungen dienen der Leukämie-Diagnose? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Blutbild und Differenzialblutbild (Blasten!)",
+              "correct": true
+            },
+            {
+              "text": "Knochenmarkpunktion (Goldstandard)",
+              "correct": true
+            },
+            {
+              "text": "Immunphänotypisierung (ALL vs. AML)",
+              "correct": true
+            },
+            {
+              "text": "Zytogenetik, Molekulargenetik (Philadelphia-Chromosom)",
+              "correct": true
+            },
+            {
+              "text": "Liquorpunktion (ZNS-Beteiligung)",
+              "correct": true
+            },
+            {
+              "text": "Blutbild allein reicht zur definitiven Diagnose",
+              "correct": false
+            }
+          ],
+          "feedback": "Diagnostik-Trias: Knochenmarkpunktion + Immunphänotypisierung + Zytogenetik. Philadelphia-Chromosom (BCR-ABL) bei 25% der ALL-Erwachsenen → schlechte Prognose, aber ansprechen auf Imatinib."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Therapie",
+          "question": "Welche Therapieprinzipien gibt es bei Leukämie? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Polychemotherapie (Induktion, Konsolidierung, Erhaltung)",
+              "correct": true
+            },
+            {
+              "text": "Allogene Stammzelltransplantation bei Hochrisiko",
+              "correct": true
+            },
+            {
+              "text": "ZNS-Prophylaxe (intrathekale Chemotherapie)",
+              "correct": true
+            },
+            {
+              "text": "Tyrosinkinasehemmer (Imatinib) bei Ph+-ALL",
+              "correct": true
+            },
+            {
+              "text": "Supportivtherapie (Transfusionen, Infektionsprophylaxe)",
+              "correct": true
+            },
+            {
+              "text": "Homöopathie als Ersttherapie ausreichend",
+              "correct": false
+            }
+          ],
+          "feedback": "ALL-Therapie: 3 Phasen über 2–3 Jahre. Kinder: >80% Heilung. Remissionskriterium: <5% Blasten im Knochenmark. Tumorlysesyndrom: gefürchtete Komplikation bei Therapiebeginn!"
+        }
+      ],
+      "hints": [
+        "ALL: häufigste Kinderkrebserkrankung | AML: häufigste Leukämie bei Erwachsenen",
+        "Philadelphia-Chromosom t(9;22): BCR-ABL Fusion → schlechte Prognose, aber Imatinib-sensitiv",
+        "B-Symptomatik: Fieber >38°C, Nachtschweiß, Gewichtsverlust >10% in 6 Monaten",
+        "Tumorlysesyndrom: Hyperurikämie, Hyperkalämie, Hyperphosphatämie → Nierenversagen"
+      ]
+    },
+    {
+      "id": "masern",
+      "name": "Masern",
+      "subtitle": "Hochkontagiöse Viruserkrankung",
+      "icon": "🦠",
+      "category": "Infektionslehre",
+      "categoryId": "infektionslehre",
+      "schweregrad": "mittel",
+      "scenario": "Ein 5-jähriges ungeimpftes Kind hat seit 3 Tagen hohes Fieber, Husten, Schnupfen, Lichtempfindlichkeit und jetzt einen fleckigen roten Ausschlag, der hinter den Ohren begann und sich ausbreitet.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Klinisches Bild & Symptome",
+          "question": "Welche Symptome und Stadien sind typisch für Masern? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Prodromalstadium: Fieber, Husten, Schnupfen, Konjunktivitis (3–4 Tage)",
+              "correct": true
+            },
+            {
+              "text": "Koplik-Flecken (weißliche Flecken auf Wangenschleimhaut)",
+              "correct": true
+            },
+            {
+              "text": "Exanthem: retroaurikulär beginnend, zentrifugal ausbreitend",
+              "correct": true
+            },
+            {
+              "text": "Makulopapulöser, konfluierender Ausschlag",
+              "correct": true
+            },
+            {
+              "text": "Fiebersenkung beim Auftreten des Exanthems",
+              "correct": false
+            },
+            {
+              "text": "Lichtempfindlichkeit (Fotophobie)",
+              "correct": true
+            }
+          ],
+          "feedback": "Koplik-Flecken (Kalkspritzer-ähnlich auf Wangenschleimhaut) sind pathognomonisch und erscheinen 1–2 Tage vor dem Exanthem. Hochkontagiös: Kontagionsindex ~97%!"
+        },
+        {
+          "id": "komplikationen",
+          "title": "Komplikationen & Prävention",
+          "question": "Welche Komplikationen und Präventionsmaßnahmen gibt es? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Otitis media (häufigste Komplikation)",
+              "correct": true
+            },
+            {
+              "text": "Masernenzephalitis (1:1000, schwer)",
+              "correct": true
+            },
+            {
+              "text": "SSPE (subakute sklerosierende Panenzephalitis, Spätfolge)",
+              "correct": true
+            },
+            {
+              "text": "Pneumonie (häufigste Todesursache)",
+              "correct": true
+            },
+            {
+              "text": "Meldepflicht bei Verdacht, Erkrankung und Tod",
+              "correct": true
+            },
+            {
+              "text": "MMR-Impfung (2× im 2. Lebensjahr)",
+              "correct": true
+            },
+            {
+              "text": "Masern sind durch Antibiotika heilbar",
+              "correct": false
+            }
+          ],
+          "feedback": "SSPE: subakute sklerosierende Panenzephalitis, Spätfolge nach 5–15 Jahren, immer letal. Impfpflicht in D seit 2020 (KiTa, Schule). Masern-Immunsuppression: T-Zell-Gedächtnis geht verloren!"
+        }
+      ],
+      "hints": [
+        "Koplik-Flecken = pathognomonisch für Masern (Kalkspritzer auf roter Wangenschleimhaut)",
+        "Kontagionsindex ~97%: höchster aller bekannten Erreger",
+        "SSPE: immer letal, Latenz 5–15 Jahre nach Masernerkrankung",
+        "Masernimpfpflicht Deutschland seit 2020 für KiTa und Schule"
+      ]
+    },
+    {
+      "id": "rheumatoide-arthritis",
+      "name": "Rheumatoide Arthritis",
+      "subtitle": "Chronisch-entzündliche Gelenkerkrankung",
+      "icon": "🦴",
+      "category": "Bewegungsapparat",
+      "categoryId": "bewegungsapparat",
+      "schweregrad": "mittel",
+      "scenario": "Eine 45-jährige Frau klagt seit 3 Monaten über symmetrische Schwellung und Schmerzen in den Finger-Grundgelenken beider Hände, besonders morgens mit über 1 Stunde Steifheit.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome sind typisch für rheumatoide Arthritis? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Morgensteifigkeit >1 Stunde",
+              "correct": true
+            },
+            {
+              "text": "Symmetrischer Gelenkbefall",
+              "correct": true
+            },
+            {
+              "text": "MCP- und PIP-Gelenke betroffen (nicht DIP!)",
+              "correct": true
+            },
+            {
+              "text": "Druckschmerzhafter Händedruck (Gaenslen-Zeichen)",
+              "correct": true
+            },
+            {
+              "text": "Rheumafaktoren, Anti-CCP-Antikörper positiv",
+              "correct": true
+            },
+            {
+              "text": "CRP, BSG erhöht",
+              "correct": true
+            },
+            {
+              "text": "DIP-Gelenke typisch für Arthrose",
+              "correct": true
+            },
+            {
+              "text": "Gelenkdeformitäten im Spätstadium (Knopfloch, Schwanenhals)",
+              "correct": true
+            },
+            {
+              "text": "Asymmetrisch, DIP-Gelenke bevorzugt",
+              "correct": false
+            }
+          ],
+          "feedback": "RA vs. Arthrose: RA = entzündlich, symmetrisch, MCP/PIP, Morgensteifigkeit >1h, Rheumafaktor. Arthrose = degenerativ, asymmetrisch, DIP, Morgensteifigkeit <30 min."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Diagnostik & Therapie",
+          "question": "Welche Maßnahmen sind bei RA indiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "DMARD: Methotrexat (MTX) als Basistherapie",
+              "correct": true
+            },
+            {
+              "text": "Biologika: TNF-Hemmer (Etanercept, Adalimumab) bei Versagen",
+              "correct": true
+            },
+            {
+              "text": "NSAR und Kortikosteroide (symptomatisch, kurzfristig)",
+              "correct": true
+            },
+            {
+              "text": "Physiotherapie, Ergotherapie (Gelenkschutz)",
+              "correct": true
+            },
+            {
+              "text": "Folsäure begleitend zu MTX (Nebenwirkungen ↓)",
+              "correct": true
+            },
+            {
+              "text": "Ausschließlich Kortison dauerhaft ohne DMARD",
+              "correct": false
+            }
+          ],
+          "feedback": "MTX ist der Goldstandard der DMARD-Therapie. Biologika bei unzureichendem Ansprechen. Folsäure-Supplementierung begleitend zu MTX obligat (reduziert Nebenwirkungen). Frühe aggressive Therapie verhindert Gelenkdestruktion."
+        }
+      ],
+      "hints": [
+        "ACR/EULAR-Kriterien 2010: Score ≥6/10 → RA",
+        "Anti-CCP-Antikörper: spezifischer als Rheumafaktor (95% Spezifität)",
+        "MTX: wöchentliche Einnahme! + Folsäure täglich",
+        "Schlimmste Komplikation: atlanto-axiale Subluxation (C1/C2) → Myelonkompression!"
+      ]
+    },
+    {
+      "id": "panikstörung",
+      "name": "Panikstörung",
+      "subtitle": "Wiederkehrende unerwartete Panikattacken",
+      "icon": "😨",
+      "category": "Psychiatrie",
+      "categoryId": "psychiatrie",
+      "schweregrad": "mittel",
+      "scenario": "Eine 32-jährige Frau beschreibt plötzliche Episoden mit Herzrasen, Atemnot, Schwitzen, Zittern und dem Gefühl zu sterben. Die Attacken dauern 10–20 Minuten. Sie meidet jetzt öffentliche Orte.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome charakterisieren eine Panikattacke? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Herzrasen, Palpitationen, Tachykardie",
+              "correct": true
+            },
+            {
+              "text": "Atemnot, Erstickungsgefühl",
+              "correct": true
+            },
+            {
+              "text": "Schwitzen, Zittern",
+              "correct": true
+            },
+            {
+              "text": "Todesangst, Angst vor Kontrollverlust",
+              "correct": true
+            },
+            {
+              "text": "Derealisation, Depersonalisation",
+              "correct": true
+            },
+            {
+              "text": "Parästhesien (Kribbeln in Händen/Füßen)",
+              "correct": true
+            },
+            {
+              "text": "Plötzlicher Beginn, Gipfel nach 10 min",
+              "correct": true
+            },
+            {
+              "text": "Andauernde konstante Symptome über Tage",
+              "correct": false
+            }
+          ],
+          "feedback": "Panikattacke: plötzlich, Gipfel nach 10 min, max. 20–30 min. DSM-5: 4 von 13 Symptomen + abrupt. Panikstörung: wiederkehrende Attacken + anhaltende Sorge + Verhaltensänderung."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Therapie",
+          "question": "Welche Therapiemaßnahmen sind bei Panikstörung wirksam? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Kognitive Verhaltenstherapie (KVT) – Ersttherapie",
+              "correct": true
+            },
+            {
+              "text": "Expositionstherapie (In-vivo-Konfrontation)",
+              "correct": true
+            },
+            {
+              "text": "SSRI/SNRI (pharmakologisch)",
+              "correct": true
+            },
+            {
+              "text": "Psychoedukation (Panikzyklus erklären)",
+              "correct": true
+            },
+            {
+              "text": "Atemtechniken (Bauchatmung, verlängertes Ausatmen)",
+              "correct": true
+            },
+            {
+              "text": "Benzodiazepine dauerhaft als Ersttherapie",
+              "correct": false
+            }
+          ],
+          "feedback": "KVT ist effektivste Therapie: Katastrophisierungen korrigieren, Exposition. Benzodiazepine nur kurzfristig (Abhängigkeitsgefahr!). SSRI wirken nach 2–4 Wochen. Panikzyklus: Angst → Hyperventilation → Symptome → mehr Angst."
+        }
+      ],
+      "hints": [
+        "Panikzyklus: Angst → körperliche Symptome → Katastrophisierung ('ich sterbe') → mehr Angst",
+        "Hyperventilation → CO2↓ → Kribbeln in Händen (Hypokapnie)",
+        "Agoraphobie oft sekundär: Angst vor Orten, von denen man bei Panikattacke nicht fliehen kann",
+        "Benzodiazepine: kurzfristig wirksam, aber Abhängigkeitspotenzial → nie Dauertherapie!"
+      ]
+    },
+    {
+      "id": "niereninsuffizienz-chron",
+      "name": "Chronische Niereninsuffizienz",
+      "subtitle": "Progrediente Abnahme der Nierenfunktion",
+      "icon": "💧",
+      "category": "Harnapparat",
+      "categoryId": "harnapparat",
+      "schweregrad": "schwer",
+      "scenario": "Ein 65-jähriger Diabetiker und Hypertoniker hat seit Jahren schleichend zunehmende Müdigkeit, Übelkeit und Wassereinlagerungen. Kreatinin 4,2 mg/dl, GFR 14 ml/min. Kalium 5,8 mmol/l.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Symptome nach Stadium",
+          "question": "Welche Symptome treten bei chronischer Niereninsuffizienz auf? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Früh meist asymptomatisch (GFR 60-90)",
+              "correct": true
+            },
+            {
+              "text": "Hypertonie, Anämie (EPO-Mangel)",
+              "correct": true
+            },
+            {
+              "text": "Ödeme, Gewichtszunahme (Flüssigkeitsretention)",
+              "correct": true
+            },
+            {
+              "text": "Urämiesymptome: Übelkeit, Erbrechen, Juckreiz",
+              "correct": true
+            },
+            {
+              "text": "Hyperkalämie (lebensbedrohlich!)",
+              "correct": true
+            },
+            {
+              "text": "Metabolische Azidose",
+              "correct": true
+            },
+            {
+              "text": "Urämischer Fötor (NH3-Geruch)",
+              "correct": true
+            },
+            {
+              "text": "Spontane Besserung ohne Therapie",
+              "correct": false
+            }
+          ],
+          "feedback": "CKD-Stadien 1–5 nach GFR. Stadium 5 (<15 ml/min) = terminale Niereninsuffizienz → Dialyse oder Transplantation. Urämie: 'urämische Vergiftung' durch Harnstoff, Kreatinin, weitere Toxine."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Therapie & Nierenersatz",
+          "question": "Welche Maßnahmen bei chronischer Niereninsuffizienz? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Ursache behandeln (Diabetes, Hypertonie)",
+              "correct": true
+            },
+            {
+              "text": "Blutdruckkontrolle <130/80 mmHg (ACE-Hemmer)",
+              "correct": true
+            },
+            {
+              "text": "Eiweißreduktion in der Ernährung",
+              "correct": true
+            },
+            {
+              "text": "Kaliumrestriktion bei Hyperkaliämie",
+              "correct": true
+            },
+            {
+              "text": "Phosphatbinder, Vitamin D, EPO-Gabe",
+              "correct": true
+            },
+            {
+              "text": "Hämodialyse oder Peritonealdialyse (GFR <15)",
+              "correct": true
+            },
+            {
+              "text": "Nierentransplantation (beste Langzeittherapie)",
+              "correct": true
+            },
+            {
+              "text": "Hohe Eiweißzufuhr zur Kräftigung",
+              "correct": false
+            }
+          ],
+          "feedback": "Hyperkaliämie >6,5 mmol/l → Notfall! (Herzrhythmusstörungen). ACE-Hemmer sind nephroprotektiv (senken intraglomeruläre Hypertension). Dialyse: 3×/Woche à 4–5h Hämodialyse."
+        }
+      ],
+      "hints": [
+        "GFR-Stadien: G1 >90 | G2 60–89 | G3a 45–59 | G3b 30–44 | G4 15–29 | G5 <15 ml/min",
+        "Anämie bei CNI: EPO-Mangel → renale Anämie (normozytär) → EPO-Gabe",
+        "Hyperkaliämie >6,5 mmol/l → EKG-Zeichen: Zeltförmige T-Wellen → Notfall!",
+        "Metformin bei GFR <30 ml/min kontraindiziert (Laktatazidose)"
+      ]
+    },
+    {
+      "id": "gallensteine",
+      "name": "Cholelithiasis / Cholezystitis",
+      "subtitle": "Gallensteine und Gallenblasenentzündung",
+      "icon": "🫘",
+      "category": "Leber, Gallenblase, Pankreas (D.m.)",
+      "categoryId": "leber-galle-pankreas",
+      "schweregrad": "mittel",
+      "scenario": "Eine 45-jährige übergewichtige Frau kommt mit kolikartigen Schmerzen im rechten Oberbauch nach dem Fettessen, die in die rechte Schulter ausstrahlen. Sie hat leichte Gelbsucht und Fieber.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Anamnese & Symptome",
+          "question": "Welche Symptome und klinischen Zeichen treten bei Gallenpathologien auf? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Gallenkolik: krampfartige Schmerzen rechter Oberbauch",
+              "correct": true
+            },
+            {
+              "text": "Ausstrahlung in rechte Schulter/Schulterblatt",
+              "correct": true
+            },
+            {
+              "text": "Übelkeit, Erbrechen, Fettunverträglichkeit",
+              "correct": true
+            },
+            {
+              "text": "Murphy-Zeichen positiv (Cholezystitis)",
+              "correct": true
+            },
+            {
+              "text": "Ikterus bei Choledocholithiasis (Stein im Gallengang)",
+              "correct": true
+            },
+            {
+              "text": "Charcot-Trias: Fieber, Ikterus, Koliken (Cholangitis)",
+              "correct": true
+            },
+            {
+              "text": "Linksseitige Bauchschmerzen sind typisch",
+              "correct": false
+            }
+          ],
+          "feedback": "5-F-Regel der Cholelithiasis: Female, Fat, Forty, Fertile, Fair (hellhäutig). Charcot-Trias bei Cholangitis = Notfall! Stein + Infektion = Sepsis-Gefahr."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Diagnostik & Therapie",
+          "question": "Wie werden Gallensteine diagnostiziert und behandelt? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Sonografie (Goldstandard, Steine >5mm)",
+              "correct": true
+            },
+            {
+              "text": "Labor: Bilirubin, AP, GGT, AST/ALT",
+              "correct": true
+            },
+            {
+              "text": "ERCP (Gallengangs-Steine, therapeutisch)",
+              "correct": true
+            },
+            {
+              "text": "Laparoskopische Cholezystektomie (symptomatische Steine)",
+              "correct": true
+            },
+            {
+              "text": "Asymptomatische Steine: keine Therapie nötig",
+              "correct": true
+            },
+            {
+              "text": "Konservativ immer ausreichend",
+              "correct": false
+            }
+          ],
+          "feedback": "Asymptomatische Gallensteine: Watch & Wait. Symptomatisch: Cholezystektomie (bevorzugt laparoskopisch). ERCP + Papillotomie bei Choledocholithiasis. Cholangitis = Notfall: Antibiotika + ERCP-Drainage."
+        }
+      ],
+      "hints": [
+        "5-F-Regel: Female, Fat, Forty, Fertile, Fair",
+        "Charcot-Trias (Cholangitis): Fieber + Ikterus + Koliken → Notfall!",
+        "Murphy-Zeichen: Schmerz + Atemstop bei Palpation unter rechtem Rippenbogen",
+        "Asymptomatische Gallensteine bei >10%  Erwachsene → keine Therapie nötig"
+      ]
+    },
+    {
+      "id": "ibuprofen-pharmako",
+      "name": "NSAR / Ibuprofen",
+      "subtitle": "Nicht-steroidale Antirheumatika",
+      "icon": "💊",
+      "category": "Pharmakologie",
+      "categoryId": "pharmakologie",
+      "schweregrad": "leicht",
+      "scenario": "Eine 55-jährige Patientin mit Arthrose und bekanntem Magengeschwür nimmt täglich Ibuprofen 600 mg. Sie hat Nierensuffizienz (GFR 40 ml/min) und nimmt ASS 100 mg zur Herzprophylaxe.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Wirkmechanismus & Indikationen",
+          "question": "Was ist korrekt bezüglich NSAR/Ibuprofen? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Hemmung der COX-1 und COX-2 (Cyclooxygenasen)",
+              "correct": true
+            },
+            {
+              "text": "Analgetisch, antipyretisch, antiphlogistisch",
+              "correct": true
+            },
+            {
+              "text": "Indikationen: Schmerzen, Fieber, Entzündungen",
+              "correct": true
+            },
+            {
+              "text": "COX-2-Hemmer (Celecoxib): weniger GI-Nebenwirkungen",
+              "correct": true
+            },
+            {
+              "text": "ASS-Wirkung wird durch Ibuprofen abgeschwächt (Wechselwirkung!)",
+              "correct": true
+            },
+            {
+              "text": "NSAR sind bei allen Patienten sicher",
+              "correct": false
+            }
+          ],
+          "feedback": "NSAR hemmen Prostaglandinsynthese → Analgesie + Entzündungshemmung. COX-1-Hemmung → GI-Schleimhautschaden + Thromboxan-Hemmung (anti-aggregatorisch). Ibuprofen antagonisiert irreversible COX-Hemmung von ASS!"
+        },
+        {
+          "id": "komplikationen",
+          "title": "Kontraindikationen & Nebenwirkungen",
+          "question": "Welche Kontraindikationen und Nebenwirkungen sind klinisch relevant? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "GI: Ulzera, Blutungen (COX-1-Hemmung)",
+              "correct": true
+            },
+            {
+              "text": "Renal: akutes Nierenversagen, Wasserretention",
+              "correct": true
+            },
+            {
+              "text": "Kardiovaskulär: Hypertonie, Herzinfarktrisiko↑ (v.a. COX-2)",
+              "correct": true
+            },
+            {
+              "text": "Kontraindiziert bei: Magenulkus, Niereninsuffizienz, Herzinsuffizienz",
+              "correct": true
+            },
+            {
+              "text": "Analgetika-Asthma: Bronchospasmus durch Prostaglandinhemmung",
+              "correct": true
+            },
+            {
+              "text": "Schwangerschaft 3. Trimester: Kontraindikation",
+              "correct": true
+            },
+            {
+              "text": "NSAR sind bei Niereninsuffizienz empfohlen",
+              "correct": false
+            }
+          ],
+          "feedback": "Gastroprotektion bei NSAR: PPI (Omeprazol) obligat bei Risikopatienten (Ulkus-Anamnese, Alter >65J, Kortison). Niere: NSAR hemmen prostaglandinvermittelte Vasodilatation → bei Herzinsuffizienz/Niereninsuffizienz gefährlich."
+        }
+      ],
+      "hints": [
+        "NSAR + ASS: Ibuprofen hebt irreversible COX-Hemmung von ASS auf → weniger Herzschutz!",
+        "Analgetika-Asthma: NSAR → Leukotriene↑ (durch COX-Hemmung) → Bronchospasmus",
+        "PPI bei NSAR-Therapie: immer bei Ulkus-Anamnese, Kortison, Alter >65J",
+        "Paracetamol ist besser bei Nierensuffizienz (keine prostaglandinvermittelte Wirkung auf Niere)"
+      ]
+    },
+    {
+      "id": "febriler-krampfanfall",
+      "name": "Fieberkrampf",
+      "subtitle": "Benigner Krampfanfall bei Fieber im Kindesalter",
+      "icon": "👶",
+      "category": "Pädiatrie",
+      "categoryId": "paediatrie",
+      "schweregrad": "mittel",
+      "scenario": "Eltern bringen ihr 18 Monate altes Kind nach einem 2-minütigen generalisierten Krampfanfall mit Fieber 39,5°C. Das Kind ist jetzt schläfrig (postiktal), hat zuvor keine Krämpfe gehabt.",
+      "phases": [
+        {
+          "id": "anamnese",
+          "title": "Klinisches Bild",
+          "question": "Was ist korrekt bezüglich des Fieberkrampfs? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Häufigste Krampfursache im Kindesalter (6 Mo.–5 Jahre)",
+              "correct": true
+            },
+            {
+              "text": "Typisch: generalisiert, <5 Minuten, vollständige Erholung",
+              "correct": true
+            },
+            {
+              "text": "Oft bei rapidem Fieberanstieg",
+              "correct": true
+            },
+            {
+              "text": "Komplizierter Fieberkrampf: >15 min, fokal, innerhalb 24h wiederholt",
+              "correct": true
+            },
+            {
+              "text": "Postiktale Schläfrigkeit ist normal",
+              "correct": true
+            },
+            {
+              "text": "Fieberkrampf = immer Epilepsie",
+              "correct": false
+            }
+          ],
+          "feedback": "Einfacher Fieberkrampf: generalisiert, <15 min, keine Fokalzeichen, kein zweiter Anfall in 24h. Prognose gut: 2–5% entwickeln später Epilepsie (kaum höher als Normalbevölkerung)."
+        },
+        {
+          "id": "massnahmen",
+          "title": "Maßnahmen",
+          "question": "Welche Maßnahmen sind beim Fieberkrampf indiziert? (Mehrfachauswahl)",
+          "type": "multiple",
+          "options": [
+            {
+              "text": "Stabile Seitenlage (Aspirationsschutz)",
+              "correct": true
+            },
+            {
+              "text": "Fiebersenkung: Antipyretika (Ibuprofen, Paracetamol)",
+              "correct": true
+            },
+            {
+              "text": "Bei anhaltendem Anfall >5 min: Diazepam rektal",
+              "correct": true
+            },
+            {
+              "text": "Beruhigung der Eltern, Aufklärung",
+              "correct": true
+            },
+            {
+              "text": "Hospitalisation nur bei kompliziertem Fieberkrampf",
+              "correct": true
+            },
+            {
+              "text": "Sofortige Dauertherapie mit Antiepileptika",
+              "correct": false
+            }
+          ],
+          "feedback": "Beim laufenden Krampf: nichts in den Mund, Seitenlage, Zeit messen. >5 Minuten → Diazepam rektal 0,5 mg/kg. Lumbalpunktion bei Meningismus, Bewusstseinsstörung, Alter <18 Monate (zum Ausschluss Meningitis)."
+        }
+      ],
+      "hints": [
+        "Einfacher Fieberkrampf: generalisiert, <15 min, kein Rezidiv in 24h, vollständige Erholung",
+        "Komplizierter Fieberkrampf: >15 min ODER fokal ODER mehrfach in 24h → MRT, EEG, LP",
+        "Rezidivrate: 30% erleiden weiteren Fieberkrampf",
+        "Niemals etwas in den Mund geben während des Krampfs!"
+      ]
+    }
+  ]
+}
