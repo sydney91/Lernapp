@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#1a1410">
+<title>Diagnose-Spiel - Heilpraktiker Lernspiel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Diagnose-<span>Spiel</span></h1>
+    <p>Patientenfälle analysieren und diagnostizieren</p>
+  </header>
+
+  <nav class="main-nav">
+    <a href="index.html" class="main-tab">Start</a>
+    <a href="quiz.html" class="main-tab">Quiz</a>
+    <a href="wissen.html" class="main-tab">Wissen</a>
+    <a href="terminologie.html" class="main-tab">Terminologie</a>
+    <a href="diagnose.html" class="main-tab active">Diagnose-Spiel</a>
+    <a href="pruefung.html" class="main-tab">Pruefungstrainer</a>
+    <a href="admin.html" class="main-tab">Admin</a>
+  </nav>
+
+  <div class="container" id="diagnose-area">
+    <div id="diagnose-content"></div>
+  </div>
+
+<script src="shared.js"></script>
+<script src="diagnose-data.js"></script>
+<script>
+const DIAGNOSE_JSON_FILE = 'diagnose-cases.json';
+const DIAGNOSE_STORAGE_KEY = 'diagnose-cases';
+let externalCasesLoaded = false;
+
+// Versuche externe JSON-Datei zu laden
+async function loadExternalCases() {
+  try {
+    const response = await fetch(DIAGNOSE_JSON_FILE);
+    if (response.ok) {
+      const data = await response.json();
+      let cases = [];
+      
+      if (Array.isArray(data)) {
+        cases = data;
+      } else if (data.cases && Array.isArray(data.cases)) {
+        cases = data.cases;
+      }
+      
+      if (cases.length > 0) {
+        localStorage.setItem(DIAGNOSE_STORAGE_KEY, JSON.stringify(cases));
+        externalCasesLoaded = true;
+        console.log(`${cases.length} Diagnose-Fälle aus JSON geladen`);
+        
+        const diagnoseContent = document.getElementById('diagnose-content');
+        if (diagnoseContent && diagnoseContent.innerHTML.includes('diagnose-case-grid')) {
+          renderDiagnoseCaseSelection(diagnoseContent);
+        }
+        return true;
+      }
+    }
+  } catch (e) {
+    console.log('JSON-Datei konnte nicht geladen werden:', e.message);
+  }
+  return false;
+}
+
+function getDiagnoseCases() {
+  try {
+    const stored = localStorage.getItem(DIAGNOSE_STORAGE_KEY);
+    if (stored) {
+      const parsed = JSON.parse(stored);
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed;
+      }
+    }
+  } catch (e) {
+    console.warn('Fehler beim Laden der Diagnose-Fälle:', e);
+  }
+  return DEFAULT_DIAGNOSE_CASES;
+}
+
+function saveDiagnoseCases(cases) {
+  try {
+    localStorage.setItem(DIAGNOSE_STORAGE_KEY, JSON.stringify(cases));
+    return true;
+  } catch (e) {
+    console.error('Fehler beim Speichern:', e);
+    return false;
+  }
+}
+
+let currentDiagnoseCase = null;
+let currentDiagnosePhase = 0;
+let diagnoseAnswers = {};
+let diagnoseScore = 0;
+let currentDiagnoseFilter = 'all';
+let diagnoseCategories = [];
+
+async function loadDiagnoseCategories() {
+  try {
+    const response = await fetch(DIAGNOSE_JSON_FILE);
+    if (response.ok) {
+      const data = await response.json();
+      if (data.categories && Array.isArray(data.categories)) {
+        diagnoseCategories = data.categories;
+        localStorage.setItem('diagnose-categories', JSON.stringify(data.categories));
+      }
+    }
+  } catch (e) {
+    const stored = localStorage.getItem('diagnose-categories');
+    if (stored) {
+      diagnoseCategories = JSON.parse(stored);
+    }
+  }
+}
+
+function getDiagnoseCategories() {
+  if (diagnoseCategories.length > 0) return diagnoseCategories;
+  const stored = localStorage.getItem('diagnose-categories');
+  if (stored) {
+    diagnoseCategories = JSON.parse(stored);
+    return diagnoseCategories;
+  }
+  const cases = getDiagnoseCases();
+  const uniqueCategories = [...new Set(cases.map(c => c.categoryId))];
+  return uniqueCategories.map(id => {
+    const caseWithCat = cases.find(c => c.categoryId === id);
+    return { id: id, name: caseWithCat?.category || id, icon: '📋', color: '#666' };
+  });
+}
+
+function initDiagnoseSpiel() {
+  const container = document.getElementById('diagnose-content');
+  loadExternalCases().then(() => {
+    loadDiagnoseCategories().then(() => {
+      renderDiagnoseCaseSelection(container);
+    });
+  });
+}
+
+function filterDiagnoseCases(categoryId) {
+  currentDiagnoseFilter = categoryId;
+  const container = document.getElementById('diagnose-content');
+  renderDiagnoseCaseSelection(container);
+}
+
+function renderDiagnoseCaseSelection(container) {
+  const allCases = getDiagnoseCases();
+  const categories = getDiagnoseCategories();
+  
+  const cases = currentDiagnoseFilter === 'all' 
+    ? allCases 
+    : allCases.filter(c => c.categoryId === currentDiagnoseFilter);
+  
+  const categoryFilterHTML = `
+    <div class="diagnose-filter">
+      <div class="diagnose-filter-label">🔍 Kategorie filtern:</div>
+      <div class="diagnose-filter-buttons">
+        <button class="diagnose-filter-btn ${currentDiagnoseFilter === 'all' ? 'active' : ''}" onclick="filterDiagnoseCases('all')">
+          <span class="filter-icon">📚</span>
+          <span class="filter-name">Alle</span>
+          <span class="filter-count">${allCases.length}</span>
+        </button>
+        ${categories.map(cat => {
+          const count = allCases.filter(c => c.categoryId === cat.id).length;
+          if (count === 0) return '';
+          return `
+            <button class="diagnose-filter-btn ${currentDiagnoseFilter === cat.id ? 'active' : ''}" 
+                    onclick="filterDiagnoseCases('${cat.id}')"
+                    style="--cat-color: ${cat.color || '#666'}">
+              <span class="filter-icon">${cat.icon || '📋'}</span>
+              <span class="filter-name">${cat.name}</span>
+              <span class="filter-count">${count}</span>
+            </button>
+          `;
+        }).join('')}
+      </div>
+    </div>
+  `;
+  
+  const casesHTML = cases.map(c => `
+    <div class="diagnose-case-card" onclick="startDiagnoseCase('${c.id}')" style="--card-color: ${getCategoryColor(c.categoryId)}">
+      <div class="diagnose-case-icon">${c.icon}</div>
+      <div class="diagnose-case-name">${c.name}</div>
+      <div class="diagnose-case-subtitle">${c.subtitle}</div>
+      <div class="diagnose-case-category">${c.category}</div>
+    </div>
+  `).join('');
+
+  container.innerHTML = `
+    <div class="diagnose-intro">
+      <h2>🩺 Diagnose-Spiel</h2>
+      <p>Führe eine vollständige Patientenuntersuchung durch: Von der Anamnese über die Diagnostik bis zur Therapieentscheidung.</p>
+    </div>
+    ${categoryFilterHTML}
+    <div class="screen-title">Wähle einen Fall ${currentDiagnoseFilter !== 'all' ? `(${cases.length} Treffer)` : ''}</div>
+    <div class="screen-sub">Klicke auf ein Krankheitsbild, um die Diagnose-Simulation zu starten</div>
+    <div class="diagnose-case-grid">
+      ${casesHTML}
+    </div>
+  `;
+}
+
+function getCategoryColor(categoryId) {
+  const categories = getDiagnoseCategories();
+  const cat = categories.find(c => c.id === categoryId);
+  return cat?.color || '#c0392b';
+}
+
+function startDiagnoseCase(caseId) {
+  currentDiagnoseCase = getDiagnoseCases().find(c => c.id === caseId);
+  currentDiagnosePhase = 0;
+  diagnoseAnswers = {};
+  diagnoseScore = 0;
+  renderDiagnosePhase();
+}
+
+function renderDiagnosePhase() {
+  const container = document.getElementById('diagnose-content');
+  const caseData = currentDiagnoseCase;
+  const phase = caseData.phases[currentDiagnosePhase];
+
+  const phasesHTML = caseData.phases.map((p, i) => {
+    let cls = 'diagnose-phase';
+    if (i < currentDiagnosePhase) cls += ' completed';
+    if (i === currentDiagnosePhase) cls += ' active';
+    return `<div class="${cls}">${p.title}</div>`;
+  }).join('');
+
+  const optionsHTML = phase.options.map((opt, i) => `
+    <div class="diagnose-option" data-index="${i}" onclick="toggleDiagnoseOption(this, ${i})">
+      <div class="diagnose-checkbox"></div>
+      <div class="diagnose-option-text">${opt.text}</div>
+    </div>
+  `).join('');
+
+  container.innerHTML = `
+    <button class="back-btn" onclick="backToDiagnoseCases()">← Zurück zur Fallauswahl</button>
+    <div class="diagnose-game">
+      <div class="diagnose-header">
+        <h2>${caseData.name}</h2>
+        <div class="subtitle">${caseData.subtitle}</div>
+        <div class="diagnose-phase-indicator">
+          ${phasesHTML}
+        </div>
+      </div>
+      <div class="diagnose-body">
+        <div class="diagnose-scenario">
+          <h3>👤 Patientenszenario</h3>
+          <p>${caseData.scenario}</p>
+        </div>
+        <div class="diagnose-question">${phase.question}</div>
+        <div class="diagnose-options" id="diagnose-options">
+          ${optionsHTML}
+        </div>
+        <div class="diagnose-feedback" id="diagnose-feedback"></div>
+        <div class="diagnose-actions">
+          <button class="diagnose-btn diagnose-btn-primary" id="diagnose-check-btn" onclick="checkDiagnoseAnswer()">Antwort prüfen</button>
+          <button class="diagnose-btn diagnose-btn-primary" id="diagnose-next-btn" onclick="nextDiagnosePhase()" style="display:none;">Weiter →</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function toggleDiagnoseOption(el, index) {
+  el.classList.toggle('selected');
+  const checkbox = el.querySelector('.diagnose-checkbox');
+  checkbox.textContent = el.classList.contains('selected') ? '✓' : '';
+}
+
+function checkDiagnoseAnswer() {
+  const phase = currentDiagnoseCase.phases[currentDiagnosePhase];
+  const options = document.querySelectorAll('.diagnose-option');
+  const feedback = document.getElementById('diagnose-feedback');
+  
+  let correctCount = 0;
+  let totalCorrect = phase.options.filter(o => o.correct).length;
+  let wrongSelected = 0;
+
+  options.forEach((opt, i) => {
+    const isSelected = opt.classList.contains('selected');
+    const isCorrect = phase.options[i].correct;
+
+    if (isSelected && isCorrect) {
+      opt.classList.add('correct');
+      correctCount++;
+    } else if (isSelected && !isCorrect) {
+      opt.classList.add('incorrect');
+      wrongSelected++;
+    } else if (!isSelected && isCorrect) {
+      opt.classList.add('correct');
+    }
+    opt.style.pointerEvents = 'none';
+  });
+
+  const score = Math.max(0, correctCount - wrongSelected);
+  const maxScore = totalCorrect;
+  diagnoseScore += score;
+  diagnoseAnswers[phase.id] = { score, maxScore, correctCount, wrongSelected };
+
+  let feedbackClass = 'success';
+  let feedbackTitle = '✓ Sehr gut!';
+  if (correctCount < totalCorrect || wrongSelected > 0) {
+    if (correctCount >= totalCorrect / 2 && wrongSelected <= 1) {
+      feedbackClass = 'partial';
+      feedbackTitle = '◐ Teilweise richtig';
+    } else {
+      feedbackClass = 'error';
+      feedbackTitle = '✗ Nicht ganz richtig';
+    }
+  }
+
+  feedback.className = `diagnose-feedback show ${feedbackClass}`;
+  feedback.innerHTML = `
+    <h4>${feedbackTitle}</h4>
+    <p>${phase.feedback}</p>
+    <p style="margin-top:0.5rem;font-size:0.85rem;color:#888;">Punkte: ${score}/${maxScore} (${correctCount} richtig, ${wrongSelected} falsch ausgewählt)</p>
+  `;
+
+  document.getElementById('diagnose-check-btn').style.display = 'none';
+  document.getElementById('diagnose-next-btn').style.display = 'inline-block';
+}
+
+function nextDiagnosePhase() {
+  currentDiagnosePhase++;
+  if (currentDiagnosePhase < currentDiagnoseCase.phases.length) {
+    renderDiagnosePhase();
+  } else {
+    renderDiagnoseResult();
+  }
+}
+
+function renderDiagnoseResult() {
+  const container = document.getElementById('diagnose-content');
+  const caseData = currentDiagnoseCase;
+  
+  let totalMax = 0;
+  caseData.phases.forEach(p => {
+    totalMax += p.options.filter(o => o.correct).length;
+  });
+  
+  const percentage = Math.round((diagnoseScore / totalMax) * 100);
+  let emoji = '🎓';
+  let message = 'Ausgezeichnet! Du hast den Fall hervorragend gelöst.';
+  if (percentage < 50) {
+    emoji = '📚';
+    message = 'Hier gibt es noch Lernbedarf. Wiederhole den Fall oder schau dir die Lernhinweise an.';
+  } else if (percentage < 75) {
+    emoji = '💪';
+    message = 'Gut gemacht! Mit etwas Übung wirst du noch sicherer.';
+  } else if (percentage < 90) {
+    emoji = '🌟';
+    message = 'Sehr gut! Du hast ein solides Verständnis des Krankheitsbildes.';
+  }
+
+  const summaryHTML = caseData.phases.map(p => {
+    const answer = diagnoseAnswers[p.id] || { score: 0, maxScore: 0 };
+    return `
+      <div class="diagnose-summary-item">
+        <span class="diagnose-summary-label">${p.title}:</span>
+        <span class="diagnose-summary-value">${answer.score}/${answer.maxScore} Punkte</span>
+      </div>
+    `;
+  }).join('');
+
+  const hintsHTML = caseData.hints ? caseData.hints.map(h => `<li>${h}</li>`).join('') : '';
+
+  container.innerHTML = `
+    <div class="diagnose-game">
+      <div class="diagnose-result">
+        <div class="diagnose-result-icon">${emoji}</div>
+        <h2>Fall abgeschlossen: ${caseData.name}</h2>
+        <div class="diagnose-result-score">${percentage}%</div>
+        <p>${message}</p>
+        
+        <div class="diagnose-summary">
+          <h3>📊 Deine Ergebnisse</h3>
+          ${summaryHTML}
+          <div class="diagnose-summary-item" style="border-top:2px solid #ddd;padding-top:0.8rem;margin-top:0.5rem;">
+            <span class="diagnose-summary-label"><strong>Gesamt:</strong></span>
+            <span class="diagnose-summary-value"><strong>${diagnoseScore}/${totalMax} Punkte</strong></span>
+          </div>
+        </div>
+
+        ${hintsHTML ? `
+        <div class="diagnose-hints">
+          <h4>💡 Lernhinweise</h4>
+          <ul>${hintsHTML}</ul>
+        </div>
+        ` : ''}
+
+        <div class="diagnose-actions" style="justify-content:center;border:none;padding:0;">
+          <button class="diagnose-btn diagnose-btn-secondary" onclick="startDiagnoseCase('${caseData.id}')">Fall wiederholen</button>
+          <button class="diagnose-btn diagnose-btn-primary" onclick="backToDiagnoseCases()">Anderen Fall wählen</button>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function backToDiagnoseCases() {
+  currentDiagnoseCase = null;
+  currentDiagnosePhase = 0;
+  diagnoseAnswers = {};
+  diagnoseScore = 0;
+  const container = document.getElementById('diagnose-content');
+  renderDiagnoseCaseSelection(container);
+}
+
+// Initialize
+initDiagnoseSpiel();
+</script>
+</body>
+</html>

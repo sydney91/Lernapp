@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#1a1410">
+<title>Wissen - Heilpraktiker Lernspiel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Heil<span>praktiker</span> Wissen</h1>
+    <p>Lernmaterialien zu allen wichtigen Themen</p>
+  </header>
+
+  <nav class="main-nav">
+    <a href="index.html" class="main-tab">Start</a>
+    <a href="quiz.html" class="main-tab">Quiz</a>
+    <a href="wissen.html" class="main-tab active">Wissen</a>
+    <a href="terminologie.html" class="main-tab">Terminologie</a>
+    <a href="diagnose.html" class="main-tab">Diagnose-Spiel</a>
+    <a href="pruefung.html" class="main-tab">Pruefungstrainer</a>
+    <a href="admin.html" class="main-tab">Admin</a>
+  </nav>
+
+  <div class="container" id="wissen-area">
+    <div class="wissen-nav" id="wissen-nav"></div>
+    <div class="wissen-content" id="wissen-content"></div>
+  </div>
+
+<script src="shared.js"></script>
+<script src="wissen-data.js"></script>
+<script>
+// Wissen Navigation
+let wissenInitialized = false;
+let activeWissenTopic = 'zelle-gewebe';
+
+function initWissen() {
+  if (wissenInitialized) return;
+  wissenInitialized = true;
+  const nav = document.getElementById('wissen-nav');
+  WISSEN_TOPICS.forEach(t => {
+    const btn = document.createElement('button');
+    btn.id = 'tab-btn-' + t.id;
+    btn.className = 'wissen-tab' + (t.id === activeWissenTopic ? ' active' : '');
+    btn.onclick = () => showWissenTopic(t.id);
+    nav.appendChild(btn);
+    renderTabLabel(btn, t.id, t.name);
+  });
+  showWissenTopic(activeWissenTopic);
+}
+
+function renderTabLabel(btn, id, name) {
+  const score = getTopicScore(id);
+  const questions = LERNKONTROLLE[id] || [];
+  const total = questions.length;
+  if (!total || score.total === 0) {
+    btn.innerHTML = `<span class="tab-name">${name}</span>`;
+    return;
+  }
+  const pct = score.lastPct;
+  const deg = Math.round(pct / 100 * 360);
+  const color = pct >= 80 ? '#27ae60' : pct >= 50 ? '#b8860b' : '#9b2335';
+  btn.innerHTML = `
+    <span class="tab-name">${name}</span>
+    <span class="tab-progress">
+      <span class="tab-pie" style="background:conic-gradient(${color} ${deg}deg, rgba(200,190,175,0.4) ${deg}deg);"></span>
+      <span class="tab-pct" style="color:${color}">${pct}%</span>
+    </span>`;
+}
+
+function refreshAllTabLabels() {
+  WISSEN_TOPICS.forEach(t => {
+    const btn = document.getElementById('tab-btn-' + t.id);
+    if (btn) renderTabLabel(btn, t.id, t.name);
+  });
+}
+
+function showWissenTopic(id) {
+  activeWissenTopic = id;
+  WISSEN_TOPICS.forEach(t => {
+    const btn = document.getElementById('tab-btn-' + t.id);
+    if (btn) btn.classList.toggle('active', t.id === id);
+  });
+  const topic = WISSEN_TOPICS.find(t => t.id === id);
+  const container = document.getElementById('wissen-content');
+  container.innerHTML = '';
+  topic.render(container);
+  
+  // Prüfungsnotizen initialisieren
+  setTimeout(() => renderNotizenList(id), 50);
+  
+  const questions = LERNKONTROLLE[id];
+  if (questions && questions.length) {
+    const score = getTopicScore(id);
+    const badgeText = score.total > 0 ? score.lastPct + ' % zuletzt' : questions.length + ' Fragen';
+    const btn = document.createElement('button');
+    btn.className = 'lernkontrolle-btn';
+    btn.innerHTML = `Lernkontrolle starten <span class="btn-badge">${badgeText}</span>`;
+    btn.onclick = () => startLernkontrolle(id);
+    container.appendChild(btn);
+  }
+}
+
+// Lernkontrolle Quiz Engine
+function startLernkontrolle(topicId) {
+  const questions = [...LERNKONTROLLE[topicId]];
+  for (let i = questions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [questions[i], questions[j]] = [questions[j], questions[i]];
+  }
+  let current = 0;
+  let correct = 0;
+  let answered = false;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'lk-overlay';
+  overlay.innerHTML = `
+    <div class="lk-modal">
+      <div class="lk-header">
+        <h3>Lernkontrolle</h3>
+        <button class="lk-close" onclick="this.closest('.lk-overlay').remove()">X</button>
+      </div>
+      <div class="lk-body" id="lk-body"></div>
+    </div>`;
+  document.body.appendChild(overlay);
+
+  function renderQuestion() {
+    answered = false;
+    const q = questions[current];
+    const body = document.getElementById('lk-body');
+    const pct = Math.round(current / questions.length * 100);
+    const indices = q.a.map((_,i)=>i);
+    for (let i = indices.length-1; i>0; i--) {
+      const j = Math.floor(Math.random()*(i+1));
+      [indices[i],indices[j]] = [indices[j],indices[i]];
+    }
+    const correctShuffledIdx = indices.indexOf(q.c);
+
+    body.innerHTML = `
+      <div class="lk-progress-bar"><div class="lk-progress-fill" style="width:${pct}%"></div></div>
+      <div class="lk-q-num">Frage ${current + 1} von ${questions.length}</div>
+      <div class="lk-question">${q.q}</div>
+      <div class="lk-answers" id="lk-answers">
+        ${indices.map((origIdx, si) => `
+          <button class="lk-answer" data-shuffled="${si}" data-correct="${si === correctShuffledIdx}"
+            onclick="lkAnswer(this, ${si === correctShuffledIdx}, '${escHtml(q.e)}', ${correctShuffledIdx})">
+            ${q.a[origIdx]}
+          </button>`).join('')}
+      </div>
+      <div id="lk-expl" style="display:none" class="lk-explanation"></div>
+      <button class="lk-next-btn" id="lk-next" style="display:none"
+        onclick="lkNext()">
+        ${current + 1 < questions.length ? 'Naechste Frage' : 'Ergebnis anzeigen'}
+      </button>`;
+  }
+
+  window.lkAnswer = function(btn, isCorrect, explanation, correctIdx) {
+    if (answered) return;
+    answered = true;
+    if (isCorrect) correct++;
+    document.querySelectorAll('.lk-answer').forEach((b, si) => {
+      b.classList.add('answered');
+      if (parseInt(b.dataset.shuffled) === correctIdx) b.classList.add('show-correct');
+    });
+    btn.classList.add(isCorrect ? 'correct' : 'wrong');
+    const expl = document.getElementById('lk-expl');
+    expl.innerHTML = `<strong>${isCorrect ? 'Richtig!' : 'Leider falsch.'}</strong> ${explanation}`;
+    expl.style.display = 'block';
+    document.getElementById('lk-next').style.display = 'block';
+  };
+
+  window.lkNext = function() {
+    current++;
+    if (current < questions.length) {
+      renderQuestion();
+    } else {
+      showLkResult();
+    }
+  };
+
+  function showLkResult() {
+    const pct = Math.round(correct / questions.length * 100);
+    setTopicScore(topicId, correct, questions.length);
+    refreshAllTabLabels();
+    const contentBtn = document.querySelector('.lernkontrolle-btn');
+    if (contentBtn) {
+      contentBtn.querySelector('.btn-badge').textContent = pct + ' % zuletzt';
+    }
+    const colorClass = pct >= 80 ? 'great' : pct >= 50 ? 'mid' : 'low';
+    const msg = pct >= 80
+      ? 'Ausgezeichnet! Du beherrschst dieses Thema sehr gut.'
+      : pct >= 50
+      ? 'Gut gemacht! Einzelne Bereiche noch vertiefen.'
+      : 'Weitermachen! Lies das Thema nochmal durch und starte neu.';
+    const body = document.getElementById('lk-body');
+    body.innerHTML = `
+      <div class="lk-result">
+        <div class="lk-result-circle ${colorClass}">${pct}<span style="font-size:0.6em">%</span></div>
+        <h3>${correct} von ${questions.length} richtig</h3>
+        <p>${msg}</p>
+        <div class="lk-result-btns">
+          <button class="lk-result-btn retry" onclick="document.querySelector('.lk-overlay').remove(); startLernkontrolle('${topicId}')">Nochmal</button>
+          <button class="lk-result-btn close" onclick="document.querySelector('.lk-overlay').remove()">Schliessen</button>
+        </div>
+      </div>`;
+  }
+
+  renderQuestion();
+}
+
+// Initialize
+initWissen();
+</script>
+</body>
+</html>

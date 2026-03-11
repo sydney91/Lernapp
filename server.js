@@ -351,6 +351,385 @@ app.delete('/api/videos/:topicId/:videoId', (req, res) => {
 });
 
 // ═══════════════════════════════════════════════════════════════
+// WISSEN-INHALTE API (Artikel & Prüfungswichtig)
+// ═══════════════════════════════════════════════════════════════
+
+const WISSEN_INHALTE_FILE = path.join(DATA_DIR, 'wissen-inhalte.json');
+
+// Wissen-Inhalte laden
+function loadWissenInhalte() {
+  if (fs.existsSync(WISSEN_INHALTE_FILE)) {
+    return JSON.parse(fs.readFileSync(WISSEN_INHALTE_FILE, 'utf-8'));
+  }
+  return { topics: {} };
+}
+
+// Wissen-Inhalte speichern
+function saveWissenInhalte(data) {
+  data.lastUpdated = new Date().toISOString();
+  fs.writeFileSync(WISSEN_INHALTE_FILE, JSON.stringify(data, null, 2));
+}
+
+// Alle Wissen-Inhalte laden
+app.get('/api/wissen', (req, res) => {
+  try {
+    const data = loadWissenInhalte();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Wissen-Inhalt für ein Topic laden
+app.get('/api/wissen/:topicId', (req, res) => {
+  try {
+    const data = loadWissenInhalte();
+    const topic = data.topics[req.params.topicId];
+    if (topic) {
+      res.json(topic);
+    } else {
+      res.status(404).json({ error: 'Topic nicht gefunden' });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Prüfungswichtig-Section aktualisieren
+app.put('/api/wissen/:topicId/pruefungswichtig', (req, res) => {
+  try {
+    const data = loadWissenInhalte();
+    const topicId = req.params.topicId;
+    
+    if (!data.topics[topicId]) {
+      data.topics[topicId] = { id: topicId, pruefungswichtig: { enabled: true, sections: [] } };
+    }
+    
+    data.topics[topicId].pruefungswichtig = req.body;
+    saveWissenInhalte(data);
+    
+    res.json({ success: true, pruefungswichtig: data.topics[topicId].pruefungswichtig });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Einzelne Prüfungswichtig-Section hinzufügen
+app.post('/api/wissen/:topicId/pruefungswichtig/section', (req, res) => {
+  try {
+    const data = loadWissenInhalte();
+    const topicId = req.params.topicId;
+    
+    if (!data.topics[topicId]) {
+      data.topics[topicId] = { id: topicId, pruefungswichtig: { enabled: true, sections: [] } };
+    }
+    if (!data.topics[topicId].pruefungswichtig) {
+      data.topics[topicId].pruefungswichtig = { enabled: true, sections: [] };
+    }
+    
+    const section = {
+      id: Date.now(),
+      title: req.body.title || 'Neue Sektion',
+      color: req.body.color || '#b8860b',
+      icon: req.body.icon || '📝',
+      content: req.body.content || [],
+      addedAt: new Date().toISOString()
+    };
+    
+    data.topics[topicId].pruefungswichtig.sections.push(section);
+    saveWissenInhalte(data);
+    
+    res.json({ success: true, section });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Prüfungswichtig-Section aktualisieren
+app.put('/api/wissen/:topicId/pruefungswichtig/section/:sectionId', (req, res) => {
+  try {
+    const data = loadWissenInhalte();
+    const { topicId, sectionId } = req.params;
+    
+    if (data.topics[topicId]?.pruefungswichtig?.sections) {
+      const idx = data.topics[topicId].pruefungswichtig.sections.findIndex(
+        s => s.id === parseInt(sectionId) || s.title === sectionId
+      );
+      if (idx >= 0) {
+        data.topics[topicId].pruefungswichtig.sections[idx] = {
+          ...data.topics[topicId].pruefungswichtig.sections[idx],
+          ...req.body,
+          updatedAt: new Date().toISOString()
+        };
+        saveWissenInhalte(data);
+        res.json({ success: true, section: data.topics[topicId].pruefungswichtig.sections[idx] });
+        return;
+      }
+    }
+    res.status(404).json({ error: 'Section nicht gefunden' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Prüfungswichtig-Section löschen
+app.delete('/api/wissen/:topicId/pruefungswichtig/section/:sectionId', (req, res) => {
+  try {
+    const data = loadWissenInhalte();
+    const { topicId, sectionId } = req.params;
+    
+    if (data.topics[topicId]?.pruefungswichtig?.sections) {
+      data.topics[topicId].pruefungswichtig.sections = data.topics[topicId].pruefungswichtig.sections.filter(
+        s => s.id !== parseInt(sectionId)
+      );
+      saveWissenInhalte(data);
+    }
+    
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════
+// PRÜFUNGSNOTIZEN API (Benutzer-eigene Notizen)
+// ═══════════════════════════════════════════════════════════════
+
+const PRUEFUNGSNOTIZEN_FILE = path.join(DATA_DIR, 'pruefungsnotizen.json');
+
+// Prüfungsnotizen laden
+function loadPruefungsnotizen() {
+  if (fs.existsSync(PRUEFUNGSNOTIZEN_FILE)) {
+    return JSON.parse(fs.readFileSync(PRUEFUNGSNOTIZEN_FILE, 'utf-8'));
+  }
+  return { notizen: {}, lastModified: null };
+}
+
+// Prüfungsnotizen speichern
+function savePruefungsnotizen(data) {
+  data.lastModified = new Date().toISOString();
+  fs.writeFileSync(PRUEFUNGSNOTIZEN_FILE, JSON.stringify(data, null, 2));
+}
+
+// Alle Prüfungsnotizen laden
+app.get('/api/pruefungsnotizen', (req, res) => {
+  try {
+    const data = loadPruefungsnotizen();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Prüfungsnotizen für ein Topic laden
+app.get('/api/pruefungsnotizen/:topicId', (req, res) => {
+  try {
+    const data = loadPruefungsnotizen();
+    const notizen = data.notizen[req.params.topicId] || [];
+    res.json(notizen);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Prüfungsnotiz hinzufügen
+app.post('/api/pruefungsnotizen/:topicId', (req, res) => {
+  try {
+    const data = loadPruefungsnotizen();
+    const topicId = req.params.topicId;
+    
+    if (!data.notizen[topicId]) {
+      data.notizen[topicId] = [];
+    }
+    
+    const notiz = {
+      id: Date.now(),
+      title: req.body.title || '',
+      text: req.body.text || '',
+      wichtig: req.body.wichtig || false,
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+    
+    data.notizen[topicId].push(notiz);
+    savePruefungsnotizen(data);
+    
+    res.json({ success: true, notiz });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Prüfungsnotiz aktualisieren
+app.put('/api/pruefungsnotizen/:topicId/:notizId', (req, res) => {
+  try {
+    const data = loadPruefungsnotizen();
+    const { topicId, notizId } = req.params;
+    
+    if (data.notizen[topicId]) {
+      const idx = data.notizen[topicId].findIndex(n => n.id === parseInt(notizId));
+      if (idx >= 0) {
+        data.notizen[topicId][idx] = {
+          ...data.notizen[topicId][idx],
+          title: req.body.title,
+          text: req.body.text,
+          wichtig: req.body.wichtig,
+          updatedAt: new Date().toISOString()
+        };
+        savePruefungsnotizen(data);
+        res.json({ success: true, notiz: data.notizen[topicId][idx] });
+        return;
+      }
+    }
+    res.status(404).json({ error: 'Notiz nicht gefunden' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Prüfungsnotiz löschen
+app.delete('/api/pruefungsnotizen/:topicId/:notizId', (req, res) => {
+  try {
+    const data = loadPruefungsnotizen();
+    const { topicId, notizId } = req.params;
+    
+    if (data.notizen[topicId]) {
+      data.notizen[topicId] = data.notizen[topicId].filter(n => n.id !== parseInt(notizId));
+      savePruefungsnotizen(data);
+    }
+    
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Alle Notizen für ein Topic ersetzen (Batch-Update)
+app.put('/api/pruefungsnotizen/:topicId', (req, res) => {
+  try {
+    const data = loadPruefungsnotizen();
+    const topicId = req.params.topicId;
+    
+    data.notizen[topicId] = req.body.notizen || [];
+    savePruefungsnotizen(data);
+    
+    res.json({ success: true, notizen: data.notizen[topicId] });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════
+// KARTEIKARTEN API
+// ═══════════════════════════════════════════════════════════════
+
+const KARTEIKARTEN_FILE = path.join(DATA_DIR, 'karteikarten.json');
+
+// Karteikarten-Daten laden
+function loadKarteikarten() {
+  if (fs.existsSync(KARTEIKARTEN_FILE)) {
+    return JSON.parse(fs.readFileSync(KARTEIKARTEN_FILE, 'utf-8'));
+  }
+  return { decks: {}, userProgress: {} };
+}
+
+// Karteikarten-Daten speichern
+function saveKarteikarten(data) {
+  fs.writeFileSync(KARTEIKARTEN_FILE, JSON.stringify(data, null, 2));
+}
+
+// Alle Karteikarten-Decks abrufen
+app.get('/api/karteikarten', (req, res) => {
+  try {
+    const data = loadKarteikarten();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Einzelnes Deck abrufen
+app.get('/api/karteikarten/:deckId', (req, res) => {
+  try {
+    const data = loadKarteikarten();
+    const deck = data.decks[req.params.deckId];
+    
+    if (!deck) {
+      return res.status(404).json({ error: 'Deck nicht gefunden' });
+    }
+    
+    res.json(deck);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Lernfortschritt speichern
+app.post('/api/karteikarten/:deckId/progress', (req, res) => {
+  try {
+    const data = loadKarteikarten();
+    const deckId = req.params.deckId;
+    const { cardId, correct, timestamp } = req.body;
+    
+    if (!data.userProgress[deckId]) {
+      data.userProgress[deckId] = {};
+    }
+    
+    if (!data.userProgress[deckId][cardId]) {
+      data.userProgress[deckId][cardId] = {
+        attempts: 0,
+        correct: 0,
+        lastSeen: null,
+        nextReview: null
+      };
+    }
+    
+    const cardProgress = data.userProgress[deckId][cardId];
+    cardProgress.attempts++;
+    if (correct) cardProgress.correct++;
+    cardProgress.lastSeen = timestamp || new Date().toISOString();
+    
+    // Einfacher Spaced-Repetition-Algorithmus
+    const successRate = cardProgress.correct / cardProgress.attempts;
+    let daysUntilReview = 1;
+    if (successRate >= 0.8 && cardProgress.attempts >= 3) daysUntilReview = 7;
+    else if (successRate >= 0.6 && cardProgress.attempts >= 2) daysUntilReview = 3;
+    
+    const nextReview = new Date();
+    nextReview.setDate(nextReview.getDate() + daysUntilReview);
+    cardProgress.nextReview = nextReview.toISOString();
+    
+    saveKarteikarten(data);
+    res.json({ success: true, progress: cardProgress });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Fortschritt für ein Deck abrufen
+app.get('/api/karteikarten/:deckId/progress', (req, res) => {
+  try {
+    const data = loadKarteikarten();
+    const progress = data.userProgress[req.params.deckId] || {};
+    res.json(progress);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Fortschritt zurücksetzen
+app.delete('/api/karteikarten/:deckId/progress', (req, res) => {
+  try {
+    const data = loadKarteikarten();
+    delete data.userProgress[req.params.deckId];
+    saveKarteikarten(data);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════
 // SERVER STARTEN
 // ═══════════════════════════════════════════════════════════════
 

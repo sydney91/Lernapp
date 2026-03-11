@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#1a1410">
+<title>Quiz - Heilpraktiker Lernspiel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Heil<span>praktiker</span> Quiz</h1>
+    <p>Teste dein Wissen in verschiedenen Kategorien</p>
+  </header>
+
+  <nav class="main-nav">
+    <a href="index.html" class="main-tab">Start</a>
+    <a href="quiz.html" class="main-tab active">Quiz</a>
+    <a href="wissen.html" class="main-tab">Wissen</a>
+    <a href="terminologie.html" class="main-tab">Terminologie</a>
+    <a href="diagnose.html" class="main-tab">Diagnose-Spiel</a>
+    <a href="pruefung.html" class="main-tab">Pruefungstrainer</a>
+    <a href="admin.html" class="main-tab">Admin</a>
+  </nav>
+
+  <div class="container" id="quiz-area">
+    <div id="category-screen">
+      <h2 class="screen-title">Waehle eine Kategorie</h2>
+      <p class="screen-sub">Teste dein Wissen in verschiedenen Bereichen der Heilpraktikerpruefung</p>
+      <div class="category-grid" id="cat-grid"></div>
+    </div>
+
+    <div id="quiz-screen" style="display:none;">
+      <div class="quiz-header">
+        <button class="back-btn" onclick="showCategories()">Zurueck</button>
+        <div class="quiz-progress">
+          <span id="q-tag" class="quiz-tag">Anatomie</span>
+          <span class="quiz-counter">Frage <span id="q-num">1</span> von <span id="q-total">10</span></span>
+          <span class="quiz-score" id="score-display">0</span>
+        </div>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="question-card">
+        <p class="q-text" id="q-text"></p>
+        <p class="q-hint" id="q-hint"></p>
+        <div class="answers-grid" id="answers"></div>
+        <div class="explanation-box" id="explanation"></div>
+        <button class="next-btn" id="next-btn" onclick="nextQuestion()" style="display:none;">Naechste Frage</button>
+      </div>
+    </div>
+
+    <div id="result-screen" style="display:none;">
+      <div class="result-card">
+        <div class="result-emoji" id="res-emoji"></div>
+        <div class="result-score" id="res-score">75%</div>
+        <h2 id="res-title">Gut gemacht!</h2>
+        <p id="res-msg">Du hast solides Wissen gezeigt.</p>
+        <div class="result-stats">
+          <div class="stat-item"><span class="stat-label">Richtig</span><span class="stat-value correct" id="res-right">8</span></div>
+          <div class="stat-item"><span class="stat-label">Falsch</span><span class="stat-value wrong" id="res-wrong">2</span></div>
+          <div class="stat-item"><span class="stat-label">Gesamt</span><span class="stat-value" id="res-total">10</span></div>
+        </div>
+        <div class="result-actions">
+          <button class="result-btn primary" onclick="retryQuiz()">Nochmal versuchen</button>
+          <button class="result-btn secondary" onclick="showCategories()">Kategorie wechseln</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<script src="quiz-data.js"></script>
+<script>
+// Quiz State
+let currentQuestions = [];
+let currentIndex = 0;
+let score = 0;
+let answered = false;
+let currentCategory = '';
+
+function buildCategories() {
+  const grid = document.getElementById('cat-grid');
+  CATEGORIES.forEach(cat => {
+    const count = cat.id === 'mixed' ? QUESTIONS.length : QUESTIONS.filter(q => q.cat === cat.id).length;
+    const card = document.createElement('div');
+    card.className = 'cat-card';
+    card.innerHTML = `<div class="cat-icon">${cat.icon}</div>
+      <div class="cat-name">${cat.name}</div>
+      <div class="cat-count">${count} Fragen</div>`;
+    card.onclick = () => startQuiz(cat.id);
+    grid.appendChild(card);
+  });
+}
+
+function startQuiz(catId) {
+  currentCategory = catId;
+  let pool = catId === 'mixed' ? [...QUESTIONS] : QUESTIONS.filter(q => q.cat === catId);
+  pool = pool.sort(() => Math.random() - 0.5).slice(0, Math.min(10, pool.length));
+  currentQuestions = pool;
+  currentIndex = 0;
+  score = 0;
+  document.getElementById('category-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'none';
+  document.getElementById('quiz-screen').style.display = 'block';
+  document.getElementById('q-total').textContent = currentQuestions.length;
+  renderQuestion();
+}
+
+function renderQuestion() {
+  answered = false;
+  const q = currentQuestions[currentIndex];
+  const catInfo = CATEGORIES.find(c => c.id === q.cat);
+  document.getElementById('q-num').textContent = currentIndex + 1;
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('progress-fill').style.width = (currentIndex / currentQuestions.length * 100) + '%';
+  document.getElementById('q-tag').textContent = catInfo ? catInfo.name : q.cat;
+  document.getElementById('q-text').textContent = q.q;
+  document.getElementById('q-hint').textContent = '';
+  document.getElementById('explanation').style.display = 'none';
+  document.getElementById('explanation').className = 'explanation-box';
+  document.getElementById('next-btn').style.display = 'none';
+
+  const letters = ['A','B','C','D','E'];
+  const container = document.getElementById('answers');
+  container.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const btn = document.createElement('button');
+    btn.className = 'answer-btn';
+    btn.innerHTML = `<span class="letter">${letters[i]}</span><span>${opt}</span>`;
+    btn.onclick = () => selectAnswer(i);
+    container.appendChild(btn);
+  });
+}
+
+function selectAnswer(idx) {
+  if (answered) return;
+  answered = true;
+  const q = currentQuestions[currentIndex];
+  const btns = document.querySelectorAll('.answer-btn');
+  btns.forEach(b => b.disabled = true);
+  const expBox = document.getElementById('explanation');
+
+  if (idx === q.ans) {
+    score++;
+    btns[idx].classList.add('correct');
+    expBox.className = 'explanation-box';
+    expBox.innerHTML = `<strong>Richtig!</strong> ${q.exp}`;
+  } else {
+    btns[idx].classList.add('wrong');
+    btns[q.ans].classList.add('correct');
+    expBox.className = 'explanation-box wrong-exp';
+    expBox.innerHTML = `<strong>Leider falsch.</strong> ${q.exp}`;
+  }
+  expBox.style.display = 'block';
+  document.getElementById('score-display').textContent = score;
+  document.getElementById('next-btn').style.display = 'block';
+  document.getElementById('next-btn').textContent =
+    currentIndex < currentQuestions.length - 1 ? 'Naechste Frage' : 'Ergebnis anzeigen';
+}
+
+function nextQuestion() {
+  currentIndex++;
+  if (currentIndex >= currentQuestions.length) {
+    showResult();
+  } else {
+    renderQuestion();
+  }
+}
+
+function showResult() {
+  document.getElementById('quiz-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'block';
+  const total = currentQuestions.length;
+  const pct = Math.round(score / total * 100);
+  document.getElementById('res-right').textContent = score;
+  document.getElementById('res-wrong').textContent = total - score;
+  document.getElementById('res-total').textContent = total;
+  const scoreEl = document.getElementById('res-score');
+  scoreEl.textContent = pct + '%';
+  scoreEl.className = 'result-score ' + (pct >= 75 ? 'score-good' : pct >= 50 ? 'score-mid' : 'score-low');
+  let emoji, title, msg;
+  if (pct >= 90) { emoji=''; title='Ausgezeichnet!'; msg='Hervorragende Leistung! Du bist bestens fuer die Pruefung vorbereitet.'; }
+  else if (pct >= 75) { emoji=''; title='Sehr gut!'; msg='Solides Wissen! Noch ein wenig ueben und du bist pruefungsbereit.'; }
+  else if (pct >= 50) { emoji=''; title='Ausbaufaehig'; msg='Gutes Fundament, aber einige Themen solltest du nochmals vertiefen.'; }
+  else { emoji=''; title='Weiter ueben!'; msg='Keine Sorge - wiederhole diese Themen und versuche es erneut!'; }
+  document.getElementById('res-emoji').textContent = emoji;
+  document.getElementById('res-title').textContent = title;
+  document.getElementById('res-msg').textContent = msg;
+}
+
+function retryQuiz() {
+  startQuiz(currentCategory);
+}
+
+function showCategories() {
+  document.getElementById('quiz-screen').style.display = 'none';
+  document.getElementById('result-screen').style.display = 'none';
+  document.getElementById('category-screen').style.display = 'block';
+}
+
+// Initialize
+buildCategories();
+</script>
+</body>
+</html>

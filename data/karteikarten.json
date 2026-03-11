@@ -1,0 +1,489 @@
+{
+  "decks": {
+    "zelle-gewebe": {
+      "id": "zelle-gewebe",
+      "name": "Zelle & Gewebe",
+      "icon": "🔬",
+      "description": "Zellaufbau, Zellteilung, Gewebearten und ihre Funktionen",
+      "cards": [
+        {
+          "id": "zg-001",
+          "category": "Zellorganellen",
+          "front": "Was sind die 'Kraftwerke der Zelle' und was produzieren sie?",
+          "back": "**Mitochondrien**\n\nSie produzieren **ATP** (Adenosintriphosphat) durch aerobe Atmung.\n\n💡 *Merke: Mito-CHON-drien = CHON steht für Energie-Champion*",
+          "difficulty": 1,
+          "tags": [
+            "Zellorganellen",
+            "Grundlagen"
+          ]
+        },
+        {
+          "id": "zg-002",
+          "category": "Zellorganellen",
+          "front": "Welche Zellen haben KEINEN Zellkern?",
+          "back": "**Erythrozyten** (rote Blutkörperchen) und **Thrombozyten** (Blutplättchen)\n\n⚠️ *Prüfungsfalle: Deshalb können sie sich nicht teilen!*\n\n💡 *Merke: E-Thrys ohne Kern = Energie-Trabanten ohne Steuerung*",
+          "difficulty": 2,
+          "tags": [
+            "Zellorganellen",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-003",
+          "category": "Zellorganellen",
+          "front": "Welche Funktion haben Lysosomen?",
+          "back": "**Zelluläre Verdauung** und **Autophagie** (Abbau von Zellmüll)\n\n💡 *Merke: Lyso-somen = 'Löse'-Körperchen (lösen Abfall auf)*",
+          "difficulty": 1,
+          "tags": [
+            "Zellorganellen"
+          ]
+        },
+        {
+          "id": "zg-004",
+          "category": "Zellorganellen",
+          "front": "Wo findet die Proteinsynthese statt?",
+          "back": "An den **Ribosomen**\n\n• Am **rauen ER** (endoplasmatisches Retikulum) für exportierte Proteine\n• Frei im Zytoplasma für zelleigene Proteine\n\n💡 *Merke: Ribosomen = 'Riesen-Bauarbeiter' für Proteine*",
+          "difficulty": 1,
+          "tags": [
+            "Zellorganellen",
+            "Proteinsynthese"
+          ]
+        },
+        {
+          "id": "zg-005",
+          "category": "Zellorganellen",
+          "front": "Was macht der Golgi-Apparat?",
+          "back": "**Sortierung, Verpackung und Sekretion** von Proteinen\n\nEr funktioniert wie eine 'Poststelle' der Zelle.\n\n💡 *Merke: Golgi = 'Go-Logi-stik' - versendet Pakete (Proteine)*",
+          "difficulty": 1,
+          "tags": [
+            "Zellorganellen"
+          ]
+        },
+        {
+          "id": "zg-006",
+          "category": "Zellteilung",
+          "front": "Nenne die 5 Phasen der Mitose in der richtigen Reihenfolge!",
+          "back": "**I-P-M-A-T**\n\n1. **I**nterphase - DNA-Verdopplung\n2. **P**rophase - Chromosomen kondensieren\n3. **M**etaphase - Chromosomen an Äquatorialplatte\n4. **A**naphase - Schwesterchromatiden trennen sich\n5. **T**elophase - 2 identische Tochterzellen\n\n💡 *Merksatz: **I**ch **P**utze **M**ein **A**uto **T**äglich*",
+          "difficulty": 2,
+          "tags": [
+            "Zellteilung",
+            "Mitose",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-007",
+          "category": "Zellteilung",
+          "front": "Was ist der Unterschied zwischen Mitose und Meiose?",
+          "back": "**Mitose:**\n• 2 identische Tochterzellen\n• Diploid (2n = 46 Chromosomen)\n• Körperzellen\n\n**Meiose:**\n• 4 genetisch unterschiedliche Zellen\n• Haploid (n = 23 Chromosomen)\n• Keimzellen (Ei, Spermien)\n\n💡 *Merke: Mitose = Mehr vom Gleichen | Meiose = Mischen für Vielfalt*",
+          "difficulty": 2,
+          "tags": [
+            "Zellteilung",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-008",
+          "category": "Zellteilung",
+          "front": "Wie viele Chromosomen hat der Mensch?",
+          "back": "**46 Chromosomen** = 23 Paare (diploid)\n\n• 22 Autosomenpaare\n• 1 Geschlechtschromosomenpaar (XX oder XY)\n\nKeimzellen: **23 Chromosomen** (haploid)\n\n💡 *Merke: 46 = 4+6 = 10 Finger, die du zum Zählen brauchst*",
+          "difficulty": 1,
+          "tags": [
+            "Zellteilung",
+            "Grundlagen"
+          ]
+        },
+        {
+          "id": "zg-009",
+          "category": "Zellzyklus",
+          "front": "Was ist der Unterschied zwischen Apoptose und Nekrose?",
+          "back": "**Apoptose:**\n• Programmierter Zelltod\n• Geordnet, OHNE Entzündung\n• Physiologisch (z.B. Embryonalentwicklung)\n\n**Nekrose:**\n• Pathologischer Zelltod\n• Ungeordnet, MIT Entzündung\n• Durch Trauma, Infektion\n\n💡 *Merke: Apo-ptose = 'Abfall' ordentlich entsorgt | Nekrose = 'Notfall' mit Chaos*",
+          "difficulty": 2,
+          "tags": [
+            "Zellzyklus",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-010",
+          "category": "Gewebearten",
+          "front": "Nenne die 4 Grundgewebearten!",
+          "back": "**E-B-M-N:**\n\n1. **E**pithelgewebe - Deckgewebe, Drüsen\n2. **B**indegewebe - Stütze, Verbindung\n3. **M**uskelgewebe - Bewegung\n4. **N**ervengewebe - Erregungsleitung\n\n💡 *Merksatz: **E**ine **B**esondere **M**enschliche **N**atur*",
+          "difficulty": 1,
+          "tags": [
+            "Gewebearten",
+            "Grundlagen"
+          ]
+        },
+        {
+          "id": "zg-011",
+          "category": "Epithelgewebe",
+          "front": "Welches Epithel kleidet die Harnblase aus?",
+          "back": "**Übergangsepithel** (Urothel)\n\nBesonderheit: Es ist **dehnbar**!\n\nVorkommen: Harnblase, Ureter, Nierenbecken\n\n💡 *Merke: Übergangs-epithel = 'Übergangslösung' für Dehnung*",
+          "difficulty": 2,
+          "tags": [
+            "Epithelgewebe",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-012",
+          "category": "Epithelgewebe",
+          "front": "Wo findet man Flimmerepithel?",
+          "back": "**Atemwege** und **Eileiter**\n\nFunktion:\n• Atemwege: Schleimtransport nach außen\n• Eileiter: Transport der Eizelle\n\n💡 *Merke: Flimmern = Filmen (F) = Fließender Transport*",
+          "difficulty": 2,
+          "tags": [
+            "Epithelgewebe",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-013",
+          "category": "Epithelgewebe",
+          "front": "Welche Gewebe haben KEINE Blutgefäße?",
+          "back": "**Knorpel** und **Epithel**\n\nErnährung erfolgt durch **Diffusion**!\n\n⚠️ *Prüfungsfalle: Deshalb heilt Knorpel so schlecht!*\n\n💡 *Merke: K+E ohne Blut = Keine eigene Blutversorgung*",
+          "difficulty": 2,
+          "tags": [
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-014",
+          "category": "Bindegewebe",
+          "front": "Nenne die 3 Knorpelarten und ihr Vorkommen!",
+          "back": "1. **Hyaliner Knorpel** (häufigster)\n   → Gelenkflächen, Rippenknorpel, Trachea\n\n2. **Faserknorpel** (druckresistent)\n   → Bandscheiben, Menisken\n\n3. **Elastischer Knorpel** (biegsam)\n   → Ohr, Epiglottis\n\n💡 *Merke: HFE = Hyalin-Faser-Elastisch = Häufig-Fest-Elastisch*",
+          "difficulty": 2,
+          "tags": [
+            "Bindegewebe",
+            "Knorpel"
+          ]
+        },
+        {
+          "id": "zg-015",
+          "category": "Bindegewebe",
+          "front": "Was produzieren Fibroblasten?",
+          "back": "**Kollagen** und **elastische Fasern**\n\nSie sind die 'Bauarbeiter' des Bindegewebes.\n\n💡 *Merke: Fibro-BLAST-en = BAUEN Fasern*",
+          "difficulty": 1,
+          "tags": [
+            "Bindegewebe"
+          ]
+        },
+        {
+          "id": "zg-016",
+          "category": "Muskelgewebe",
+          "front": "Welche Muskulatur hat Glanzstreifen?",
+          "back": "**Herzmuskulatur**\n\nGlanzstreifen = Verbindungsstellen zwischen Herzmuskelzellen (Disci intercalares)\n\nBesonderheit: Quer gestreift wie Skelettmuskel, aber UNwillkürlich!\n\n💡 *Merke: Herz = 'Glänzende' Leistung durch Glanzstreifen*",
+          "difficulty": 2,
+          "tags": [
+            "Muskelgewebe",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-017",
+          "category": "Muskelgewebe",
+          "front": "Vergleiche die 3 Muskelarten!",
+          "back": "| Typ | Steuerung | Gestreift? |\n|-----|-----------|------------|\n| **Skelettmuskel** | willkürlich | ja |\n| **Herzmuskel** | unwillkürlich | ja |\n| **Glatte M.** | unwillkürlich | nein |\n\n💡 *Merke: Nur was ich WILL ist gestreift (Skelett), Herz macht was es will aber sieht gleich aus*",
+          "difficulty": 2,
+          "tags": [
+            "Muskelgewebe"
+          ]
+        },
+        {
+          "id": "zg-018",
+          "category": "Nervengewebe",
+          "front": "Welche Zellen bilden die Myelinscheide im ZNS vs. PNS?",
+          "back": "**ZNS:** Oligodendrozyten\n**PNS:** Schwann-Zellen\n\n💡 *Merksatz:*\n• *Oligo im ZNS = 'Oligo' klingt zentraler*\n• *Schwann im PNS = Schwann 'schwimmt' außen rum*",
+          "difficulty": 2,
+          "tags": [
+            "Nervengewebe",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-019",
+          "category": "Nervengewebe",
+          "front": "Was ist saltatorische Erregungsleitung?",
+          "back": "**Springende** Erregungsleitung an **myelinisierten Nervenfasern**\n\nDer Impuls 'springt' von Ranvier-Schnürring zu Ranvier-Schnürring.\n\n→ Viel **schnellere** Leitung als kontinuierliche!\n\n💡 *Merke: Saltatorisch = 'Salto' = Springen*",
+          "difficulty": 2,
+          "tags": [
+            "Nervengewebe"
+          ]
+        },
+        {
+          "id": "zg-020",
+          "category": "Regeneration",
+          "front": "Welche Gewebe regenerieren gut vs. schlecht?",
+          "back": "**Gut ✅:**\n• Epithelgewebe\n• Knochen\n• Leber\n\n**Schlecht ❌:**\n• Herzmuskel\n• Nervengewebe (ZNS)\n• Knorpel (keine Gefäße!)\n\n💡 *Merke: HNK heilt nicht = Herz-Nerv-Knorpel*",
+          "difficulty": 2,
+          "tags": [
+            "Regeneration",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-021",
+          "category": "Fachbegriffe",
+          "front": "Was bedeuten Hyperplasie, Hypertrophie und Atrophie?",
+          "back": "**Hyperplasie:** Zellzahl↑ (mehr Zellen)\n**Hypertrophie:** Zellgröße↑ (größere Zellen)\n**Atrophie:** Zellschwund↓ (weniger/kleiner)\n\n💡 *Merke:*\n• *Hyper-PLASIE = PLUS an Anzahl*\n• *Hyper-TROPHIE = TROPH = Nahrung = Größe*\n• *A-Trophie = A = weg = Schwund*",
+          "difficulty": 2,
+          "tags": [
+            "Fachbegriffe",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "zg-022",
+          "category": "Fachbegriffe",
+          "front": "Was ist Dysplasie und warum ist sie wichtig?",
+          "back": "**Dysplasie** = Abnorme Zelldifferenzierung\n\n⚠️ **Krebsvorstufe!**\n\nBeispiel: Zervikale Dysplasie → kann zu Gebärmutterhalskrebs werden\n\n💡 *Merke: Dys = 'Durcheinander' = Disorder = Gefahr*",
+          "difficulty": 2,
+          "tags": [
+            "Fachbegriffe",
+            "Prüfungswissen"
+          ]
+        }
+      ]
+    },
+    "blut": {
+      "id": "blut",
+      "name": "Blut",
+      "icon": "🩸",
+      "description": "Blutbestandteile, Blutgerinnung, Blutgruppen und Laborwerte",
+      "cards": [
+        {
+          "id": "bl-001",
+          "category": "Zusammensetzung",
+          "front": "Wie viel Blut hat ein Erwachsener und wie ist es zusammengesetzt?",
+          "back": "**Volumen:** 5-6 L (Mann), 4-5 L (Frau)\n\n**Zusammensetzung:**\n• **55% Plasma** (Wasser, Proteine, Elektrolyte)\n• **45% Zellen** (Erys, Leukos, Thrombos)\n\n💡 *Merke: 55-45 = Fifty-Fifty (fast)*",
+          "difficulty": 1,
+          "tags": [
+            "Zusammensetzung",
+            "Grundlagen"
+          ]
+        },
+        {
+          "id": "bl-002",
+          "category": "Zusammensetzung",
+          "front": "Was ist der Hämatokrit?",
+          "back": "**Anteil der Zellen am Gesamtblut** (in %)\n\n**Normwerte:**\n• Mann: 42-52%\n• Frau: 37-47%\n\n↑ bei Dehydration, Polyglobulie\n↓ bei Anämie, Überwässerung\n\n💡 *Merke: Hämat-o-KRIT = KRIT-ischer Anteil der Zellen*",
+          "difficulty": 1,
+          "tags": [
+            "Zusammensetzung",
+            "Laborwerte"
+          ]
+        },
+        {
+          "id": "bl-003",
+          "category": "Erythrozyten",
+          "front": "Nenne die wichtigsten Fakten zu Erythrozyten!",
+          "back": "• **Anzahl:** 4,5-5,5 Mio/µl\n• **Lebensdauer:** 120 Tage\n• **Abbauort:** Milz\n• **KEIN Zellkern, KEINE Mitochondrien**\n• Energiegewinnung: anaerobe Glykolyse\n\n💡 *Merke: 120 Tage = 4 Monate = Ein Semester für Erys*",
+          "difficulty": 2,
+          "tags": [
+            "Erythrozyten",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-004",
+          "category": "Erythrozyten",
+          "front": "Was ist ein Retikulozyt?",
+          "back": "**Unreifer Erythrozyt** aus dem Knochenmark\n\n• Enthält noch Reste von RNA\n• Marker für **Knochenmarkaktivität**\n• Normal: 0,5-2% der Erys\n\n↑ bei: Regeneration nach Blutverlust, Hämolyse\n↓ bei: Knochenmarkinsuffizienz\n\n💡 *Merke: Retikulo = Reti-Kulisse = noch im Aufbau*",
+          "difficulty": 2,
+          "tags": [
+            "Erythrozyten",
+            "Laborwerte"
+          ]
+        },
+        {
+          "id": "bl-005",
+          "category": "Erythrozyten",
+          "front": "Was ist EPO und wo wird es gebildet?",
+          "back": "**Erythropoetin** = Hormon zur Stimulation der Erythrozytenbildung\n\nBildungsort: **Niere** (90%)\n\nStimulus: Hypoxie (Sauerstoffmangel)\n\n⚠️ *Bei Niereninsuffizienz → EPO↓ → renale Anämie*\n\n💡 *Merke: EPO = E-Post von der Niere ans Knochenmark*",
+          "difficulty": 2,
+          "tags": [
+            "Erythrozyten",
+            "Hormone"
+          ]
+        },
+        {
+          "id": "bl-006",
+          "category": "Erythrozyten",
+          "front": "Wie sind die Hämoglobin-Normwerte?",
+          "back": "**Hämoglobin (Hb):**\n• Mann: **14-18 g/dl**\n• Frau: **12-16 g/dl**\n\n💡 *Merksatz:*\n• *Mann: 14-18 = Führerschein mit 18*\n• *Frau: 12-16 = Schule ab 6 bis 12*\n\n↓ = Anämie",
+          "difficulty": 1,
+          "tags": [
+            "Erythrozyten",
+            "Laborwerte"
+          ]
+        },
+        {
+          "id": "bl-007",
+          "category": "Leukozyten",
+          "front": "Nenne die Leukozyten-Untergruppen mit Anteilen!",
+          "back": "**Gesamtzahl:** 4.000-10.000/µl\n\n• **Neutrophile:** 50-70% (Bakterienabwehr)\n• **Lymphozyten:** 25-35% (spezif. Immunabwehr)\n• **Monozyten:** 3-8% (Phagozytose)\n• **Eosinophile:** 2-4% (Parasiten, Allergie)\n• **Basophile:** 0-1% (Histamin)\n\n💡 *Merksatz: Never Let Monkeys Eat Bananas (N-L-M-E-B absteigend)*",
+          "difficulty": 2,
+          "tags": [
+            "Leukozyten",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-008",
+          "category": "Leukozyten",
+          "front": "Was ist eine Linksverschiebung?",
+          "back": "**Vermehrung unreifer Neutrophiler** (Stabkernige) im Blut\n\n→ Zeichen einer **akuten bakteriellen Infektion**\n\nDer Körper wirft 'Reservisten' ins Gefecht!\n\n💡 *Merke: LINKS = Unreife Zellen stehen LINKS im Blutbild*",
+          "difficulty": 2,
+          "tags": [
+            "Leukozyten",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-009",
+          "category": "Thrombozyten",
+          "front": "Nenne die wichtigsten Thrombozytenfakten!",
+          "back": "• **Anzahl:** 150.000-400.000/µl\n• **Lebensdauer:** 7-10 Tage\n• **Bildung:** Megakaryozyten im Knochenmark\n• **Funktion:** Primäre Hämostase\n\n💡 *Merke: 150-400 Tausend = Wie Einwohnerzahl einer Stadt*\n*7-10 Tage = Eine Urlaubswoche*",
+          "difficulty": 1,
+          "tags": [
+            "Thrombozyten",
+            "Grundlagen"
+          ]
+        },
+        {
+          "id": "bl-010",
+          "category": "Hämostase",
+          "front": "Nenne die 3 Phasen der Blutgerinnung!",
+          "back": "1. **Vasospasmus** - Gefäßverengung\n2. **Primäre Hämostase** - Thrombozytenpfropf (weißer Thrombus)\n3. **Sekundäre Hämostase** - Fibringerinnsel (roter Thrombus)\n\n💡 *Merksatz: VEng-PFropf-FIbrin = VE-P-FI = WEG ZUM FIX*",
+          "difficulty": 2,
+          "tags": [
+            "Hämostase",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-011",
+          "category": "Hämostase",
+          "front": "Was ist der Unterschied zwischen extrinsischer und intrinsischer Gerinnung?",
+          "back": "**Extrinsisch (schnell):**\n• Ausgelöst durch Gewebsverletzung\n• Faktor III → VII → gemeinsame Endstrecke\n• Gemessen mit **Quick/INR**\n\n**Intrinsisch (langsam):**\n• Ausgelöst durch Kontaktaktivierung\n• Faktor XII → gemeinsame Endstrecke\n• Gemessen mit **PTT**\n\n💡 *Merke: EX-tern = Quick | IN-tern = PTT*",
+          "difficulty": 3,
+          "tags": [
+            "Hämostase",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-012",
+          "category": "Hämostase",
+          "front": "Die gemeinsame Endstrecke der Gerinnung?",
+          "back": "**Faktor X → Prothrombin → Thrombin → Fibrinogen → Fibrin**\n\nThrombin ist das Schlüsselenzym!\n\n💡 *Merksatz: Zehn-Pro-Thrombin-Fibrin = ZEHNmal PROfi THROMBI FINden*",
+          "difficulty": 2,
+          "tags": [
+            "Hämostase"
+          ]
+        },
+        {
+          "id": "bl-013",
+          "category": "Gerinnungstests",
+          "front": "Welcher Test misst was bei der Gerinnung?",
+          "back": "**Quick/INR:**\n• Extrinsisches System\n• Kontrolle bei **Marcumar** (Vitamin-K-Antagonist)\n• Normal: Quick 70-130%, INR 0,8-1,2\n\n**PTT:**\n• Intrinsisches System\n• Kontrolle bei **Heparin**\n• Normal: 25-38 Sekunden\n\n💡 *Merke: Heparin verlängert PTT | Marcumar verlängert Quick*",
+          "difficulty": 2,
+          "tags": [
+            "Gerinnungstests",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-014",
+          "category": "Blutgruppen",
+          "front": "Erkläre das ABO-System!",
+          "back": "| Gruppe | Antigen | Antikörper |\n|--------|---------|------------|\n| **A** | A | Anti-B |\n| **B** | B | Anti-A |\n| **AB** | A+B | keine |\n| **0** | keine | Anti-A+B |\n\n💡 *Merke: Man hat Antikörper gegen das, was man NICHT hat*",
+          "difficulty": 2,
+          "tags": [
+            "Blutgruppen",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-015",
+          "category": "Blutgruppen",
+          "front": "Wer ist Universalspender und Universalempfänger?",
+          "back": "**Universalspender:** 0 negativ\n→ Keine Antigene, die reagieren könnten\n\n**Universalempfänger:** AB positiv\n→ Keine Antikörper, die reagieren könnten\n\n⚠️ *Gilt nur für Erythrozyten-Konzentrate!*\n\n💡 *Merke: 0 = 'Ohne' alles spenden | AB = 'Alles' bekommen*",
+          "difficulty": 2,
+          "tags": [
+            "Blutgruppen",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-016",
+          "category": "Blutgruppen",
+          "front": "Was ist Morbus haemolyticus neonatorum?",
+          "back": "**Rh-Inkompatibilität** zwischen Mutter und Kind\n\nRh-negative Mutter + Rh-positives Kind:\n1. Schwangerschaft: Sensibilisierung\n2. Schwangerschaft: Antikörper greifen kindliche Erys an!\n\n**Prophylaxe:** Anti-D-Gabe nach Geburt\n\n💡 *Merke: Erste Schwangerschaft = Kennenlernen, Zweite = Angriff*",
+          "difficulty": 3,
+          "tags": [
+            "Blutgruppen",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-017",
+          "category": "Hämatopoese",
+          "front": "Wo findet die Blutbildung statt?",
+          "back": "**Rotes Knochenmark** in flachen Knochen:\n• Sternum (Brustbein)\n• Wirbelkörper\n• Beckenknochen\n• Rippen\n\nBeim Kind: gesamtes Knochenmark aktiv\nBeim Erwachsenen: nur noch flache Knochen\n\n💡 *Merke: SWBR = Sternum-Wirbel-Becken-Rippen*",
+          "difficulty": 1,
+          "tags": [
+            "Hämatopoese"
+          ]
+        },
+        {
+          "id": "bl-018",
+          "category": "Hämatopoese",
+          "front": "Was ist die pluripotente Stammzelle?",
+          "back": "**Ursprungszelle** aller Blutzellen im Knochenmark\n\nKann sich entwickeln zu:\n• Myeloische Reihe (Erys, Granulozyten, Thrombos)\n• Lymphatische Reihe (Lymphozyten)\n\n💡 *Merke: Pluri-POTENT = POTENZial für ALLES*",
+          "difficulty": 2,
+          "tags": [
+            "Hämatopoese"
+          ]
+        },
+        {
+          "id": "bl-019",
+          "category": "Laborwerte",
+          "front": "Die wichtigsten Blut-Laborwerte zum Auswendiglernen!",
+          "back": "| Parameter | Normalwert |\n|-----------|------------|\n| Erys | 4,5-5,5 Mio/µl |\n| Hb (M) | 14-18 g/dl |\n| Hb (F) | 12-16 g/dl |\n| Hkt (M) | 42-52% |\n| Leukos | 4-10 Tsd/µl |\n| Thrombos | 150-400 Tsd/µl |\n| Quick | 70-130% |\n| PTT | 25-38 sec |\n\n💡 *Lerne diese unbedingt auswendig!*",
+          "difficulty": 2,
+          "tags": [
+            "Laborwerte",
+            "Prüfungswissen"
+          ]
+        },
+        {
+          "id": "bl-020",
+          "category": "Prüfungsfallen",
+          "front": "Welche Prüfungsfallen gibt es beim Thema Blut?",
+          "back": "⚠️ **Typische Fallen:**\n\n1. Erythrozyten haben **keinen Zellkern** aber brauchen trotzdem B12/Folsäure für die BILDUNG!\n\n2. **Linksverschiebung** = BAKTERIELL (nicht viral!)\n\n3. **0 negativ = Universalspender** gilt NUR für Erythrozytenkonzentrate!\n\n4. **MHN erst ab 2. Schwangerschaft** gefährlich\n\n5. Heparin → PTT↑ | Marcumar → Quick↓",
+          "difficulty": 3,
+          "tags": [
+            "Prüfungsfallen"
+          ]
+        }
+      ]
+    }
+  },
+  "userProgress": {
+    "zelle-gewebe": {
+      "zg-001": {
+        "attempts": 2,
+        "correct": 2,
+        "lastSeen": "2026-03-11T20:33:07.248Z",
+        "nextReview": "2026-03-14T20:33:07.253Z"
+      },
+      "zg-002": {
+        "attempts": 1,
+        "correct": 1,
+        "lastSeen": "2026-03-11T20:31:35.437Z",
+        "nextReview": "2026-03-12T20:31:35.457Z"
+      }
+    }
+  }
+}

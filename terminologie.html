@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#1a1410">
+<title>Terminologie - Heilpraktiker Lernspiel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Medizinische <span>Terminologie</span></h1>
+    <p>Fachbegriffe und Glossar</p>
+  </header>
+
+  <nav class="main-nav">
+    <a href="index.html" class="main-tab">Start</a>
+    <a href="quiz.html" class="main-tab">Quiz</a>
+    <a href="wissen.html" class="main-tab">Wissen</a>
+    <a href="terminologie.html" class="main-tab active">Terminologie</a>
+    <a href="diagnose.html" class="main-tab">Diagnose-Spiel</a>
+    <a href="pruefung.html" class="main-tab">Pruefungstrainer</a>
+    <a href="admin.html" class="main-tab">Admin</a>
+  </nav>
+
+  <div class="container" id="terminologie-area">
+    <div class="glossar-controls">
+      <input type="text" id="glossar-search" placeholder="Begriff suchen..." oninput="filterGlossar()">
+      <select id="glossar-filter" onchange="filterGlossar()">
+        <option value="">Alle Kategorien</option>
+      </select>
+    </div>
+    <div id="glossar-list" class="glossar-list"></div>
+  </div>
+
+<script src="shared.js"></script>
+<script src="terminologie-data.js"></script>
+<script>
+let glossarInitialized = false;
+
+function initTerminologie() {
+  if (glossarInitialized) return;
+  glossarInitialized = true;
+  
+  // Build category filter
+  const categories = [...new Set(GLOSSAR.map(g => g.k))].sort();
+  const select = document.getElementById('glossar-filter');
+  categories.forEach(cat => {
+    const opt = document.createElement('option');
+    opt.value = cat;
+    opt.textContent = cat;
+    select.appendChild(opt);
+  });
+  
+  renderGlossar(GLOSSAR);
+}
+
+function filterGlossar() {
+  const search = document.getElementById('glossar-search').value.toLowerCase();
+  const category = document.getElementById('glossar-filter').value;
+  
+  let filtered = GLOSSAR;
+  
+  if (category) {
+    filtered = filtered.filter(g => g.k === category);
+  }
+  
+  if (search) {
+    filtered = filtered.filter(g => 
+      g.w.toLowerCase().includes(search) || 
+      g.d.toLowerCase().includes(search) ||
+      (g.wz && g.wz.toLowerCase().includes(search))
+    );
+  }
+  
+  renderGlossar(filtered);
+}
+
+function renderGlossar(items) {
+  const list = document.getElementById('glossar-list');
+  
+  if (items.length === 0) {
+    list.innerHTML = '<div class="glossar-empty">Keine Begriffe gefunden.</div>';
+    return;
+  }
+  
+  // Group by first letter
+  const grouped = {};
+  items.forEach(g => {
+    const letter = g.w.charAt(0).toUpperCase();
+    if (!grouped[letter]) grouped[letter] = [];
+    grouped[letter].push(g);
+  });
+  
+  let html = '';
+  Object.keys(grouped).sort().forEach(letter => {
+    html += `<div class="glossar-letter">${letter}</div>`;
+    grouped[letter].forEach(g => {
+      html += `
+        <div class="glossar-entry">
+          <div class="glossar-header" onclick="toggleGlossarEntry(this)">
+            <div class="glossar-word">
+              <strong>${escHtml(g.w)}</strong>
+              <span class="glossar-pronunciation">[${escHtml(g.p)}]</span>
+              <span class="glossar-category">${escHtml(g.k)}</span>
+            </div>
+            <span class="glossar-toggle">+</span>
+          </div>
+          <div class="glossar-details" style="display:none">
+            <div class="glossar-definition">${g.d}</div>
+            ${g.wz ? `<div class="glossar-etymology"><strong>Wortherkunft:</strong> ${g.wz}</div>` : ''}
+            ${g.b ? `<div class="glossar-example"><strong>Beispiel:</strong> ${g.b}</div>` : ''}
+          </div>
+        </div>`;
+    });
+  });
+  
+  list.innerHTML = html;
+}
+
+function toggleGlossarEntry(header) {
+  const details = header.nextElementSibling;
+  const toggle = header.querySelector('.glossar-toggle');
+  if (details.style.display === 'none') {
+    details.style.display = 'block';
+    toggle.textContent = '−';
+  } else {
+    details.style.display = 'none';
+    toggle.textContent = '+';
+  }
+}
+
+// Initialize
+initTerminologie();
+</script>
+</body>
+</html>

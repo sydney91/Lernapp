@@ -1,0 +1,362 @@
+{
+  "topics": {
+    "zelle-gewebe": {
+      "id": "zelle-gewebe",
+      "name": "🔬 Zelle & Gewebe",
+      "title": "Zelle & Gewebe",
+      "subtitle": "Unterrichtsskript · Einführung in die Grundlagen des menschlichen Körpers",
+      "pruefungswichtig": {
+        "enabled": true,
+        "sections": [
+          {
+            "title": "1. Zellaufbau ⭐⭐",
+            "color": "#b8860b",
+            "icon": "🔬",
+            "isTable": true,
+            "tableHeaders": ["Organell", "Funktion"],
+            "tableRows": [
+              ["Zellmembran", "Selektive Permeabilität, Rezeptoren, Signalübertragung"],
+              ["Zellkern", "DNA, Steuerung der Proteinsynthese"],
+              ["Mitochondrien", "ATP-Produktion (Energiezentrale), aerobe Atmung"],
+              ["Ribosomen", "Proteinsynthese (rau ER)"],
+              ["Endoplasmatisches Retikulum", "Rau: Proteinsynthese"],
+              ["Golgi-Apparat", "Sortierung, Verpackung, Sekretion von Proteinen"],
+              ["Lysosomen", "Zelluläre Verdauung, Autophagie"],
+              ["Zytoskelett", "Stabilität, Zellbewegung, Zellteilung"]
+            ],
+            "content": [
+              "**Prüfungsfallen ⚠️:**",
+              "Erythrozyten & Thrombozyten: **kein Zellkern**",
+              "Muskelzellen & Leberzellen: **viele Mitochondrien** (hoher Energiebedarf)",
+              "Nur tierische Zellen haben **Zentrosom** (Zellteilung)"
+            ]
+          },
+          {
+            "title": "2. Zellteilung ⭐⭐⭐ (sehr prüfungsrelevant!)",
+            "color": "#8e44ad",
+            "icon": "🧬",
+            "content": [
+              "**MITOSE (Körperzellen) – Phasen: IPMAT**",
+              "**I**nterphase – DNA-Verdopplung (S-Phase)",
+              "**P**rophase – Chromosomen kondensieren, Kernhülle löst sich",
+              "**M**etaphase – Chromosomen an Äquatorialplatte",
+              "**A**naphase – Schwesterchromatiden trennen sich",
+              "**T**elophase – zwei identische Tochterzellen (diploid, 2n)",
+              "",
+              "**MEIOSE (Keimzellen)**",
+              "Ergebnis: 4 haploide Zellen (n = 23 Chromosomen)",
+              "Wichtig für: Eizellen, Spermien",
+              "Crossing-over in Prophase I → genetische Vielfalt",
+              "",
+              "**Prüfungsfallen ⚠️:**",
+              "Mitose = identische Kopien | Meiose = genetisch unterschiedlich",
+              "Mensch: **46 Chromosomen** (diploid) = 23 Paare",
+              "Tumorzellen = unkontrollierte Mitose"
+            ]
+          },
+          {
+            "title": "3. Zellzyklus & Apoptose ⭐",
+            "color": "#27ae60",
+            "icon": "🔄",
+            "content": [
+              "**G1-Phase:** Zellwachstum",
+              "**S-Phase:** DNA-Replikation",
+              "**G2-Phase:** Vorbereitung Mitose",
+              "**M-Phase:** Mitose",
+              "**G0-Phase:** Ruhephase (z.B. Nervenzellen dauerhaft)",
+              "",
+              "**Apoptose** = programmierter Zelltod",
+              "• Physiologisch (Embryonalentwicklung, Immunsystem)",
+              "• Gestört bei Krebs (zu wenig) oder Neurodegeneration (zu viel)",
+              "",
+              "**Nekrose** = pathologischer Zelltod (Entzündung, Trauma) → Entzündungsreaktion"
+            ]
+          },
+          {
+            "title": "4. Gewebearten ⭐⭐⭐ (Kernthema!)",
+            "color": "#2980b9",
+            "icon": "📋",
+            "content": [
+              "**4 Grundgewebearten:**",
+              "**E**pithel → Deckgewebe, Drüsen",
+              "**B**indegewebe → Stütz-, Verbindungsgewebe",
+              "**M**uskelgewebe → Bewegung",
+              "**N**ervengewebe → Erregungsleitung",
+              "",
+              "Merksatz: **E**ine **B**esondere **M**enschliche **N**atur"
+            ]
+          },
+          {
+            "title": "5. Epithelgewebe ⭐⭐⭐",
+            "color": "#3498db",
+            "icon": "🧱",
+            "isTable": true,
+            "tableHeaders": ["Typ", "Vorkommen"],
+            "tableRows": [
+              ["Einschichtiges Plattenepithel", "Alveolen, Gefäßinnenwand (Endothel), Serosen"],
+              ["Einschichtiges kubisches Epithel", "Nierentubuli, Schilddrüsenfollikel"],
+              ["Einschichtiges zylindrisches Epithel", "Magen, Darm, Gebärmutter"],
+              ["Mehrschichtiges Plattenepithel (verhornend)", "Haut (Epidermis)"],
+              ["Mehrschichtiges Plattenepithel (nicht verhornend)", "Mundhöhle, Ösophagus, Vagina"],
+              ["Übergangsepithel (Urothel)", "Harnblase, Ureter (dehnbar!)"],
+              ["Flimmerepithel (einschichtig)", "Atemwege, Eileiter"]
+            ],
+            "content": [
+              "**Drüsenepithel:**",
+              "**Exokrine Drüsen:** sezernieren nach außen (Schweiß, Speichel, Pankreas)",
+              "**Endokrine Drüsen:** sezernieren in Blut (Hormone) – Schilddrüse, Nebenniere",
+              "**Gemischte Drüsen:** Pankreas (exokrin: Verdauungsenzyme + endokrin: Insulin)"
+            ]
+          },
+          {
+            "title": "6. Bindegewebe ⭐⭐",
+            "color": "#e67e22",
+            "icon": "🔗",
+            "isTable": true,
+            "tableHeaders": ["Typ", "Merkmale", "Vorkommen"],
+            "tableRows": [
+              ["Lockeres Bindegewebe", "Fibroblasten, Kollagen, elastische Fasern", "Unterhaut, Organgerüst"],
+              ["Straffes Bindegewebe", "Viel Kollagen, wenig Zellen", "Sehnen, Bänder, Hornhaut"],
+              ["Fettgewebe", "Energiespeicher, Wärmeisolation", "Unterhaut, Nierenlager"],
+              ["Knorpelgewebe", "Keine Gefäße, ernährt durch Diffusion", "Gelenke, Trachea, Ohr"],
+              ["Knochengewebe", "Hartsubstanz (Hydroxylapatit)", "Skelett"],
+              ["Blut", "Flüssiges Bindegewebe", "Gefäßsystem"]
+            ],
+            "content": [
+              "**Knorpelarten:**",
+              "• **Hyaliner Knorpel:** Gelenkflächen, Rippenknorpel, Trachea (häufigster)",
+              "• **Faserknorpel:** Bandscheiben, Menisken (druckresistent)",
+              "• **Elastischer Knorpel:** Ohr, Epiglottis (biegsam)",
+              "",
+              "**Wichtige Zellen des Bindegewebes:**",
+              "• **Fibroblasten:** produzieren Kollagen und elastische Fasern",
+              "• **Mastzellen:** Histamin, Heparin (Entzündung, Allergie)",
+              "• **Makrophagen:** Phagozytose",
+              "• **Plasmazellen:** Antikörperproduktion"
+            ]
+          },
+          {
+            "title": "7. Muskelgewebe ⭐⭐",
+            "color": "#e74c3c",
+            "icon": "💪",
+            "isTable": true,
+            "tableHeaders": ["Typ", "Steuerung", "Vorkommen", "Besonderheit"],
+            "tableRows": [
+              ["Skelettmuskulatur", "willkürlich", "Bewegung", "quer gestreift, vielkernig"],
+              ["Herzmuskulatur", "unwillkürlich", "Herz", "quer gestreift, Glanzstreifen, einkernig"],
+              ["Glatte Muskulatur", "unwillkürlich", "Organe, Gefäße", "nicht gestreift, spindelförmig"]
+            ]
+          },
+          {
+            "title": "8. Nervengewebe ⭐⭐",
+            "color": "#9b59b6",
+            "icon": "⚡",
+            "content": [
+              "**Nervenzelle (Neuron):**",
+              "• **Soma (Zellkörper):** Zellkern, Stoffwechsel",
+              "• **Dendrit:** Reizaufnahme (afferent zum Soma)",
+              "• **Axon:** Reizweiterleitung (efferent vom Soma)",
+              "• **Myelinscheide (Schwann-Zellen):** Isolation, schnelle Erregungsleitung",
+              "• **Ranvier-Schnürringe:** saltatorische Erregungsleitung → schneller!",
+              "",
+              "**Nerventypen:**",
+              "• **Myelinisiert:** schnelle Leitung (motorisch, Propriozeption)",
+              "• **Unmyelinisiert:** langsame Leitung (Schmerzfasern C-Fasern)"
+            ]
+          },
+          {
+            "title": "8b. Gliazellen (Stützzellen)",
+            "color": "#9b59b6",
+            "icon": "🧠",
+            "isTable": true,
+            "tableHeaders": ["Typ", "Funktion"],
+            "tableRows": [
+              ["Schwann-Zellen", "Myelinscheide (PNS)"],
+              ["Oligodendrozyten", "Myelinscheide (ZNS)"],
+              ["Astrozyten", "Blut-Hirn-Schranke, Stoffwechsel"],
+              ["Mikroglia", "Immunabwehr im ZNS"]
+            ]
+          },
+          {
+            "title": "9. Regenerationsfähigkeit der Gewebe ⭐⭐",
+            "color": "#16a085",
+            "icon": "🔄",
+            "isTable": true,
+            "tableHeaders": ["Gewebe", "Regeneration"],
+            "tableRows": [
+              ["Epithelgewebe", "✅ sehr gut"],
+              ["Knochengewebe", "✅ gut"],
+              ["Lebergewebe", "✅ gut"],
+              ["Glatte Muskulatur", "⚠️ eingeschränkt"],
+              ["Skelettmuskulatur", "⚠️ eingeschränkt"],
+              ["Herzmuskulatur", "❌ kaum"],
+              ["Nervengewebe (ZNS)", "❌ praktisch nicht"],
+              ["Knorpel", "❌ schlecht (gefäßlos!)"]
+            ]
+          },
+          {
+            "title": "10. Wichtige Begriffe für die Prüfung ⭐",
+            "color": "#34495e",
+            "icon": "📖",
+            "isTable": true,
+            "tableHeaders": ["Begriff", "Definition"],
+            "tableRows": [
+              ["Hyperplasie", "Zellzahlvermehrung (physiologisch möglich)"],
+              ["Hypertrophie", "Zellvergrößerung (z.B. Herzmuskel bei Hypertonie)"],
+              ["Atrophie", "Zellverkleinerung/-schwund (z.B. Muskelatrophie)"],
+              ["Aplasie", "Ausbleiben der Organentwicklung"],
+              ["Metaplasie", "Umwandlung in anderen Zelltyp (z.B. Barrett-Ösophagus)"],
+              ["Dysplasie", "Abnorme Zelldifferenzierung (Krebsvorstufe!)"],
+              ["Anaplasie", "Entdifferenzierung → Tumorzellen"],
+              ["Nekrose", "Pathologischer Zelltod (Entzündung)"],
+              ["Apoptose", "Programmierter Zelltod (physiologisch)"]
+            ]
+          },
+          {
+            "title": "⚠️ Typische Prüfungsfragen",
+            "color": "#c0392b",
+            "icon": "❓",
+            "content": [
+              "**Welches Epithel kleidet die Harnblase aus?** → Übergangsepithel",
+              "**Wo findet man Flimmerepithel?** → Atemwege + Eileiter",
+              "**Welches Gewebe hat keine Blutgefäße?** → Knorpel + Epithel (Ernährung durch Diffusion)",
+              "**Was unterscheidet Apoptose von Nekrose?** → Apoptose = geordnet, ohne Entzündung",
+              "**Welche Muskulatur hat Glanzstreifen?** → Herzmuskulatur",
+              "**Was produzieren Fibroblasten?** → Kollagen + elastische Fasern",
+              "**Welche Zellen bilden die Myelinscheide im ZNS?** → Oligodendrozyten"
+            ]
+          }
+        ]
+      }
+    },
+    "blut": {
+      "id": "blut",
+      "name": "🩸 Blut",
+      "title": "Blut – Anatomie & Physiologie",
+      "subtitle": "Skript nach HP A. Beck · Paracelsus-Schulen · Blutbestandteile, Funktion, Gerinnung & Blutgruppen",
+      "pruefungswichtig": {
+        "enabled": true,
+        "sections": [
+          {
+            "title": "1. Zusammensetzung des Blutes",
+            "color": "#b8860b",
+            "icon": "🩸",
+            "content": [
+              "**Gesamtvolumen:** ~5–6 L (Mann), ~4–5 L (Frau)",
+              "**Plasma (55%):** Wasser, Proteine (Albumin, Globuline, Fibrinogen), Elektrolyte",
+              "**Zelluläre Bestandteile (45%):** Erythrozyten, Leukozyten, Thrombozyten",
+              "**Hämatokrit:** Anteil der Zellen am Gesamtblut (Norm: Mann 42–52%, Frau 37–47%)"
+            ]
+          },
+          {
+            "title": "2. Erythrozyten ⭐ (sehr prüfungsrelevant)",
+            "color": "#c0392b",
+            "icon": "🔴",
+            "content": [
+              "**Anzahl:** 4,5–5,5 Mio/µl",
+              "**Lebensdauer:** 120 Tage, Abbau in Milz",
+              "Kein Zellkern, keine Mitochondrien → **anaerobe Glykolyse**",
+              "**Hämoglobin:** Sauerstofftransport (Hb-Norm: Mann 14–18 g/dl, Frau 12–16 g/dl)",
+              "**Retikulozyten** = unreife Erythrozyten (Aktivitätsmarker der Blutbildung)",
+              "**Bildung:** Knochenmark, gesteuert durch EPO (Erythropoetin, aus Niere)"
+            ]
+          },
+          {
+            "title": "3. Leukozyten ⭐⭐ (sehr wichtig!)",
+            "color": "#2980b9",
+            "icon": "⚪",
+            "content": [
+              "**Gesamtzahl:** 4.000–10.000/µl",
+              "**Neutrophile (50–70%):** Bakterienabwehr, Phagozytose",
+              "**Lymphozyten (25–35%):** T-/B-Zellen, spezifische Immunabwehr",
+              "**Monozyten (3–8%):** Phagozytose, werden zu Makrophagen",
+              "**Eosinophile (2–4%):** Parasitenabwehr, Allergie",
+              "**Basophile (0–1%):** Histamin, allergische Reaktionen",
+              "**Linksverschiebung** = mehr unreife Neutrophile → bakterielle Infektion"
+            ]
+          },
+          {
+            "title": "4. Thrombozyten ⭐",
+            "color": "#8e44ad",
+            "icon": "🟣",
+            "content": [
+              "**Anzahl:** 150.000–400.000/µl",
+              "**Lebensdauer:** 7–10 Tage",
+              "Bildung aus **Megakaryozyten** im Knochenmark",
+              "**Funktion:** primäre Hämostase (Thrombozytenpfropf)"
+            ]
+          },
+          {
+            "title": "5. Hämostase / Blutgerinnung ⭐⭐⭐ (top prüfungsrelevant!)",
+            "color": "#d35400",
+            "icon": "🩹",
+            "content": [
+              "**3 Phasen:** 1. Vasospasmus → 2. Primäre Hämostase (Thrombozytenaggregation) → 3. Sekundäre Hämostase (Gerinnungskaskade)",
+              "**Extrinsisch (schnell):** Gewebsverletzung → Faktor III → VII → gemeinsame Endstrecke",
+              "**Intrinsisch (langsam):** Kontaktaktivierung → Faktor XII → gemeinsame Endstrecke",
+              "**Gemeinsame Endstrecke:** Faktor X → Prothrombin → Thrombin → Fibrinogen → Fibrin",
+              "**Quick/INR:** extrinsisches System (Marcumar-Kontrolle)",
+              "**PTT:** intrinsisches System (Heparin-Kontrolle)",
+              "**Fibrinolyse:** Plasmin löst Fibringerinnsel auf → tPA aktiviert Plasminogen"
+            ]
+          },
+          {
+            "title": "6. Blutgruppen ABO + Rhesus ⭐⭐",
+            "color": "#27ae60",
+            "icon": "🅰️",
+            "content": [
+              "**A:** Antigen A auf Erythrozyt, Anti-B im Serum",
+              "**B:** Antigen B auf Erythrozyt, Anti-A im Serum",
+              "**AB:** Antigene A+B, keine Antikörper",
+              "**0:** keine Antigene, Anti-A + Anti-B im Serum",
+              "**Rhesus-positiv (85%):** D-Antigen vorhanden",
+              "**Rhesus-Inkompatibilität:** Rh- Mutter + Rh+ Kind → Morbus haemolyticus neonatorum → Anti-D-Prophylaxe!",
+              "**Universalspender:** 0 negativ | **Universalempfänger:** AB positiv"
+            ]
+          },
+          {
+            "title": "7. Hämatopoese (Blutbildung) ⭐",
+            "color": "#b8860b",
+            "icon": "🦴",
+            "content": [
+              "**Ort:** rotes Knochenmark (Sternum, Wirbelkörper, Becken)",
+              "Alle Zellen entstammen der **pluripotenten Stammzelle**",
+              "**Steuerung:** EPO (Erythrozyten), TPO (Thrombozyten), G-CSF (Granulozyten)",
+              "Beim Kind: gesamtes Knochenmark aktiv → beim Erwachsenen nur noch flache Knochen"
+            ]
+          },
+          {
+            "title": "8. Wichtige Laborwerte auswendig lernen ⭐⭐",
+            "color": "#2980b9",
+            "icon": "📊",
+            "isTable": true,
+            "tableHeaders": ["Parameter", "Normalwert"],
+            "tableRows": [
+              ["Hb Mann", "14–18 g/dl"],
+              ["Hb Frau", "12–16 g/dl"],
+              ["Hämatokrit Mann", "42–52%"],
+              ["Erythrozyten", "4,5–5,5 Mio/µl"],
+              ["Leukozyten", "4.000–10.000/µl"],
+              ["Thrombozyten", "150.000–400.000/µl"],
+              ["Quick", "70–130%"],
+              ["INR", "0,8–1,2"],
+              ["PTT", "25–38 sec"]
+            ]
+          },
+          {
+            "title": "⚠️ Typische Prüfungsfallen",
+            "color": "#c0392b",
+            "icon": "⚠️",
+            "content": [
+              "Erythrozyten haben **keinen Zellkern** → kein Vitamin B12/Folsäure-Bedarf für DNA, aber trotzdem Mangel-Anämie möglich",
+              "**Linksverschiebung** = mehr Stab- und Bandkernige → immer bakterielle Ursache denken",
+              "**Heparin verlängert PTT** | **Marcumar verlängert Quick/INR**",
+              "**0 negativ = Universalspender** (nur Erythrozyten!)",
+              "**Morbus haemolyticus neonatorum:** erst ab 2. Schwangerschaft gefährlich (1. Schwangerschaft = Sensibilisierung)"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
