@@ -730,6 +730,274 @@ app.delete('/api/karteikarten/:deckId/progress', (req, res) => {
 });
 
 // ═══════════════════════════════════════════════════════════════
+// FEHLER-DASHBOARD & SPACED REPETITION API
+// ═══════════════════════════════════════════════════════════════
+
+const FEHLER_FILE = path.join(DATA_DIR, 'quiz-fehler.json');
+const SRS_FILE = path.join(DATA_DIR, 'quiz-srs.json');
+
+// Fehler-Daten laden
+function loadFehler() {
+  if (fs.existsSync(FEHLER_FILE)) {
+    return JSON.parse(fs.readFileSync(FEHLER_FILE, 'utf-8'));
+  }
+  return { 
+    version: '1.0',
+    lastUpdated: new Date().toISOString(),
+    fehler: {} // { questionId: { questionId, question, category, wrongCount, correctCount, lastWrong, lastCorrect, givenAnswers: [] } }
+  };
+}
+
+// Fehler-Daten speichern
+function saveFehler(data) {
+  data.lastUpdated = new Date().toISOString();
+  fs.writeFileSync(FEHLER_FILE, JSON.stringify(data, null, 2));
+}
+
+// SRS-Daten laden
+function loadSRS() {
+  if (fs.existsSync(SRS_FILE)) {
+    return JSON.parse(fs.readFileSync(SRS_FILE, 'utf-8'));
+  }
+  return {
+    version: '1.0',
+    lastUpdated: new Date().toISOString(),
+    questions: {} // { questionId: { interval, repetition, easeFactor, nextReview, lastReview } }
+  };
+}
+
+// SRS-Daten speichern
+function saveSRS(data) {
+  data.lastUpdated = new Date().toISOString();
+  fs.writeFileSync(SRS_FILE, JSON.stringify(data, null, 2));
+}
+
+// SM-2 Algorithmus
+function calculateSM2(quality, currentData) {
+  // quality: 0-5 (0-2 = falsch, 3-5 = richtig)
+  // Default-Werte für neue Fragen
+  let { interval = 0, repetition = 0, easeFactor = 2.5 } = currentData || {};
+  
+  if (quality < 3) {
+    // Falsch beantwortet: Reset
+    return {
+      interval: 1,
+      repetition: 0,
+      easeFactor: Math.max(1.3, easeFactor - 0.2)
+    };
+  }
+  
+  // Richtig beantwortet
+  const newEF = Math.max(1.3, easeFactor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
+  
+  let newInterval;
+  if (repetition === 0) {
+    newInterval = 1;
+  } else if (repetition === 1) {
+    newInterval = 6;
+  } else {
+    newInterval = Math.round(interval * newEF);
+  }
+  
+  return {
+    interval: newInterval,
+    repetition: repetition + 1,
+    easeFactor: newEF
+  };
+}
+
+// ── Fehler-API ──
+
+// Alle Fehler laden
+app.get('/api/fehler', (req, res) => {
+  try {
+    const data = loadFehler();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Fehler nach Kategorie laden
+app.get('/api/fehler/:category', (req, res) => {
+  try {
+    const data = loadFehler();
+    const categoryFehler = Object.values(data.fehler).filter(f => f.category === req.params.category);
+    res.json(categoryFehler);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Antwort tracken (sowohl Fehler als auch richtige)
+app.post('/api/fehler/track', (req, res) => {
+  try {
+    const { questionId, question, category, explanation, answers, correctIndex, isCorrect, givenIndex } = req.body;
+    
+    if (!questionId) {
+      return res.status(400).json({ error: 'questionId erforderlich' });
+    }
+    
+    const fehlerData = loadFehler();
+    const srsData = loadSRS();
+    
+    // Fehler-Tracking
+    if (!fehlerData.fehler[questionId]) {
+      fehlerData.fehler[questionId] = {
+        questionId,
+        question: question || '',
+        category: category || '',
+        explanation: explanation || '',
+        answers: answers || [],
+        correctIndex: correctIndex,
+        wrongCount: 0,
+        correctCount: 0,
+        lastWrong: null,
+        lastCorrect: null,
+        givenAnswers: []
+      };
+    }
+    
+    const entry = fehlerData.fehler[questionId];
+    entry.givenAnswers.push({
+      index: givenIndex,
+      correct: isCorrect,
+      timestamp: new Date().toISOString()
+    });
+    
+    if (isCorrect) {
+      entry.correctCount++;
+      entry.lastCorrect = new Date().toISOString();
+    } else {
+      entry.wrongCount++;
+      entry.lastWrong = new Date().toISOString();
+    }
+    
+    saveFehler(fehlerData);
+    
+    // SRS-Update (SM-2)
+    const quality = isCorrect ? 4 : 1; // Vereinfacht: richtig=4, falsch=1
+    const currentSRS = srsData.questions[questionId] || {};
+    const newSRS = calculateSM2(quality, currentSRS);
+    
+    const nextReview = new Date();
+    nextReview.setDate(nextReview.getDate() + newSRS.interval);
+    
+    srsData.questions[questionId] = {
+      ...newSRS,
+      nextReview: nextReview.toISOString().split('T')[0], // YYYY-MM-DD
+      lastReview: new Date().toISOString().split('T')[0],
+      category: category || currentSRS.category
+    };
+    
+    saveSRS(srsData);
+    
+    res.json({ 
+      success: true, 
+      fehler: entry,
+      srs: srsData.questions[questionId]
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Fehler löschen (einzelne Frage aus Fehler-Liste entfernen)
+app.delete('/api/fehler/:questionId', (req, res) => {
+  try {
+    const data = loadFehler();
+    delete data.fehler[req.params.questionId];
+    saveFehler(data);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Alle Fehler zurücksetzen
+app.delete('/api/fehler', (req, res) => {
+  try {
+    saveFehler({ version: '1.0', lastUpdated: new Date().toISOString(), fehler: {} });
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ── SRS-API ──
+
+// Alle SRS-Daten laden
+app.get('/api/srs', (req, res) => {
+  try {
+    const data = loadSRS();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Fällige Fragen laden (nextReview <= heute)
+app.get('/api/srs/due', (req, res) => {
+  try {
+    const data = loadSRS();
+    const today = new Date().toISOString().split('T')[0];
+    const dueQuestions = Object.entries(data.questions)
+      .filter(([id, q]) => q.nextReview <= today)
+      .map(([id, q]) => ({ questionId: id, ...q }));
+    
+    res.json({
+      count: dueQuestions.length,
+      questions: dueQuestions
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Fällige Fragen nach Kategorie
+app.get('/api/srs/due/:category', (req, res) => {
+  try {
+    const data = loadSRS();
+    const today = new Date().toISOString().split('T')[0];
+    const dueQuestions = Object.entries(data.questions)
+      .filter(([id, q]) => q.nextReview <= today && q.category === req.params.category)
+      .map(([id, q]) => ({ questionId: id, ...q }));
+    
+    res.json({
+      count: dueQuestions.length,
+      questions: dueQuestions
+    });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// SRS für eine Frage abrufen
+app.get('/api/srs/:questionId', (req, res) => {
+  try {
+    const data = loadSRS();
+    const srs = data.questions[req.params.questionId];
+    if (srs) {
+      res.json(srs);
+    } else {
+      res.status(404).json({ error: 'Keine SRS-Daten für diese Frage' });
+    }
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// SRS zurücksetzen
+app.delete('/api/srs', (req, res) => {
+  try {
+    saveSRS({ version: '1.0', lastUpdated: new Date().toISOString(), questions: {} });
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════
 // SERVER STARTEN
 // ═══════════════════════════════════════════════════════════════
 
