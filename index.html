@@ -685,6 +685,265 @@
   .lk-btn-close:hover { border-color: var(--gold); }
 
   /* ══════════════════════════════════════════════════════════════════
+     FEHLER-DASHBOARD & SPACED REPETITION
+     ══════════════════════════════════════════════════════════════════ */
+  
+  .fehler-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--space-md);
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+  
+  .fehler-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+  
+  .fehler-stat-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-sm);
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  
+  .fehler-stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  
+  .fehler-stat-number.error { color: var(--color-error); }
+  .fehler-stat-number.success { color: var(--color-success); }
+  .fehler-stat-number.warning { color: var(--color-warning); }
+  .fehler-stat-number.primary { color: var(--color-primary); }
+  
+  .fehler-stat-label {
+    font-size: 13px;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+  }
+  
+  .fehler-actions {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+  }
+  
+  .fehler-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.15s;
+    min-height: 44px;
+  }
+  
+  .fehler-action-btn:hover {
+    background: var(--color-primary-dark);
+    transform: translateY(-1px);
+  }
+  
+  .fehler-action-btn.secondary {
+    background: var(--color-secondary);
+  }
+  
+  .fehler-action-btn.secondary:hover {
+    background: #4aa77a;
+  }
+  
+  .fehler-action-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+  }
+  
+  .fehler-filter {
+    display: flex;
+    gap: var(--space-xs);
+    flex-wrap: wrap;
+    margin-bottom: var(--space-md);
+  }
+  
+  .fehler-filter-btn {
+    padding: 8px 16px;
+    background: var(--color-surface);
+    border: 2px solid var(--color-border);
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.15s;
+    min-height: 36px;
+  }
+  
+  .fehler-filter-btn:hover {
+    border-color: var(--color-primary);
+  }
+  
+  .fehler-filter-btn.active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: white;
+  }
+  
+  .fehler-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .fehler-card {
+    background: var(--color-surface);
+    border-radius: var(--radius-lg);
+    padding: var(--space-sm);
+    box-shadow: var(--shadow);
+    border-left: 4px solid var(--color-error);
+  }
+  
+  .fehler-card.mastered {
+    border-left-color: var(--color-success);
+  }
+  
+  .fehler-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: var(--space-xs);
+    margin-bottom: 8px;
+  }
+  
+  .fehler-category-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 10px;
+    background: rgba(74, 144, 217, 0.1);
+    color: var(--color-primary);
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  
+  .fehler-question {
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--color-text);
+    margin-bottom: 8px;
+  }
+  
+  .fehler-meta {
+    display: flex;
+    gap: var(--space-sm);
+    flex-wrap: wrap;
+    font-size: 13px;
+    color: var(--color-text-muted);
+  }
+  
+  .fehler-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .fehler-meta-item.wrong { color: var(--color-error); }
+  .fehler-meta-item.right { color: var(--color-success); }
+  
+  .fehler-card-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: var(--space-xs);
+  }
+  
+  .fehler-card-btn {
+    padding: 8px 12px;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: all 0.15s;
+    min-height: 36px;
+  }
+  
+  .fehler-card-btn.practice {
+    background: var(--color-primary);
+    color: white;
+  }
+  
+  .fehler-card-btn.practice:hover {
+    background: var(--color-primary-dark);
+  }
+  
+  .fehler-card-btn.remove {
+    background: rgba(255, 59, 48, 0.1);
+    color: var(--color-error);
+  }
+  
+  .fehler-card-btn.remove:hover {
+    background: rgba(255, 59, 48, 0.2);
+  }
+  
+  .fehler-empty {
+    text-align: center;
+    padding: var(--space-lg);
+    color: var(--color-text-muted);
+  }
+  
+  .fehler-empty-icon {
+    font-size: 48px;
+    margin-bottom: var(--space-sm);
+    opacity: 0.5;
+  }
+  
+  .fehler-empty-text {
+    font-size: 16px;
+    margin-bottom: var(--space-xs);
+  }
+  
+  .fehler-empty-sub {
+    font-size: 14px;
+    opacity: 0.8;
+  }
+  
+  /* SRS Due Badge */
+  .srs-due-badge {
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    min-width: 18px;
+    height: 18px;
+    background: var(--color-error);
+    color: white;
+    border-radius: 9px;
+    font-size: 11px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 5px;
+  }
+  
+  .ios-tab-item {
+    position: relative;
+  }
+
+  /* ══════════════════════════════════════════════════════════════════
      KARTEIKARTEN SYSTEM
      ══════════════════════════════════════════════════════════════════ */
   
@@ -1313,6 +1572,252 @@
   .callout strong { color: var(--ink); }
 
   /* Phase stepper */
+  /* ── PRÜFUNGS-KOMPAKT-BLOCK ── */
+  .pruefung-kompakt {
+    background: linear-gradient(135deg, #fff8e7 0%, #fef3cd 100%);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius-lg);
+    padding: var(--space-md);
+    margin: var(--space-md) 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .pruefung-kompakt::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-secondary) 50%, var(--color-primary) 100%);
+  }
+  .pruefung-kompakt-header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-sm);
+    padding-top: var(--space-xs);
+  }
+  .pruefung-kompakt-header i {
+    color: var(--color-accent);
+  }
+  .pruefung-kompakt-title {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+  .pruefung-kompakt-subtitle {
+    font-size: 14px;
+    color: var(--color-text-muted);
+    margin-left: auto;
+    background: rgba(245,166,35,0.15);
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+  .pk-section {
+    margin-bottom: var(--space-sm);
+  }
+  .pk-section-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pk-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: var(--space-xs);
+  }
+  .pk-fact {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 10px 12px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .pk-fact-number {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--color-primary);
+    line-height: 1.1;
+  }
+  .pk-fact-label {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-top: 2px;
+  }
+  .pk-alert {
+    background: rgba(255,59,48,0.08);
+    border-left: 3px solid var(--color-error);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .pk-alert i {
+    color: var(--color-error);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .pk-alert-text {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .pk-alert-text strong {
+    color: var(--color-error);
+  }
+  .pk-mnemonic {
+    background: linear-gradient(135deg, rgba(91,184,138,0.12) 0%, rgba(74,144,217,0.12) 100%);
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-bottom: 10px;
+  }
+  .pk-mnemonic-header {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 6px;
+  }
+  .pk-mnemonic-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--color-text);
+    letter-spacing: 0.5px;
+  }
+  .pk-mnemonic-explain {
+    font-size: 12px;
+    color: var(--color-text-muted);
+    margin-top: 4px;
+  }
+  .pk-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    margin-top: 8px;
+  }
+  .pk-table th {
+    background: var(--color-primary);
+    color: white;
+    padding: 8px 10px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .pk-table th:first-child {
+    border-radius: var(--radius-sm) 0 0 0;
+  }
+  .pk-table th:last-child {
+    border-radius: 0 var(--radius-sm) 0 0;
+  }
+  .pk-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    background: white;
+  }
+  .pk-table tr:last-child td:first-child {
+    border-radius: 0 0 0 var(--radius-sm);
+  }
+  .pk-table tr:last-child td:last-child {
+    border-radius: 0 0 var(--radius-sm) 0;
+  }
+  .pk-table tr:hover td {
+    background: rgba(74,144,217,0.05);
+  }
+  .pk-chip {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .pk-chip-green {
+    background: rgba(52,199,89,0.15);
+    color: #1a7a45;
+  }
+  .pk-chip-orange {
+    background: rgba(245,166,35,0.15);
+    color: #b37400;
+  }
+  .pk-chip-blue {
+    background: rgba(74,144,217,0.15);
+    color: #2563a8;
+  }
+  .pk-compare {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xs);
+  }
+  @media (max-width: 500px) {
+    .pk-compare {
+      grid-template-columns: 1fr;
+    }
+  }
+  .pk-compare-card {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 12px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+  }
+  .pk-compare-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pk-compare-list {
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+  }
+  .pk-quick-test {
+    background: white;
+    border-radius: var(--radius-sm);
+    padding: 12px 14px;
+    margin-top: var(--space-sm);
+  }
+  .pk-quick-test-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pk-quick-test-q {
+    font-size: 13px;
+    padding: 6px 0;
+    border-bottom: 1px dashed #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .pk-quick-test-q:last-child {
+    border-bottom: none;
+  }
+  .pk-answer {
+    font-size: 12px;
+    color: white;
+    background: var(--color-secondary);
+    padding: 2px 8px;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .pk-quick-test-q:hover .pk-answer {
+    opacity: 1;
+  }
+
   .phase-list {
     display: flex;
     flex-wrap: wrap;
@@ -2573,75 +3078,84 @@
   }
 
   /* ══════════════════════════════════════════════════════════════
-     ANHÄNGE / DOKUMENTE STYLES
+     ANHÄNGE / DOKUMENTE STYLES - iPhone Optimiert
      ══════════════════════════════════════════════════════════════ */
   .anhaenge-section {
-    margin-top: 2rem;
-    padding: 1.5rem;
-    background: #faf8f4;
-    border: 2px dashed #d4cfc5;
-    border-radius: 12px;
+    margin-top: var(--space-md);
+    padding: var(--space-sm);
+    background: var(--color-bg);
+    border: 2px dashed rgba(0,0,0,0.1);
+    border-radius: var(--radius-lg);
   }
   .anhaenge-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-bottom: 1rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid #e8e2d8;
+    gap: var(--space-xs);
+    margin-bottom: var(--space-sm);
+    padding-bottom: var(--space-xs);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
   }
   .anhaenge-header-actions {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
     flex-wrap: wrap;
   }
   .anhaenge-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.2rem;
-    color: var(--blue-dark);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-primary);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
   }
   .anhaenge-add-btn {
     display: flex;
     align-items: center;
-    gap: 0.4rem;
-    padding: 0.5rem 1rem;
-    background: var(--sage);
+    gap: 6px;
+    padding: 10px 16px;
+    background: var(--color-secondary);
     color: white;
     border: none;
-    border-radius: 8px;
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.9rem;
+    border-radius: var(--radius-sm);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.15s;
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
-  .anhaenge-add-btn:hover {
-    background: var(--sage-light);
-    transform: translateY(-2px);
+  .anhaenge-add-btn:active {
+    transform: scale(0.96);
+    opacity: 0.85;
   }
   .anhaenge-add-btn .plus-icon {
-    font-size: 1.2rem;
+    font-size: 18px;
     font-weight: bold;
   }
   .anhaenge-btn-small {
-    padding: 0.4rem 0.8rem;
-    background: #f8f6f2;
-    color: var(--ink);
-    border: 1px solid #e8e2d8;
-    border-radius: 6px;
-    font-family: 'Source Serif 4', serif;
-    font-size: 0.8rem;
+    padding: 10px 14px;
+    background: var(--color-surface);
+    color: var(--color-text);
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: var(--radius-sm);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.15s;
+    min-height: 44px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
-  .anhaenge-btn-small:hover {
-    background: #fff;
-    border-color: var(--gold);
+  .anhaenge-btn-small:active {
+    transform: scale(0.96);
+    background: var(--color-bg);
   }
   .anhaenge-import-label {
     display: inline-flex;
@@ -2649,35 +3163,35 @@
   }
   .anhaenge-empty {
     text-align: center;
-    padding: 2rem;
-    color: #999;
+    padding: var(--space-lg);
+    color: var(--color-text-muted);
   }
   .anhaenge-empty-icon {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    opacity: 0.5;
+    font-size: 48px;
+    margin-bottom: var(--space-xs);
+    opacity: 0.4;
   }
   .anhaenge-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: var(--space-sm);
   }
   .anhang-card {
-    background: white;
-    border: 1px solid #e8e2d8;
-    border-radius: 10px;
+    background: var(--color-surface);
+    border: none;
+    border-radius: var(--radius-md);
     overflow: hidden;
-    transition: all 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     position: relative;
+    box-shadow: var(--shadow);
   }
-  .anhang-card:hover {
-    box-shadow: 0 4px 15px var(--shadow);
-    transform: translateY(-2px);
+  .anhang-card:active {
+    transform: scale(0.98);
   }
   .anhang-preview {
     width: 100%;
-    height: 120px;
-    background: #f0ebe3;
+    height: 100px;
+    background: var(--color-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2689,139 +3203,231 @@
     object-fit: cover;
   }
   .anhang-preview-icon {
-    font-size: 3rem;
-    opacity: 0.6;
+    font-size: 2.5rem;
+    opacity: 0.5;
   }
   .anhang-info {
-    padding: 0.8rem;
+    padding: 12px;
   }
   .anhang-name {
-    font-size: 0.85rem;
+    font-size: 15px;
     font-weight: 600;
-    color: var(--ink);
+    color: var(--color-text);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin-bottom: 0.3rem;
+    margin-bottom: 4px;
   }
   .anhang-meta {
-    font-size: 0.75rem;
-    color: #888;
+    font-size: 13px;
+    color: var(--color-text-muted);
   }
   .anhang-actions {
     display: flex;
-    gap: 0.5rem;
-    margin-top: 0.5rem;
+    gap: 8px;
+    margin-top: 8px;
   }
   .anhang-btn {
     flex: 1;
-    padding: 0.4rem;
+    padding: 10px 8px;
     border: none;
-    border-radius: 5px;
-    font-size: 0.75rem;
+    border-radius: var(--radius-sm);
+    font-size: 13px;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.15s;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
   }
   .anhang-btn-view {
-    background: var(--blue-dark);
+    background: var(--color-primary);
     color: white;
   }
-  .anhang-btn-view:hover { background: #2c4a6f; }
-  .anhang-btn-delete {
-    background: #f5e6e6;
-    color: var(--red);
+  .anhang-btn-view:active { 
+    transform: scale(0.96);
+    opacity: 0.85;
   }
-  .anhang-btn-delete:hover { background: #f0d0d0; }
+  .anhang-btn-delete {
+    background: rgba(255, 59, 48, 0.12);
+    color: var(--color-error);
+  }
+  .anhang-btn-delete:active { 
+    transform: scale(0.96);
+    background: rgba(255, 59, 48, 0.2);
+  }
 
-  /* Lightbox für Bild-Vorschau */
+  /* Lightbox für Bild-Vorschau - iPhone Optimiert */
   .anhang-lightbox {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.9);
+    background: rgba(0,0,0,0.95);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 10000;
-    padding: 2rem;
+    padding: calc(var(--safe-top, env(safe-area-inset-top, 20px)) + 60px) var(--space-sm) calc(var(--safe-bottom, env(safe-area-inset-bottom, 20px)) + 20px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
   .anhang-lightbox img {
-    max-width: 90%;
-    max-height: 90%;
-    border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    touch-action: pinch-zoom;
   }
   .anhang-lightbox-close {
-    position: absolute;
-    top: 1rem;
-    right: 1.5rem;
-    background: white;
+    position: fixed;
+    top: calc(var(--safe-top, env(safe-area-inset-top, 20px)) + 12px);
+    right: 16px;
+    background: rgba(255,255,255,0.95);
     border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    font-size: 1.5rem;
+    width: 44px;
+    height: 44px;
+    border-radius: 22px;
+    font-size: 24px;
+    font-weight: 300;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: var(--color-text);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: transform 0.15s, opacity 0.15s;
+  }
+  .anhang-lightbox-close:active {
+    transform: scale(0.92);
+    opacity: 0.8;
+  }
+  /* Download-Button in Lightbox */
+  .anhang-lightbox-actions {
+    position: fixed;
+    bottom: calc(var(--safe-bottom, env(safe-area-inset-bottom, 20px)) + 16px);
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+  }
+  .anhang-lightbox-btn {
+    background: rgba(255,255,255,0.95);
+    color: var(--color-primary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
+    min-height: 44px;
+    min-width: 44px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    transition: transform 0.15s;
+  }
+  .anhang-lightbox-btn:active {
+    transform: scale(0.96);
   }
 
-  /* Dokument-Vorschau Modal */
+  /* Dokument-Vorschau Modal - iPhone Optimiert */
   .doc-preview-modal {
     position: fixed;
     inset: 0;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.9);
     z-index: 10000;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: calc(var(--safe-top, env(safe-area-inset-top, 20px)) + 8px) 8px calc(var(--safe-bottom, env(safe-area-inset-bottom, 20px)) + 8px);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   }
   .doc-preview-header {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 1rem;
-    background: white;
-    border-radius: 10px 10px 0 0;
-    border-bottom: 1px solid #e8e2d8;
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    background: var(--color-surface);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  @media (min-width: 500px) {
+    .doc-preview-header {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
   .doc-preview-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--color-text);
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 8px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   .doc-preview-actions {
     display: flex;
-    gap: 0.5rem;
+    gap: 8px;
+    flex-shrink: 0;
   }
   .doc-preview-btn {
-    padding: 0.5rem 1rem;
+    padding: 12px 16px;
     border: none;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.15s;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+    flex: 1;
+  }
+  @media (min-width: 500px) {
+    .doc-preview-btn {
+      flex: none;
+    }
   }
   .doc-preview-btn-download {
-    background: var(--blue-dark);
+    background: var(--color-primary);
     color: white;
   }
-  .doc-preview-btn-download:hover { background: #2c4a6f; }
-  .doc-preview-btn-close {
-    background: #f0ebe3;
-    color: var(--ink);
+  .doc-preview-btn-download:active { 
+    transform: scale(0.96);
+    opacity: 0.85;
   }
-  .doc-preview-btn-close:hover { background: #e8e2d8; }
+  .doc-preview-btn-close {
+    background: rgba(0,0,0,0.06);
+    color: var(--color-text);
+  }
+  .doc-preview-btn-close:active {
+    transform: scale(0.96);
+    background: rgba(0,0,0,0.1);
+  }
   .doc-preview-content {
     flex: 1;
-    background: white;
-    border-radius: 0 0 10px 10px;
+    background: var(--color-surface);
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
     overflow: hidden;
     display: flex;
     align-items: stretch;
+    min-height: 0; /* für korrektes Flexbox-Verhalten */
   }
   .doc-preview-content iframe,
   .doc-preview-content object {
@@ -2832,14 +3438,16 @@
   .doc-preview-text {
     width: 100%;
     height: 100%;
-    padding: 1.5rem;
+    padding: var(--space-sm);
     overflow: auto;
-    font-family: 'Source Serif 4', serif;
-    font-size: 1rem;
-    line-height: 1.7;
+    -webkit-overflow-scrolling: touch;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
     white-space: pre-wrap;
     word-wrap: break-word;
-    background: #faf8f4;
+    background: var(--color-bg);
+    color: var(--color-text);
   }
   .doc-preview-unsupported {
     width: 100%;
@@ -2847,23 +3455,28 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 3rem;
+    padding: var(--space-lg) var(--space-sm);
     text-align: center;
-    background: #faf8f4;
+    background: var(--color-bg);
   }
   .doc-preview-unsupported-icon {
-    font-size: 4rem;
-    margin-bottom: 1rem;
+    font-size: 64px;
+    margin-bottom: var(--space-sm);
     opacity: 0.5;
   }
   .doc-preview-unsupported h3 {
-    font-family: 'Playfair Display', serif;
-    color: var(--ink);
-    margin-bottom: 0.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: 8px;
   }
   .doc-preview-unsupported p {
-    color: #666;
-    margin-bottom: 1.5rem;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+    max-width: 300px;
   }
 
   /* Hidden file input */
@@ -3974,6 +4587,14 @@
     </div>
   </div>
 
+  <!-- ═══════════════════════════════════════════════════════ -->
+  <!-- FEHLER-DASHBOARD AREA -->
+  <div id="fehler-area" style="display:none;">
+    <div id="fehler-screen">
+      <div id="fehler-content"></div>
+    </div>
+  </div>
+
 </div> <!-- Ende ios-scroll-wrapper -->
 </div> <!-- Ende ios-content -->
 
@@ -3988,9 +4609,12 @@
     <span class="ios-tab-icon"><i data-lucide="book-open" style="width:24px;height:24px;stroke-width:1.8;"></i></span>
     <span class="ios-tab-label">Wissen</span>
   </button>
-  <button class="ios-tab-item" onclick="switchMainTab('terminologie')" data-tab="terminologie">
-    <span class="ios-tab-icon"><i data-lucide="search" style="width:24px;height:24px;stroke-width:1.8;"></i></span>
-    <span class="ios-tab-label">Glossar</span>
+  <button class="ios-tab-item" onclick="switchMainTab('fehler')" data-tab="fehler">
+    <span class="ios-tab-icon" style="position:relative;">
+      <i data-lucide="alert-circle" style="width:24px;height:24px;stroke-width:1.8;"></i>
+      <span class="srs-due-badge" id="srs-due-badge" style="display:none;">0</span>
+    </span>
+    <span class="ios-tab-label">Fehler</span>
   </button>
   <button class="ios-tab-item" onclick="switchMainTab('diagnose')" data-tab="diagnose">
     <span class="ios-tab-icon"><i data-lucide="stethoscope" style="width:24px;height:24px;stroke-width:1.8;"></i></span>
@@ -4437,6 +5061,7 @@ const iosNavTitles = {
   terminologie: 'Glossar',
   diagnose: 'Diagnose',
   pruefung: 'Prüfung',
+  fehler: 'Fehler & Wiederholung',
   admin: 'Einstellungen'
 };
 
@@ -4446,6 +5071,7 @@ function switchMainTab(tab) {
   const termArea       = document.getElementById('terminologie-area');
   const diagnoseArea   = document.getElementById('diagnose-area');
   const pruefungArea   = document.getElementById('pruefung-area');
+  const fehlerArea     = document.getElementById('fehler-area');
   const adminArea      = document.getElementById('admin-area');
   
   // Update iOS Tab Bar
@@ -4466,6 +5092,7 @@ function switchMainTab(tab) {
   termArea.style.display     = 'none';
   diagnoseArea.style.display = 'none';
   pruefungArea.style.display = 'none';
+  fehlerArea.style.display   = 'none';
   adminArea.style.display    = 'none';
   
   // Show selected area
@@ -4488,6 +5115,9 @@ function switchMainTab(tab) {
     pruefungArea.style.display = 'block';
     document.querySelectorAll('.main-tab')[4]?.classList.add('active');
     initPruefungstrainer();
+  } else if (tab === 'fehler') {
+    fehlerArea.style.display = 'block';
+    initFehlerDashboard();
   } else if (tab === 'admin') {
     adminArea.style.display = 'block';
     document.querySelectorAll('.main-tab')[5]?.classList.add('active');
@@ -5179,6 +5809,8 @@ function showWissenTopic(id) {
   const container = document.getElementById('wissen-content');
   container.innerHTML = '';
   topic.render(container);
+  // Render Lucide icons in the new content
+  if (typeof lucide !== 'undefined') lucide.createIcons();
   // Append Lernkontrolle button at bottom
   const questions = LERNKONTROLLE[id];
   if (questions && questions.length) {
@@ -5193,24 +5825,84 @@ function showWissenTopic(id) {
 }
 
 // ─── Lernkontrolle Quiz Engine ──────────────────────────────────
-function startLernkontrolle(topicId) {
-  const questions = [...LERNKONTROLLE[topicId]];
-  // Shuffle
+function startLernkontrolle(topicId, fehlerMode = false, dueMode = false) {
+  // Get questions - either from topic, from error list, or from SRS due list
+  let questions = [];
+  let originalIndices = [];
+  
+  if (fehlerMode) {
+    // Fehler-Quiz: nur falsche Fragen
+    const fehlerData = window._fehlerCache || {};
+    questions = Object.values(fehlerData).filter(f => 
+      f.wrongCount > f.correctCount && (!topicId || f.category === topicId)
+    ).map(f => ({
+      q: f.question,
+      a: f.answers,
+      c: f.correctIndex,
+      e: f.explanation,
+      _id: f.questionId,
+      _cat: f.category
+    }));
+    if (questions.length === 0) {
+      alert('Keine Fehler zum Wiederholen vorhanden!');
+      return;
+    }
+  } else if (dueMode) {
+    // SRS-Modus: nur fällige Fragen
+    const srsData = window._srsCache || {};
+    const today = new Date().toISOString().split('T')[0];
+    const dueIds = Object.entries(srsData)
+      .filter(([id, d]) => d.nextReview <= today && (!topicId || d.category === topicId))
+      .map(([id]) => id);
+    
+    // Find matching questions from all topics
+    for (const [tid, qs] of Object.entries(LERNKONTROLLE)) {
+      qs.forEach((q, idx) => {
+        const qid = `${tid}_q_${idx}`;
+        if (dueIds.includes(qid)) {
+          questions.push({ ...q, _id: qid, _cat: tid });
+          originalIndices.push({ topicId: tid, index: idx });
+        }
+      });
+    }
+    if (questions.length === 0) {
+      alert('Keine fälligen Fragen vorhanden!');
+      return;
+    }
+  } else {
+    // Normal mode
+    const sourceQuestions = LERNKONTROLLE[topicId] || [];
+    questions = sourceQuestions.map((q, idx) => ({
+      ...q,
+      _id: `${topicId}_q_${idx}`,
+      _cat: topicId,
+      _origIdx: idx
+    }));
+    originalIndices = questions.map((_, idx) => ({ topicId, index: idx }));
+  }
+  
+  // Shuffle questions
   for (let i = questions.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [questions[i], questions[j]] = [questions[j], questions[i]];
+    if (originalIndices.length) {
+      [originalIndices[i], originalIndices[j]] = [originalIndices[j], originalIndices[i]];
+    }
   }
+  
   let current = 0;
   let correct = 0;
   let answered = false;
+  let currentQuestion = null;
 
   // Build overlay
   const overlay = document.createElement('div');
   overlay.className = 'lk-overlay';
+  const modeTitle = fehlerMode ? '🔄 Fehler wiederholen' : dueMode ? '📅 Fällige Fragen' : '✏️ Lernkontrolle';
   overlay.innerHTML = `
     <div class="lk-modal">
       <div class="lk-header">
-        <h3>✏️ Lernkontrolle</h3>
+        <h3>${modeTitle}</h3>
         <button class="lk-close" onclick="this.closest('.lk-overlay').remove()">✕</button>
       </div>
       <div class="lk-body" id="lk-body"></div>
@@ -5219,9 +5911,11 @@ function startLernkontrolle(topicId) {
 
   function renderQuestion() {
     answered = false;
-    const q = questions[current];
+    currentQuestion = questions[current];
+    const q = currentQuestion;
     const body = document.getElementById('lk-body');
     const pct = Math.round(current / questions.length * 100);
+    
     // Shuffle answer order
     const indices = q.a.map((_,i)=>i);
     for (let i = indices.length-1; i>0; i--) {
@@ -5229,6 +5923,9 @@ function startLernkontrolle(topicId) {
       [indices[i],indices[j]] = [indices[j],indices[i]];
     }
     const correctShuffledIdx = indices.indexOf(q.c);
+    
+    // Store shuffled indices for tracking which answer was given
+    window._currentShuffledIndices = indices;
 
     body.innerHTML = `
       <div class="lk-progress-bar"><div class="lk-progress-fill" style="width:${pct}%"></div></div>
@@ -5236,8 +5933,8 @@ function startLernkontrolle(topicId) {
       <div class="lk-question">${q.q}</div>
       <div class="lk-answers" id="lk-answers">
         ${indices.map((origIdx, si) => `
-          <button class="lk-answer" data-shuffled="${si}" data-correct="${si === correctShuffledIdx}"
-            onclick="lkAnswer(this, ${si === correctShuffledIdx}, '${escHtml(q.e)}', ${correctShuffledIdx})">
+          <button class="lk-answer" data-shuffled="${si}" data-orig-idx="${origIdx}" data-correct="${si === correctShuffledIdx}"
+            onclick="lkAnswer(this, ${si === correctShuffledIdx}, '${escHtml(q.e)}', ${correctShuffledIdx}, ${origIdx})">
             ${q.a[origIdx]}
           </button>`).join('')}
       </div>
@@ -5249,10 +5946,24 @@ function startLernkontrolle(topicId) {
   }
 
   // Make functions accessible on window for inline handlers
-  window.lkAnswer = function(btn, isCorrect, explanation, correctIdx) {
+  window.lkAnswer = function(btn, isCorrect, explanation, correctIdx, givenOrigIdx) {
     if (answered) return;
     answered = true;
     if (isCorrect) correct++;
+    
+    // Track the answer via API
+    const q = currentQuestion;
+    trackQuizAnswer({
+      questionId: q._id,
+      question: q.q,
+      category: q._cat,
+      explanation: q.e,
+      answers: q.a,
+      correctIndex: q.c,
+      isCorrect: isCorrect,
+      givenIndex: givenOrigIdx
+    });
+    
     // Mark all answers
     document.querySelectorAll('.lk-answer').forEach((b, si) => {
       b.classList.add('answered');
@@ -5277,13 +5988,18 @@ function startLernkontrolle(topicId) {
 
   function showResult() {
     const pct = Math.round(correct / questions.length * 100);
-    setTopicScore(topicId, correct, questions.length);
-    refreshAllTabLabels();
-    // Update button in content
-    const contentBtn = document.querySelector('.lernkontrolle-btn');
-    if (contentBtn) {
-      contentBtn.querySelector('.btn-badge').textContent = pct + ' % zuletzt';
+    if (!fehlerMode && !dueMode) {
+      setTopicScore(topicId, correct, questions.length);
+      refreshAllTabLabels();
+      // Update button in content
+      const contentBtn = document.querySelector('.lernkontrolle-btn');
+      if (contentBtn) {
+        contentBtn.querySelector('.btn-badge').textContent = pct + ' % zuletzt';
+      }
     }
+    // Update SRS due badge
+    updateSRSDueBadge();
+    
     const colorClass = pct >= 80 ? 'great' : pct >= 50 ? 'mid' : 'low';
     const emoji = pct >= 80 ? '🎉' : pct >= 50 ? '👍' : '📚';
     const msg = pct >= 80
@@ -5291,6 +6007,11 @@ function startLernkontrolle(topicId) {
       : pct >= 50
       ? 'Gut gemacht! Einzelne Bereiche noch vertiefen.'
       : 'Weitermachen! Lies das Thema nochmal durch und starte neu.';
+    const retryFn = fehlerMode 
+      ? `startLernkontrolle('${topicId || ''}', true, false)`
+      : dueMode 
+      ? `startLernkontrolle('${topicId || ''}', false, true)`
+      : `startLernkontrolle('${topicId}')`;
     const body = document.getElementById('lk-body');
     body.innerHTML = `
       <div class="lk-result">
@@ -5298,7 +6019,7 @@ function startLernkontrolle(topicId) {
         <h3>${emoji} ${correct} von ${questions.length} richtig</h3>
         <p>${msg}</p>
         <div class="lk-result-btns">
-          <button class="lk-btn-retry" onclick="this.closest('.lk-overlay').remove(); startLernkontrolle('${topicId}')">
+          <button class="lk-btn-retry" onclick="this.closest('.lk-overlay').remove(); ${retryFn}">
             🔄 Nochmal
           </button>
           <button class="lk-btn-close" onclick="this.closest('.lk-overlay').remove()">
@@ -5314,6 +6035,321 @@ function startLernkontrolle(topicId) {
 function escHtml(str) {
   return str.replace(/'/g, "\\'").replace(/"/g, '&quot;');
 }
+
+// ═══════════════════════════════════════════════════════════════
+// FEHLER-DASHBOARD & SPACED REPETITION
+// ═══════════════════════════════════════════════════════════════
+
+// Cache for Fehler and SRS data
+window._fehlerCache = {};
+window._srsCache = {};
+
+// Track quiz answer (called after each answer)
+async function trackQuizAnswer(data) {
+  try {
+    const response = await fetch('/api/fehler/track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const result = await response.json();
+    if (result.success) {
+      // Update cache
+      window._fehlerCache[data.questionId] = result.fehler;
+      window._srsCache[data.questionId] = result.srs;
+    }
+  } catch (err) {
+    console.error('Fehler beim Tracken:', err);
+  }
+}
+
+// Load Fehler data from server
+async function loadFehlerData() {
+  try {
+    const response = await fetch('/api/fehler');
+    const data = await response.json();
+    window._fehlerCache = data.fehler || {};
+    return window._fehlerCache;
+  } catch (err) {
+    console.error('Fehler beim Laden der Fehler:', err);
+    return {};
+  }
+}
+
+// Load SRS data from server
+async function loadSRSData() {
+  try {
+    const response = await fetch('/api/srs');
+    const data = await response.json();
+    window._srsCache = data.questions || {};
+    return window._srsCache;
+  } catch (err) {
+    console.error('Fehler beim Laden der SRS-Daten:', err);
+    return {};
+  }
+}
+
+// Get due questions count
+async function getDueQuestionsCount() {
+  try {
+    const response = await fetch('/api/srs/due');
+    const data = await response.json();
+    return data.count || 0;
+  } catch (err) {
+    return 0;
+  }
+}
+
+// Update SRS due badge in tab bar
+async function updateSRSDueBadge() {
+  const badge = document.getElementById('srs-due-badge');
+  if (!badge) return;
+  
+  const count = await getDueQuestionsCount();
+  if (count > 0) {
+    badge.textContent = count > 99 ? '99+' : count;
+    badge.style.display = 'flex';
+  } else {
+    badge.style.display = 'none';
+  }
+}
+
+// Delete a Fehler entry
+async function deleteFehler(questionId) {
+  try {
+    await fetch(`/api/fehler/${encodeURIComponent(questionId)}`, { method: 'DELETE' });
+    delete window._fehlerCache[questionId];
+    initFehlerDashboard(); // Refresh
+  } catch (err) {
+    console.error('Fehler beim Löschen:', err);
+  }
+}
+
+// Initialize Fehler Dashboard
+async function initFehlerDashboard() {
+  const content = document.getElementById('fehler-content');
+  if (!content) return;
+  
+  content.innerHTML = '<div class="fehler-empty"><div class="fehler-empty-icon">⏳</div><div>Lade Daten...</div></div>';
+  
+  // Load data
+  await Promise.all([loadFehlerData(), loadSRSData()]);
+  
+  const fehler = window._fehlerCache;
+  const srs = window._srsCache;
+  
+  // Calculate statistics
+  const today = new Date().toISOString().split('T')[0];
+  const allFehler = Object.values(fehler);
+  const wrongQuestions = allFehler.filter(f => f.wrongCount > f.correctCount);
+  const dueQuestions = Object.entries(srs).filter(([id, s]) => s.nextReview <= today);
+  const masteredQuestions = Object.entries(srs).filter(([id, s]) => s.repetition >= 3);
+  
+  // Count by category
+  const categoryStats = {};
+  wrongQuestions.forEach(f => {
+    categoryStats[f.category] = (categoryStats[f.category] || 0) + 1;
+  });
+  
+  // Get category name
+  function getCategoryName(catId) {
+    const cat = CATEGORIES.find(c => c.id === catId);
+    return cat ? cat.name : catId;
+  }
+  
+  // Render dashboard
+  content.innerHTML = `
+    <div class="container">
+      <!-- Stats Cards -->
+      <div class="fehler-stats">
+        <div class="fehler-stat-card">
+          <div class="fehler-stat-number error">${wrongQuestions.length}</div>
+          <div class="fehler-stat-label">Fehler zu wiederholen</div>
+        </div>
+        <div class="fehler-stat-card">
+          <div class="fehler-stat-number warning">${dueQuestions.length}</div>
+          <div class="fehler-stat-label">Heute fällig (SRS)</div>
+        </div>
+        <div class="fehler-stat-card">
+          <div class="fehler-stat-number success">${masteredQuestions.length}</div>
+          <div class="fehler-stat-label">Beherrscht (3+ richtig)</div>
+        </div>
+        <div class="fehler-stat-card">
+          <div class="fehler-stat-number primary">${allFehler.length}</div>
+          <div class="fehler-stat-label">Fragen bearbeitet</div>
+        </div>
+      </div>
+      
+      <!-- Action Buttons -->
+      <div class="fehler-actions">
+        <button class="fehler-action-btn" onclick="startLernkontrolle('', true, false)" ${wrongQuestions.length === 0 ? 'disabled' : ''}>
+          <i data-lucide="rotate-ccw" style="width:18px;height:18px;"></i>
+          Fehler wiederholen (${wrongQuestions.length})
+        </button>
+        <button class="fehler-action-btn secondary" onclick="startLernkontrolle('', false, true)" ${dueQuestions.length === 0 ? 'disabled' : ''}>
+          <i data-lucide="calendar-check" style="width:18px;height:18px;"></i>
+          Fällige Fragen (${dueQuestions.length})
+        </button>
+      </div>
+      
+      <!-- Category Filter -->
+      ${Object.keys(categoryStats).length > 0 ? `
+        <div class="fehler-filter">
+          <button class="fehler-filter-btn active" onclick="filterFehler('')">Alle</button>
+          ${Object.entries(categoryStats).map(([cat, count]) => `
+            <button class="fehler-filter-btn" onclick="filterFehler('${cat}')">${getCategoryName(cat)} (${count})</button>
+          `).join('')}
+        </div>
+      ` : ''}
+      
+      <!-- Fehler List -->
+      <div class="fehler-list" id="fehler-list">
+        ${wrongQuestions.length === 0 ? `
+          <div class="fehler-empty">
+            <div class="fehler-empty-icon"><i data-lucide="check-circle" style="width:48px;height:48px;color:var(--color-success);"></i></div>
+            <div class="fehler-empty-text">Keine Fehler vorhanden!</div>
+            <div class="fehler-empty-sub">Beantworte Quiz-Fragen, um deinen Fortschritt zu tracken.</div>
+          </div>
+        ` : wrongQuestions.map(f => renderFehlerCard(f, getCategoryName)).join('')}
+      </div>
+    </div>
+  `;
+  
+  // Update badge
+  updateSRSDueBadge();
+  
+  // Initialize Lucide icons
+  if (typeof lucide !== 'undefined') lucide.createIcons();
+}
+
+// Render a single Fehler card
+function renderFehlerCard(f, getCategoryName) {
+  const rate = f.correctCount + f.wrongCount > 0 
+    ? Math.round((f.correctCount / (f.correctCount + f.wrongCount)) * 100) 
+    : 0;
+  const isMastered = f.correctCount > f.wrongCount;
+  
+  return `
+    <div class="fehler-card ${isMastered ? 'mastered' : ''}" data-category="${f.category}">
+      <div class="fehler-card-header">
+        <span class="fehler-category-badge">${getCategoryName(f.category)}</span>
+        <span class="fehler-meta-item">${rate}% Erfolgsrate</span>
+      </div>
+      <div class="fehler-question">${f.question}</div>
+      <div class="fehler-meta">
+        <span class="fehler-meta-item wrong">
+          <i data-lucide="x" style="width:14px;height:14px;"></i> ${f.wrongCount}× falsch
+        </span>
+        <span class="fehler-meta-item right">
+          <i data-lucide="check" style="width:14px;height:14px;"></i> ${f.correctCount}× richtig
+        </span>
+      </div>
+      <div class="fehler-card-actions">
+        <button class="fehler-card-btn practice" onclick="practiceSingleQuestion('${f.questionId}')">
+          <i data-lucide="play" style="width:14px;height:14px;"></i> Üben
+        </button>
+        <button class="fehler-card-btn remove" onclick="deleteFehler('${f.questionId}')">
+          <i data-lucide="trash-2" style="width:14px;height:14px;"></i>
+        </button>
+      </div>
+    </div>
+  `;
+}
+
+// Filter Fehler by category
+function filterFehler(category) {
+  // Update filter buttons
+  document.querySelectorAll('.fehler-filter-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.includes(category) || (!category && btn.textContent === 'Alle'));
+  });
+  
+  // Filter cards
+  document.querySelectorAll('.fehler-card').forEach(card => {
+    if (!category || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+
+// Practice a single question
+function practiceSingleQuestion(questionId) {
+  const f = window._fehlerCache[questionId];
+  if (!f) return;
+  
+  // Create a mini quiz with just this question
+  const overlay = document.createElement('div');
+  overlay.className = 'lk-overlay';
+  overlay.innerHTML = `
+    <div class="lk-modal">
+      <div class="lk-header">
+        <h3>🎯 Einzelfrage üben</h3>
+        <button class="lk-close" onclick="this.closest('.lk-overlay').remove()">✕</button>
+      </div>
+      <div class="lk-body" id="lk-body"></div>
+    </div>`;
+  document.body.appendChild(overlay);
+  
+  const body = document.getElementById('lk-body');
+  const indices = f.answers.map((_, i) => i);
+  for (let i = indices.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indices[i], indices[j]] = [indices[j], indices[i]];
+  }
+  const correctShuffledIdx = indices.indexOf(f.correctIndex);
+  let answered = false;
+  
+  body.innerHTML = `
+    <div class="lk-question">${f.question}</div>
+    <div class="lk-answers" id="lk-answers">
+      ${indices.map((origIdx, si) => `
+        <button class="lk-answer" data-shuffled="${si}" data-correct="${si === correctShuffledIdx}"
+          onclick="handleSinglePractice(this, ${si === correctShuffledIdx}, '${escHtml(f.explanation)}', ${correctShuffledIdx}, ${origIdx}, '${f.questionId}')">
+          ${f.answers[origIdx]}
+        </button>`).join('')}
+    </div>
+    <div id="lk-expl" style="display:none" class="lk-explanation"></div>
+    <button class="lk-next-btn" id="lk-next" style="display:none"
+      onclick="this.closest('.lk-overlay').remove(); initFehlerDashboard();">
+      Zurück zum Dashboard →
+    </button>
+  `;
+  
+  window.handleSinglePractice = function(btn, isCorrect, explanation, correctIdx, givenOrigIdx, qId) {
+    if (answered) return;
+    answered = true;
+    
+    const f = window._fehlerCache[qId];
+    trackQuizAnswer({
+      questionId: qId,
+      question: f.question,
+      category: f.category,
+      explanation: f.explanation,
+      answers: f.answers,
+      correctIndex: f.correctIndex,
+      isCorrect: isCorrect,
+      givenIndex: givenOrigIdx
+    });
+    
+    document.querySelectorAll('.lk-answer').forEach((b, si) => {
+      b.classList.add('answered');
+      if (parseInt(b.dataset.shuffled) === correctIdx) b.classList.add('show-correct');
+    });
+    btn.classList.add(isCorrect ? 'correct' : 'wrong');
+    
+    const expl = document.getElementById('lk-expl');
+    expl.innerHTML = `<strong>${isCorrect ? '✅ Richtig!' : '❌ Leider falsch.'}</strong> ${explanation}`;
+    expl.style.display = 'block';
+    document.getElementById('lk-next').style.display = 'block';
+  };
+}
+
+// Load data on page init
+document.addEventListener('DOMContentLoaded', () => {
+  // Initial badge update
+  setTimeout(updateSRSDueBadge, 500);
+});
 
 // ─── Helper builders ───────────────────────────────────────────
 function section(title, icon, content) {
@@ -5541,6 +6577,230 @@ function renderZelleGewebe(container) {
       ${callout('<strong>Zentrales NS:</strong> Gehirn + Rückenmark<br><strong>Peripheres NS:</strong> Nerven, Nervengeflechte, Ganglien')}
     `)}
 
+
+    <!-- PRÜFUNGS-KOMPAKTZUSAMMENFASSUNG -->
+    <div class="pruefung-kompakt">
+      <div class="pruefung-kompakt-header">
+        <i data-lucide="graduation-cap" style="width:24px;height:24px;"></i>
+        <span class="pruefung-kompakt-title">Wichtig für die Prüfung</span>
+        <span class="pruefung-kompakt-subtitle">Kompaktzusammenfassung</span>
+      </div>
+
+      <!-- ZAHLEN DIE MAN WISSEN MUSS -->
+      <div class="pk-section">
+        <div class="pk-section-title"><i data-lucide="hash" style="width:16px;height:16px;"></i> Zahlen, die du kennen musst</div>
+        <div class="pk-grid">
+          <div class="pk-fact">
+            <div class="pk-fact-number">100 Bio.</div>
+            <div class="pk-fact-label">Zellen im Körper</div>
+          </div>
+          <div class="pk-fact">
+            <div class="pk-fact-number">46</div>
+            <div class="pk-fact-label">Chromosomen (23 Paare)</div>
+          </div>
+          <div class="pk-fact">
+            <div class="pk-fact-number">22 + 1</div>
+            <div class="pk-fact-label">Autosome + Heterosomenpaar</div>
+          </div>
+          <div class="pk-fact">
+            <div class="pk-fact-number">4</div>
+            <div class="pk-fact-label">Grundgewebearten</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRÜFUNGSFALLEN -->
+      <div class="pk-section">
+        <div class="pk-section-title"><i data-lucide="alert-triangle" style="width:16px;height:16px;"></i> Typische Prüfungsfallen</div>
+        
+        <div class="pk-alert">
+          <i data-lucide="x-circle" style="width:18px;height:18px;"></i>
+          <div class="pk-alert-text">
+            <strong>Erythrozyten haben KEINEN Zellkern!</strong><br>
+            Alle anderen menschlichen Zellen haben einen Kern. Erythrozyten werfen ihn bei der Reifung ab → mehr Platz für Hämoglobin.
+          </div>
+        </div>
+        
+        <div class="pk-alert">
+          <i data-lucide="x-circle" style="width:18px;height:18px;"></i>
+          <div class="pk-alert-text">
+            <strong>Muskelzellen teilen sich NICHT!</strong><br>
+            Verlorene Muskelzellen werden durch minderwertiges Narbengewebe ersetzt (wichtig bei Herzinfarkt!).
+          </div>
+        </div>
+        
+        <div class="pk-alert">
+          <i data-lucide="x-circle" style="width:18px;height:18px;"></i>
+          <div class="pk-alert-text">
+            <strong>Herzmuskel = Sonderform!</strong><br>
+            Aufbau wie quergestreifte Muskulatur, aber arbeitet unwillkürlich + unermüdbar wie glatte Muskulatur.
+          </div>
+        </div>
+      </div>
+
+      <!-- ESELSBRÜCKEN -->
+      <div class="pk-section">
+        <div class="pk-section-title"><i data-lucide="lightbulb" style="width:16px;height:16px;"></i> Eselsbrücken & Merkhilfen</div>
+        
+        <div class="pk-mnemonic">
+          <div class="pk-mnemonic-header"><i data-lucide="brain" style="width:14px;height:14px;"></i> Zellorganellen</div>
+          <div class="pk-mnemonic-text">"<strong>M</strong>ein <strong>R</strong>oter <strong>E</strong>sel <strong>L</strong>iebt <strong>Z</strong>itronenkuchen"</div>
+          <div class="pk-mnemonic-explain"><strong>M</strong>itochondrien · <strong>R</strong>ibosomen · <strong>E</strong>ndoplasmatisches Retikulum · <strong>L</strong>ysosomen · <strong>Z</strong>entrosomen</div>
+        </div>
+        
+        <div class="pk-mnemonic">
+          <div class="pk-mnemonic-header"><i data-lucide="brain" style="width:14px;height:14px;"></i> 4 Grundgewebe</div>
+          <div class="pk-mnemonic-text">"<strong>E</strong>in <strong>B</strong>auer <strong>M</strong>äht <strong>N</strong>achts"</div>
+          <div class="pk-mnemonic-explain"><strong>E</strong>pithelgewebe · <strong>B</strong>inde-/Stützgewebe · <strong>M</strong>uskelgewebe · <strong>N</strong>ervengewebe</div>
+        </div>
+        
+        <div class="pk-mnemonic">
+          <div class="pk-mnemonic-header"><i data-lucide="brain" style="width:14px;height:14px;"></i> Mitose-Phasen</div>
+          <div class="pk-mnemonic-text">"<strong>I</strong>ch <strong>P</strong>utze <strong>M</strong>einen <strong>A</strong>lten <strong>T</strong>raktor"</div>
+          <div class="pk-mnemonic-explain"><strong>I</strong>nterphase · <strong>P</strong>rophase · <strong>M</strong>etaphase · <strong>A</strong>naphase · <strong>T</strong>elophase</div>
+        </div>
+        
+        <div class="pk-mnemonic">
+          <div class="pk-mnemonic-header"><i data-lucide="brain" style="width:14px;height:14px;"></i> Geschlechtschromosomen</div>
+          <div class="pk-mnemonic-text">"X<strong>X</strong> = <strong>X</strong>-tra weiblich · X<strong>Y</strong> = <strong>Y</strong>-Mann"</div>
+          <div class="pk-mnemonic-explain">XX = weiblich · XY = männlich (das Y macht den Mann)</div>
+        </div>
+      </div>
+
+      <!-- GEWEBEARTEN VERGLEICH -->
+      <div class="pk-section">
+        <div class="pk-section-title"><i data-lucide="layers" style="width:16px;height:16px;"></i> Muskelgewebe im Vergleich</div>
+        <table class="pk-table">
+          <thead>
+            <tr>
+              <th>Typ</th>
+              <th>Steuerung</th>
+              <th>Ermüdbar?</th>
+              <th>Vorkommen</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Glatt</strong></td>
+              <td><span class="pk-chip pk-chip-orange">unwillkürlich</span></td>
+              <td>Nein</td>
+              <td>Gefäße, Magen-Darm, Uterus</td>
+            </tr>
+            <tr>
+              <td><strong>Quergestreift</strong></td>
+              <td><span class="pk-chip pk-chip-green">willkürlich</span></td>
+              <td>Ja</td>
+              <td>Skelettmuskulatur, Zwerchfell</td>
+            </tr>
+            <tr>
+              <td><strong>Herz</strong></td>
+              <td><span class="pk-chip pk-chip-blue">Sonderform</span></td>
+              <td>Nein</td>
+              <td>Nur Herz (Myokard)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- KNORPELARTEN -->
+      <div class="pk-section">
+        <div class="pk-section-title"><i data-lucide="bone" style="width:16px;height:16px;"></i> Knorpelarten – Prüfungsklassiker</div>
+        <table class="pk-table">
+          <thead>
+            <tr>
+              <th>Knorpelart</th>
+              <th>Eigenschaft</th>
+              <th>Vorkommen (Merkwort)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Hyaliner Knorpel</strong></td>
+              <td>Häufigster, glasig</td>
+              <td>Rippen, Gelenke, Nase, Kehlkopf, Trachea</td>
+            </tr>
+            <tr>
+              <td><strong>Elastischer Knorpel</strong></td>
+              <td>Biegsam, verformbar</td>
+              <td><strong>O</strong>hrmuschel, <strong>N</strong>asenspitze, <strong>E</strong>piglottis → "ONE"</td>
+            </tr>
+            <tr>
+              <td><strong>Faserknorpel</strong></td>
+              <td>Druckfest, robust</td>
+              <td><strong>M</strong>enisken, <strong>B</strong>andscheiben → "MB"</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- MITOSE VS MEIOSE -->
+      <div class="pk-section">
+        <div class="pk-section-title"><i data-lucide="git-branch" style="width:16px;height:16px;"></i> Mitose vs. Meiose</div>
+        <div class="pk-compare">
+          <div class="pk-compare-card">
+            <div class="pk-compare-title" style="color:var(--color-primary);"><i data-lucide="copy" style="width:14px;height:14px;"></i> Mitose</div>
+            <div class="pk-compare-list">
+              • <strong>Körperzellen</strong><br>
+              • 46 → 46 Chromosomen (identische Kopie)<br>
+              • Wachstum & Erneuerung<br>
+              • 5 Phasen (IPMAT)
+            </div>
+          </div>
+          <div class="pk-compare-card">
+            <div class="pk-compare-title" style="color:var(--color-secondary);"><i data-lucide="scissors" style="width:14px;height:14px;"></i> Meiose</div>
+            <div class="pk-compare-list">
+              • <strong>Keimzellen</strong> (Ei/Samen)<br>
+              • 46 → 23 Chromosomen (Reduktion!)<br>
+              • Fortpflanzung<br>
+              • 2 Teilungen
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- KNOCHEN-ZELLEN -->
+      <div class="pk-section">
+        <div class="pk-section-title"><i data-lucide="user" style="width:16px;height:16px;"></i> Knochenzellen – Die 3 "Osteos"</div>
+        <div class="pk-mnemonic">
+          <div class="pk-mnemonic-header"><i data-lucide="brain" style="width:14px;height:14px;"></i> Merkhilfe</div>
+          <div class="pk-mnemonic-text">"<strong>B</strong>lasten <strong>b</strong>auen, <strong>K</strong>lasten <strong>k</strong>nabbern"</div>
+          <div class="pk-mnemonic-explain">
+            <strong>Osteo-blasten</strong> = Knochenaufbau (Calcium einlagern)<br>
+            <strong>Osteo-zyten</strong> = Reife Knochenzellen (eingemauert)<br>
+            <strong>Osteo-klasten</strong> = Knochenabbau (Calcium entziehen)
+          </div>
+        </div>
+      </div>
+
+      <!-- SCHNELLTEST -->
+      <div class="pk-quick-test">
+        <div class="pk-quick-test-title"><i data-lucide="check-circle" style="width:16px;height:16px;"></i> Schnelltest – Hover für Antwort</div>
+        <div class="pk-quick-test-q">
+          <span>Welche Zellen haben keinen Zellkern?</span>
+          <span class="pk-answer">Erythrozyten</span>
+        </div>
+        <div class="pk-quick-test-q">
+          <span>Wie viele Chromosomen hat eine Eizelle?</span>
+          <span class="pk-answer">23 (haploid)</span>
+        </div>
+        <div class="pk-quick-test-q">
+          <span>Was ist das "Kraftwerk der Zelle"?</span>
+          <span class="pk-answer">Mitochondrien</span>
+        </div>
+        <div class="pk-quick-test-q">
+          <span>Welcher Knorpel ist in Bandscheiben?</span>
+          <span class="pk-answer">Faserknorpel</span>
+        </div>
+        <div class="pk-quick-test-q">
+          <span>XX oder XY = männlich?</span>
+          <span class="pk-answer">XY</span>
+        </div>
+        <div class="pk-quick-test-q">
+          <span>Können sich Muskelzellen teilen?</span>
+          <span class="pk-answer">Nein!</span>
+        </div>
+      </div>
+    </div>
 
     ${section('Karteikarten lernen', '🎴', `
       <p class="wissen-prose" style="margin-bottom: 1rem;">Lerne die wichtigsten Fakten zur <strong>Zelle & Gewebe</strong> mit interaktiven Karteikarten. Perfekt zum Wiederholen und für die Prüfungsvorbereitung!</p>
@@ -8997,14 +10257,17 @@ function formatFileSize(bytes) {
 function renderAnhaengeSection(topicId) {
   const sectionId = `anhaenge-${topicId}`;
   // Initiales Laden der Anhänge nach dem Rendern
-  setTimeout(() => loadAndRenderAnhaenge(topicId), 100);
+  setTimeout(() => {
+    loadAndRenderAnhaenge(topicId);
+    if (typeof lucide !== 'undefined') lucide.createIcons();
+  }, 100);
   
   return `
     <div class="anhaenge-section" id="${sectionId}">
       <div class="anhaenge-header">
-        <div class="anhaenge-title">📎 Meine Anhänge & Notizen</div>
+        <div class="anhaenge-title"><i data-lucide="paperclip" style="width:18px;height:18px;stroke-width:2;"></i> Meine Anhänge</div>
         <button class="anhaenge-add-btn" onclick="triggerAnhangUpload('${topicId}')">
-          <span class="plus-icon">+</span> Datei hinzufügen
+          <i data-lucide="plus" style="width:18px;height:18px;stroke-width:2.5;"></i> Hinzufügen
         </button>
         <input type="file" class="anhaenge-file-input" id="anhang-input-${topicId}" 
                multiple accept="image/*,.pdf,.doc,.docx,.txt,.xls,.xlsx,.ppt,.pptx"
@@ -9012,7 +10275,7 @@ function renderAnhaengeSection(topicId) {
       </div>
       <div class="anhaenge-content" id="anhaenge-content-${topicId}">
         <div class="anhaenge-empty">
-          <div class="anhaenge-empty-icon">📂</div>
+          <div class="anhaenge-empty-icon"><i data-lucide="folder-open" style="width:48px;height:48px;stroke-width:1.5;"></i></div>
           <div>Lade Anhänge...</div>
         </div>
       </div>
@@ -9057,19 +10320,19 @@ async function loadAndRenderAnhaenge(topicId) {
       let viewLabel;
       if (isImage) {
         viewAction = `openAnhangLightbox('${fileUrl.replace(/'/g, "\\'")}', '${a.name.replace(/'/g, "\\'")}')`;
-        viewLabel = '🔍 Ansehen';
+        viewLabel = '<i data-lucide="eye" style="width:16px;height:16px;stroke-width:2;"></i>';
       } else if (isPDF) {
         viewAction = `openPDFPreview('${fileUrl.replace(/'/g, "\\'")}', '${a.name.replace(/'/g, "\\'")}')`;
-        viewLabel = '👁️ Vorschau';
+        viewLabel = '<i data-lucide="eye" style="width:16px;height:16px;stroke-width:2;"></i>';
       } else if (isText) {
         viewAction = `openTextPreview('${fileUrl.replace(/'/g, "\\'")}', '${a.name.replace(/'/g, "\\'")}')`;
-        viewLabel = '👁️ Vorschau';
+        viewLabel = '<i data-lucide="eye" style="width:16px;height:16px;stroke-width:2;"></i>';
       } else if (isOffice) {
         viewAction = `openOfficePreview('${fileUrl.replace(/'/g, "\\'")}', '${a.name.replace(/'/g, "\\'")}', '${a.type}')`;
-        viewLabel = '👁️ Vorschau';
+        viewLabel = '<i data-lucide="eye" style="width:16px;height:16px;stroke-width:2;"></i>';
       } else {
         viewAction = `downloadAnhang('${fileUrl}', '${a.name.replace(/'/g, "\\'")}', '${a.type}')`;
-        viewLabel = '⬇ Öffnen';
+        viewLabel = '<i data-lucide="download" style="width:16px;height:16px;stroke-width:2;"></i>';
       }
       
       return `
@@ -9083,7 +10346,7 @@ async function loadAndRenderAnhaenge(topicId) {
                 ${viewLabel}
               </button>
               <button class="anhang-btn anhang-btn-delete" onclick="confirmDeleteAnhang(${a.id}, '${topicId}')">
-                🗑️
+                <i data-lucide="trash-2" style="width:16px;height:16px;stroke-width:2;"></i>
               </button>
             </div>
           </div>
@@ -9092,11 +10355,12 @@ async function loadAndRenderAnhaenge(topicId) {
     }).join('');
     
     container.innerHTML = `<div class="anhaenge-grid">${cardsHTML}</div>`;
+    if (typeof lucide !== 'undefined') lucide.createIcons();
   } catch (err) {
     console.error('Fehler beim Laden der Anhänge:', err);
     container.innerHTML = `
       <div class="anhaenge-empty">
-        <div class="anhaenge-empty-icon">⚠️</div>
+        <div class="anhaenge-empty-icon"><i data-lucide="alert-circle" style="width:48px;height:48px;stroke-width:1.5;"></i></div>
         <div>Fehler beim Laden der Anhänge</div>
       </div>
     `;
@@ -9146,10 +10410,18 @@ function openAnhangLightbox(dataUrl, name) {
   lightbox.className = 'anhang-lightbox';
   lightbox.onclick = (e) => { if (e.target === lightbox) lightbox.remove(); };
   lightbox.innerHTML = `
-    <button class="anhang-lightbox-close" onclick="this.parentElement.remove()">×</button>
+    <button class="anhang-lightbox-close" onclick="this.closest('.anhang-lightbox').remove()">
+      <i data-lucide="x" style="width:22px;height:22px;stroke-width:2;"></i>
+    </button>
     <img src="${dataUrl}" alt="${name}">
+    <div class="anhang-lightbox-actions">
+      <button class="anhang-lightbox-btn" onclick="downloadAnhang('${dataUrl.replace(/'/g, "\\'")}', '${name.replace(/'/g, "\\'")}', 'image')">
+        <i data-lucide="download" style="width:18px;height:18px;stroke-width:2;margin-right:6px;"></i>Speichern
+      </button>
+    </div>
   `;
   document.body.appendChild(lightbox);
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 
 function downloadAnhang(dataUrl, name, type) {
@@ -9168,10 +10440,10 @@ function openPDFPreview(dataUrl, name) {
   modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
   modal.innerHTML = `
     <div class="doc-preview-header">
-      <div class="doc-preview-title">📄 ${name}</div>
+      <div class="doc-preview-title"><i data-lucide="file-text" style="width:20px;height:20px;stroke-width:1.8;"></i> ${name}</div>
       <div class="doc-preview-actions">
-        <button class="doc-preview-btn doc-preview-btn-download" onclick="downloadAnhang('${dataUrl.replace(/'/g, "\\'")}', '${name.replace(/'/g, "\\'")}', 'application/pdf')">⬇ Herunterladen</button>
-        <button class="doc-preview-btn doc-preview-btn-close" onclick="this.closest('.doc-preview-modal').remove()">× Schließen</button>
+        <button class="doc-preview-btn doc-preview-btn-download" onclick="downloadAnhang('${dataUrl.replace(/'/g, "\\'")}', '${name.replace(/'/g, "\\'")}', 'application/pdf')"><i data-lucide="download" style="width:16px;height:16px;stroke-width:2;"></i> Laden</button>
+        <button class="doc-preview-btn doc-preview-btn-close" onclick="this.closest('.doc-preview-modal').remove()"><i data-lucide="x" style="width:16px;height:16px;stroke-width:2;"></i></button>
       </div>
     </div>
     <div class="doc-preview-content">
@@ -9179,6 +10451,7 @@ function openPDFPreview(dataUrl, name) {
     </div>
   `;
   document.body.appendChild(modal);
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 
 // Text-Vorschau
@@ -9197,10 +10470,10 @@ function openTextPreview(dataUrl, name) {
   modal.onclick = (e) => { if (e.target === modal) modal.remove(); };
   modal.innerHTML = `
     <div class="doc-preview-header">
-      <div class="doc-preview-title">📃 ${name}</div>
+      <div class="doc-preview-title"><i data-lucide="file" style="width:20px;height:20px;stroke-width:1.8;"></i> ${name}</div>
       <div class="doc-preview-actions">
-        <button class="doc-preview-btn doc-preview-btn-download" onclick="downloadAnhang('${dataUrl.replace(/'/g, "\\'")}', '${name.replace(/'/g, "\\'")}', 'text/plain')">⬇ Herunterladen</button>
-        <button class="doc-preview-btn doc-preview-btn-close" onclick="this.closest('.doc-preview-modal').remove()">× Schließen</button>
+        <button class="doc-preview-btn doc-preview-btn-download" onclick="downloadAnhang('${dataUrl.replace(/'/g, "\\'")}', '${name.replace(/'/g, "\\'")}', 'text/plain')"><i data-lucide="download" style="width:16px;height:16px;stroke-width:2;"></i> Laden</button>
+        <button class="doc-preview-btn doc-preview-btn-close" onclick="this.closest('.doc-preview-modal').remove()"><i data-lucide="x" style="width:16px;height:16px;stroke-width:2;"></i></button>
       </div>
     </div>
     <div class="doc-preview-content">
@@ -9210,6 +10483,7 @@ function openTextPreview(dataUrl, name) {
   document.body.appendChild(modal);
   // Text sicher einfügen (kein innerHTML wegen XSS)
   modal.querySelector('.doc-preview-text').textContent = textContent;
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 
 // Office-Dokumente Vorschau (mit Microsoft Office Online Viewer als Fallback-Info)
@@ -9220,28 +10494,29 @@ function openOfficePreview(dataUrl, name, type) {
   
   // Für lokale Dateien können wir keinen Online-Viewer nutzen
   // Wir zeigen eine Vorschau-Seite mit Download-Option
-  let icon = '📝';
-  if (type.includes('excel') || type.includes('spreadsheet')) icon = '📊';
-  if (type.includes('powerpoint') || type.includes('presentation')) icon = '📽️';
+  let icon = 'file-text';
+  if (type.includes('excel') || type.includes('spreadsheet')) icon = 'table';
+  if (type.includes('powerpoint') || type.includes('presentation')) icon = 'presentation';
   
   modal.innerHTML = `
     <div class="doc-preview-header">
-      <div class="doc-preview-title">${icon} ${name}</div>
+      <div class="doc-preview-title"><i data-lucide="${icon}" style="width:20px;height:20px;stroke-width:1.8;"></i> ${name}</div>
       <div class="doc-preview-actions">
-        <button class="doc-preview-btn doc-preview-btn-download" onclick="downloadAnhang('${dataUrl.replace(/'/g, "\\'")}', '${name.replace(/'/g, "\\'")}', '${type}')">⬇ Herunterladen</button>
-        <button class="doc-preview-btn doc-preview-btn-close" onclick="this.closest('.doc-preview-modal').remove()">× Schließen</button>
+        <button class="doc-preview-btn doc-preview-btn-download" onclick="downloadAnhang('${dataUrl.replace(/'/g, "\\'")}', '${name.replace(/'/g, "\\'")}', '${type}')"><i data-lucide="download" style="width:16px;height:16px;stroke-width:2;"></i> Laden</button>
+        <button class="doc-preview-btn doc-preview-btn-close" onclick="this.closest('.doc-preview-modal').remove()"><i data-lucide="x" style="width:16px;height:16px;stroke-width:2;"></i></button>
       </div>
     </div>
     <div class="doc-preview-content">
       <div class="doc-preview-unsupported">
-        <div class="doc-preview-unsupported-icon">${icon}</div>
+        <div class="doc-preview-unsupported-icon"><i data-lucide="${icon}" style="width:64px;height:64px;stroke-width:1.5;"></i></div>
         <h3>Office-Dokument</h3>
-        <p>Office-Dateien können nicht direkt im Browser angezeigt werden.<br>Lade die Datei herunter, um sie mit Microsoft Office oder einem kompatiblen Programm zu öffnen.</p>
-        <button class="doc-preview-btn doc-preview-btn-download" style="padding: 0.8rem 2rem; font-size: 1rem;" onclick="downloadAnhang('${dataUrl.replace(/'/g, "\\'")}', '${name.replace(/'/g, "\\'")}', '${type}')">⬇ Jetzt herunterladen</button>
+        <p>Office-Dateien können nicht direkt im Browser angezeigt werden. Lade die Datei herunter, um sie zu öffnen.</p>
+        <button class="doc-preview-btn doc-preview-btn-download" style="padding: 14px 28px; font-size: 17px;" onclick="downloadAnhang('${dataUrl.replace(/'/g, "\\'")}', '${name.replace(/'/g, "\\'")}', '${type}')"><i data-lucide="download" style="width:18px;height:18px;stroke-width:2;margin-right:8px;"></i>Jetzt herunterladen</button>
       </div>
     </div>
   `;
   document.body.appendChild(modal);
+  if (typeof lucide !== 'undefined') lucide.createIcons();
 }
 
 // IndexedDB beim Start initialisieren

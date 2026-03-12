@@ -470,5 +470,14 @@
       ]
     }
   },
-  "userProgress": {}
+  "userProgress": {
+    "zelle-gewebe": {
+      "zg-001": {
+        "attempts": 1,
+        "correct": 1,
+        "lastSeen": "2026-03-12T14:05:29.074Z",
+        "nextReview": "2026-03-13T14:05:29.096Z"
+      }
+    }
+  }
 }
