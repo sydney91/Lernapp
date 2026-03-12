@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "lastUpdated": "2026-03-10T16:49:08.606Z",
+  "lastUpdated": "2026-03-12T12:21:54.796Z",
   "description": "Speichert die Relation zwischen Wissen-Artikeln und deren Anhängen",
   "articles": {
     "zelle-gewebe": {

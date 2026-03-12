@@ -2,47 +2,92 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="HP Lernen">
 <meta name="format-detection" content="telephone=no">
-<meta name="theme-color" content="#1a1410">
-<title>Heilpraktiker Lernspiel</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Source+Serif+4:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#4A90D9">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩺</text></svg>">
+<!-- Lucide Icons CDN -->
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<title>Heilpraktiker Lernen</title>
+<!-- iOS-optimiertes Stylesheet -->
+<link rel="stylesheet" href="ios-styles.css">
+<!-- Fallback Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=SF+Pro+Text:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1410;
-    --parchment: #f5f0e8;
-    --cream: #faf7f2;
-    --gold: #b8860b;
-    --gold-light: #d4a017;
-    --sage: #4a6741;
-    --sage-light: #6b8f62;
-    --terracotta: #8b4513;
-    --red: #9b2335;
-    --blue-dark: #1e3a5f;
-    --shadow: rgba(26,20,16,0.15);
+    /* ═══ NEUES DESIGN-SYSTEM ═══ */
+    --color-primary:    #4A90D9;
+    --color-secondary:  #5BB88A;
+    --color-accent:     #F5A623;
+    --color-bg:         #F8F6F2;
+    --color-surface:    #FFFFFF;
+    --color-text:       #1C1C1E;
+    --color-text-muted: #6C6C70;
+    --color-success:    #34C759;
+    --color-warning:    #FF9500;
+    --color-error:      #FF3B30;
+    --color-gradient:   linear-gradient(135deg, #4A90D9 0%, #5BB88A 100%);
+    
+    /* Radii */
+    --radius-sm:        10px;
+    --radius-md:        14px;
+    --radius-lg:        20px;
+    
+    /* Schatten */
+    --shadow:           0 2px 12px rgba(0,0,0,0.08);
+    --shadow-lg:        0 4px 20px rgba(0,0,0,0.12);
+    
+    /* Safe Area */
+    --safe-top:         env(safe-area-inset-top);
+    --safe-bottom:      env(safe-area-inset-bottom);
+    
+    /* 8pt Grid Spacing */
+    --space-xs:  8px;
+    --space-sm:  16px;
+    --space-md:  24px;
+    --space-lg:  32px;
+    --space-xl:  48px;
+    
+    /* Legacy Mapping (für Kompatibilität) */
+    --ink: var(--color-text);
+    --parchment: var(--color-bg);
+    --cream: var(--color-surface);
+    --gold: var(--color-accent);
+    --gold-light: #F5C96A;
+    --sage: var(--color-secondary);
+    --sage-light: #7DCBA0;
+    --terracotta: var(--color-warning);
+    --red: var(--color-error);
+    --blue-dark: var(--color-primary);
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
 
   body {
-    font-family: 'Source Serif 4', Georgia, serif;
-    background: var(--cream);
-    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', sans-serif;
+    background: var(--color-bg);
+    color: var(--color-text);
     min-height: 100vh;
-    background-image:
-      radial-gradient(ellipse at 20% 20%, rgba(184,134,11,0.06) 0%, transparent 60%),
-      radial-gradient(ellipse at 80% 80%, rgba(74,103,65,0.06) 0%, transparent 60%);
+    overscroll-behavior: none;
+    -webkit-overflow-scrolling: touch;
+    user-select: none;
   }
 
   /* ── HEADER ── */
   header {
-    background: var(--ink);
-    color: var(--parchment);
-    padding: 2rem 2rem 1.5rem;
+    background: var(--color-gradient);
+    color: white;
+    padding: var(--space-lg) var(--space-sm) var(--space-md);
     text-align: center;
-    border-bottom: 3px solid var(--gold);
     position: relative;
     overflow: hidden;
   }
@@ -52,57 +97,57 @@
     background: repeating-linear-gradient(
       90deg,
       transparent, transparent 40px,
-      rgba(184,134,11,0.04) 40px, rgba(184,134,11,0.04) 41px
+      rgba(255,255,255,0.03) 40px, rgba(255,255,255,0.03) 41px
     );
   }
   header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.6rem, 4vw, 2.8rem);
-    font-weight: 900;
-    letter-spacing: 0.04em;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
     position: relative;
   }
-  header h1 span { color: var(--gold-light); }
+  header h1 span { color: rgba(255,255,255,0.9); }
   header p {
-    font-size: 0.9rem;
-    opacity: 0.7;
-    margin-top: 0.4rem;
-    font-style: italic;
+    font-size: 15px;
+    opacity: 0.85;
+    margin-top: var(--space-xs);
+    font-weight: 400;
     position: relative;
   }
 
   /* ── LAYOUT ── */
-  .container { max-width: 860px; margin: 0 auto; padding: 2rem 1.5rem; }
+  .container { max-width: 860px; margin: 0 auto; padding: var(--space-md) var(--space-sm); }
 
   /* ── CATEGORY SELECTOR ── */
   #category-screen { animation: fadeIn 0.5s ease; }
   .screen-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 0.4rem;
-    color: var(--blue-dark);
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+    color: var(--color-primary);
   }
   .screen-sub {
     color: #666;
     font-size: 0.92rem;
     margin-bottom: 1.8rem;
-    font-style: italic;
+    font-weight: 400;
   }
   .category-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 1rem;
+    gap: var(--space-sm);
   }
   .cat-card {
-    background: white;
-    border: 2px solid #e8e2d8;
-    border-radius: 10px;
-    padding: 1.2rem 1rem;
+    background: var(--color-surface);
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: var(--space-sm);
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     text-align: center;
-    box-shadow: 0 2px 8px var(--shadow);
+    box-shadow: var(--shadow);
     position: relative;
     overflow: hidden;
   }
@@ -110,15 +155,16 @@
     content: '';
     position: absolute; bottom: 0; left: 0; right: 0;
     height: 3px;
-    background: var(--gold);
+    background: var(--color-gradient);
     transform: scaleX(0);
     transition: transform 0.2s;
   }
-  .cat-card:hover { border-color: var(--gold); transform: translateY(-3px); box-shadow: 0 6px 18px var(--shadow); }
+  .cat-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
   .cat-card:hover::after { transform: scaleX(1); }
-  .cat-icon { font-size: 2rem; margin-bottom: 0.5rem; }
-  .cat-name { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1rem; color: var(--ink); }
-  .cat-count { font-size: 0.8rem; color: #888; margin-top: 0.2rem; }
+  .cat-card:active { transform: scale(0.97); }
+  .cat-icon { font-size: 2rem; margin-bottom: var(--space-xs); }
+  .cat-name { font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif; font-weight: 600; font-size: 17px; color: var(--color-text); }
+  .cat-count { font-size: 13px; color: var(--color-text-muted); margin-top: 4px; }
 
   /* ── QUIZ SCREEN ── */
   #quiz-screen { display: none; animation: fadeIn 0.4s ease; }
@@ -127,28 +173,28 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--space-sm);
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: var(--space-xs);
   }
   .quiz-meta {
-    font-size: 0.85rem;
-    color: #666;
+    font-size: 15px;
+    color: var(--color-text-muted);
   }
-  .quiz-meta strong { color: var(--ink); }
+  .quiz-meta strong { color: var(--color-text); }
 
   .progress-bar {
-    height: 6px;
-    background: #e8e2d8;
-    border-radius: 99px;
-    margin-bottom: 1.8rem;
+    height: 8px;
+    background: rgba(0,0,0,0.06);
+    border-radius: 4px;
+    margin-bottom: var(--space-md);
     overflow: hidden;
   }
   .progress-fill {
     height: 100%;
-    background: linear-gradient(90deg, var(--sage), var(--gold-light));
-    border-radius: 99px;
-    transition: width 0.4s ease;
+    background: var(--color-gradient);
+    border-radius: 4px;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .score-badge {
@@ -228,37 +274,39 @@
     padding-top: 0.05rem;
   }
   .answer-btn.correct {
-    background: #e8f5e3;
-    border-color: var(--sage);
-    color: var(--sage);
+    background: rgba(52, 199, 89, 0.12);
+    border-left: 3px solid var(--color-success);
+    border-color: var(--color-success);
+    color: #1a7a45;
   }
-  .answer-btn.correct .letter { color: var(--sage); }
+  .answer-btn.correct .letter { color: var(--color-success); }
   .answer-btn.wrong {
-    background: #fdecea;
-    border-color: var(--red);
-    color: var(--red);
+    background: rgba(255, 59, 48, 0.12);
+    border-left: 3px solid var(--color-error);
+    border-color: var(--color-error);
+    color: var(--color-error);
   }
-  .answer-btn.wrong .letter { color: var(--red); }
+  .answer-btn.wrong .letter { color: var(--color-error); }
   .answer-btn:disabled { cursor: default; transform: none; }
 
   .explanation-box {
     display: none;
-    background: #f0f7ee;
-    border-left: 4px solid var(--sage);
-    border-radius: 0 10px 10px 0;
-    padding: 1rem 1.2rem;
-    margin-top: 1rem;
-    font-size: 0.9rem;
+    background: rgba(52, 199, 89, 0.08);
+    border-left: 3px solid var(--color-success);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    padding: var(--space-sm);
+    margin-top: var(--space-sm);
+    font-size: 15px;
     line-height: 1.6;
-    color: #2a4a25;
-    animation: slideDown 0.3s ease;
+    color: #1a7a45;
+    animation: slideDown 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .explanation-box.wrong-exp {
-    background: #fdf2f0;
-    border-color: var(--terracotta);
-    color: #5a2010;
+    background: rgba(255, 59, 48, 0.08);
+    border-color: var(--color-error);
+    color: #a02820;
   }
-  .explanation-box strong { display: block; margin-bottom: 0.3rem; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; }
+  .explanation-box strong { display: block; margin-bottom: 4px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; }
 
   .next-btn {
     display: none;
@@ -326,35 +374,41 @@
     font-weight: 700;
   }
   .detail-stat .lbl { font-size: 0.78rem; color: #888; text-transform: uppercase; letter-spacing: 0.06em; }
-  .num-right { color: var(--sage); }
-  .num-wrong { color: var(--red); }
-  .result-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+  .num-right { color: var(--color-success); }
+  .num-wrong { color: var(--color-error); }
+  .result-actions { display: flex; gap: var(--space-sm); justify-content: center; flex-wrap: wrap; }
   .btn-primary {
-    background: var(--ink);
-    color: var(--parchment);
+    background: var(--color-primary);
+    color: white;
     border: none;
-    border-radius: 10px;
-    padding: 0.8rem 1.8rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 700;
+    border-radius: var(--radius-md);
+    padding: 12px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 50px;
+    min-width: 44px;
   }
-  .btn-primary:hover { background: var(--blue-dark); transform: translateY(-2px); }
+  .btn-primary:hover { background: #3A80C9; transform: translateY(-2px); }
+  .btn-primary:active { transform: scale(0.97); opacity: 0.85; }
   .btn-secondary {
-    background: transparent;
-    color: var(--ink);
-    border: 2px solid #ccc;
-    border-radius: 10px;
-    padding: 0.8rem 1.8rem;
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 700;
+    background: rgba(74, 144, 217, 0.12);
+    color: var(--color-primary);
+    border: none;
+    border-radius: var(--radius-md);
+    padding: 12px 24px;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    font-size: 17px;
+    font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 50px;
+    min-width: 44px;
   }
-  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+  .btn-secondary:hover { background: rgba(74, 144, 217, 0.18); }
+  .btn-secondary:active { transform: scale(0.97); opacity: 0.85; }
 
   @keyframes fadeIn { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
   @keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
@@ -362,15 +416,15 @@
   .back-btn {
     background: none;
     border: none;
-    color: var(--gold);
+    color: var(--color-primary);
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 15px;
     padding: 0;
-    font-family: 'Source Serif 4', serif;
-    margin-bottom: 1.5rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    margin-bottom: var(--space-sm);
     display: flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 4px;
   }
   .back-btn:hover { color: var(--terracotta); text-decoration: underline; }
 
@@ -2069,11 +2123,18 @@
   /* ══════════════════════════════════════════════════════════════
      DIAGNOSE-SPIEL STYLES
      ══════════════════════════════════════════════════════════════ */
-  #diagnose-screen { animation: fadeIn 0.4s ease; }
+  #diagnose-screen { 
+    animation: fadeIn 0.4s ease;
+    padding: 0.5rem 0 0 0;
+  }
+  
+  #diagnose-area {
+    margin-top: -8px;
+  }
 
   .diagnose-intro {
     text-align: center;
-    padding: 3rem 2rem;
+    padding: 1.5rem 1.5rem;
     background: white;
     border: 2px solid #e8e2d8;
     border-radius: 12px;
@@ -3345,12 +3406,16 @@
      ═══════════════════════════════════════════════════════════════ */
   
   #pruefung-screen {
-    padding: 1rem 0;
+    padding: 0.5rem 0 0 0;
+  }
+  
+  #pruefung-area {
+    margin-top: -8px;
   }
   
   .pruefung-intro {
     text-align: center;
-    padding: 2rem;
+    padding: 1rem 1.5rem;
     background: linear-gradient(135deg, #1e3a5f 0%, #2c4a6f 100%);
     color: white;
     border-radius: 16px;
@@ -3755,67 +3820,82 @@
 </head>
 <body>
 
-<header>
-  <h1>⚕ Heilpraktiker <span>Lernspiel</span></h1>
-  <p>Prüfungsvorbereitung · Schriftlich & Praktisch</p>
-</header>
+<!-- iOS NAVIGATION BAR -->
+<div class="ios-nav-bar" id="ios-nav-bar">
+  <div class="ios-nav-bar-content">
+    <button class="ios-nav-btn" id="nav-back-btn" style="visibility: hidden;" onclick="iosNavBack()">
+      <span>‹</span> Zurück
+    </button>
+    <span class="ios-nav-title" id="nav-title">Quiz</span>
+    <button class="ios-nav-btn" id="nav-action-btn" style="visibility: hidden;"></button>
+  </div>
+</div>
 
-<div class="container">
+<!-- iOS LARGE TITLE (optional, shown on main screens) -->
+<div class="ios-nav-large-title" id="large-title" style="display: none;">Quiz</div>
 
-  <!-- MAIN NAVIGATION -->
-  <nav class="main-nav">
-    <button class="main-tab active" onclick="switchMainTab('quiz')">🎯 Quiz</button>
-    <button class="main-tab" onclick="switchMainTab('wissen')">📖 Wissen</button>
-    <button class="main-tab" onclick="switchMainTab('terminologie')">🔤 Terminologie</button>
-    <button class="main-tab" onclick="switchMainTab('diagnose')">🩺 Diagnose</button>
-    <button class="main-tab" onclick="switchMainTab('pruefung')">🎓 Prüfung</button>
-    <button class="main-tab" onclick="switchMainTab('admin')">⚙️ Admin</button>
-  </nav>
+<!-- iOS MAIN CONTENT AREA -->
+<div class="ios-content" id="main-content">
 
   <!-- ═══════════════════════════════════════════════════════ -->
   <!-- QUIZ AREA -->
   <div id="quiz-area">
 
   <!-- CATEGORY SCREEN -->
-  <div id="category-screen">
-    <div class="screen-title">Themengebiet wählen</div>
-    <div class="screen-sub">Wähle ein Fachgebiet oder starte ein gemischtes Quiz</div>
-    <div class="category-grid" id="cat-grid"></div>
+  <div id="category-screen" class="ios-screen">
+    <div class="ios-nav-large-title">Themengebiet wählen</div>
+    <p style="padding: 0 16px; color: var(--ios-label-secondary); font-size: 15px; margin-bottom: 8px;">Wähle ein Fachgebiet oder starte ein gemischtes Quiz</p>
+    <div class="category-grid ios-category-grid" id="cat-grid"></div>
   </div>
 
   <!-- QUIZ SCREEN -->
-  <div id="quiz-screen">
-    <button class="back-btn" onclick="showCategories()">← Zurück zur Auswahl</button>
-    <div class="quiz-header">
-      <div class="quiz-meta">Frage <strong id="q-num">1</strong> von <strong id="q-total">10</strong></div>
-      <div class="score-badge" id="score-display">✓ 0</div>
+  <div id="quiz-screen" class="ios-screen">
+    <!-- Back button handled by iOS nav bar -->
+    <div class="ios-quiz-card">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+        <span class="ios-quiz-category-badge" id="q-tag"></span>
+        <span style="font-size: 13px; color: var(--ios-label-tertiary);">Frage <strong id="q-num">1</strong>/<strong id="q-total">10</strong></span>
+      </div>
+      <div class="ios-progress" style="margin-bottom: 16px;">
+        <div class="ios-progress-fill" id="progress-fill" style="width:0%"></div>
+      </div>
+      <div class="ios-quiz-question" id="q-text"></div>
+      <div class="ios-quiz-hint" id="q-hint"></div>
     </div>
-    <div class="progress-bar"><div class="progress-fill" id="progress-fill" style="width:0%"></div></div>
-    <div class="question-card">
-      <div class="question-category-tag" id="q-tag"></div>
-      <div class="question-text" id="q-text"></div>
-      <div class="question-hint" id="q-hint"></div>
+    <div class="ios-answer-list" id="answers" style="padding: 0 16px;"></div>
+    <div class="ios-explanation" id="explanation" style="display: none; margin: 16px;"></div>
+    <div style="padding: 16px;">
+      <button class="ios-btn ios-btn-primary ios-btn-full" id="next-btn" onclick="nextQuestion()" style="display: none;">Nächste Frage →</button>
     </div>
-    <div class="answers" id="answers"></div>
-    <div class="explanation-box" id="explanation"></div>
-    <button class="next-btn" id="next-btn" onclick="nextQuestion()">Nächste Frage →</button>
+    <div style="padding: 8px 16px; text-align: center;">
+      <span style="background: var(--hp-sage, #5A7D5A); color: white; padding: 4px 12px; border-radius: 12px; font-size: 14px; font-weight: 600;" id="score-display">✓ 0</span>
+    </div>
   </div>
 
   <!-- RESULT SCREEN -->
-  <div id="result-screen">
-    <div class="result-card">
-      <div class="result-emoji" id="res-emoji">🎓</div>
-      <div class="result-title" id="res-title">Ergebnis</div>
-      <div class="result-score" id="res-score"></div>
-      <div class="result-msg" id="res-msg"></div>
-      <div class="result-details">
-        <div class="detail-stat"><div class="num num-right" id="res-right">0</div><div class="lbl">Richtig</div></div>
-        <div class="detail-stat"><div class="num num-wrong" id="res-wrong">0</div><div class="lbl">Falsch</div></div>
-        <div class="detail-stat"><div class="num" id="res-total">0</div><div class="lbl">Fragen</div></div>
+  <div id="result-screen" class="ios-screen">
+    <div class="ios-result">
+      <div class="ios-result-icon" id="res-emoji">🎓</div>
+      <div class="ios-result-score" id="res-score"></div>
+      <div class="ios-result-title" id="res-title">Ergebnis</div>
+      <div class="ios-result-message" id="res-msg"></div>
+      <div class="ios-result-stats">
+        <div class="ios-result-stat">
+          <div class="ios-result-stat-value correct" id="res-right">0</div>
+          <div class="ios-result-stat-label">Richtig</div>
+        </div>
+        <div class="ios-result-stat">
+          <div class="ios-result-stat-value wrong" id="res-wrong">0</div>
+          <div class="ios-result-stat-label">Falsch</div>
+        </div>
+        <div class="ios-result-stat">
+          <div class="ios-result-stat-value" id="res-total">0</div>
+          <div class="ios-result-stat-label">Fragen</div>
+        </div>
       </div>
-      <div class="result-actions">
-        <button class="btn-primary" onclick="retryQuiz()">Nochmal versuchen</button>
-        <button class="btn-secondary" onclick="showCategories()">Anderes Thema</button>
+      <div class="ios-result-actions">
+        <button class="ios-btn ios-btn-primary ios-btn-full" onclick="retryQuiz()">Nochmal versuchen</button>
+        <button class="ios-btn ios-btn-secondary ios-btn-full" onclick="showCategories()">Anderes Thema</button>
       </div>
     </div>
   </div> <!-- end result-screen -->
@@ -3847,9 +3927,9 @@
       <!-- Search + Filter bar -->
       <div class="term-toolbar">
         <div class="term-search-wrap">
-          <span class="term-search-icon">🔍</span>
+          <span class="term-search-icon"><i data-lucide="search" style="width:18px;height:18px;stroke-width:1.8;"></i></span>
           <input type="text" id="term-search" class="term-search" placeholder="Begriff suchen…" oninput="filterGlossar()">
-          <button class="term-search-clear" id="term-clear" onclick="clearSearch()" style="display:none">✕</button>
+          <button class="term-search-clear" id="term-clear" onclick="clearSearch()" style="display:none"><i data-lucide="x" style="width:16px;height:16px;stroke-width:2;"></i></button>
         </div>
         <div class="term-cats" id="term-cats"></div>
       </div>
@@ -3862,7 +3942,7 @@
 
       <!-- TTS not supported warning -->
       <div id="tts-warning" style="display:none; text-align:center; padding:0.5rem; font-size:0.8rem; color:#999; margin-top:1rem;">
-        ⚠️ Sprachausgabe wird von diesem Browser nicht unterstützt.
+        <i data-lucide="info" style="width:14px;height:14px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i> Sprachausgabe wird von diesem Browser nicht unterstützt.
       </div>
 
     </div>
@@ -3893,6 +3973,34 @@
       <div id="pruefung-content"></div>
     </div>
   </div>
+
+</div> <!-- Ende ios-scroll-wrapper -->
+</div> <!-- Ende ios-content -->
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- iOS TAB BAR mit Lucide Icons -->
+<nav class="ios-tab-bar" id="ios-tab-bar">
+  <button class="ios-tab-item active" onclick="switchMainTab('quiz')" data-tab="quiz">
+    <span class="ios-tab-icon"><i data-lucide="circle-help" style="width:24px;height:24px;stroke-width:1.8;"></i></span>
+    <span class="ios-tab-label">Quiz</span>
+  </button>
+  <button class="ios-tab-item" onclick="switchMainTab('wissen')" data-tab="wissen">
+    <span class="ios-tab-icon"><i data-lucide="book-open" style="width:24px;height:24px;stroke-width:1.8;"></i></span>
+    <span class="ios-tab-label">Wissen</span>
+  </button>
+  <button class="ios-tab-item" onclick="switchMainTab('terminologie')" data-tab="terminologie">
+    <span class="ios-tab-icon"><i data-lucide="search" style="width:24px;height:24px;stroke-width:1.8;"></i></span>
+    <span class="ios-tab-label">Glossar</span>
+  </button>
+  <button class="ios-tab-item" onclick="switchMainTab('diagnose')" data-tab="diagnose">
+    <span class="ios-tab-icon"><i data-lucide="stethoscope" style="width:24px;height:24px;stroke-width:1.8;"></i></span>
+    <span class="ios-tab-label">Diagnose</span>
+  </button>
+  <button class="ios-tab-item" onclick="switchMainTab('pruefung')" data-tab="pruefung">
+    <span class="ios-tab-icon"><i data-lucide="target" style="width:24px;height:24px;stroke-width:1.8;"></i></span>
+    <span class="ios-tab-label">Prüfung</span>
+  </button>
+</nav>
 
 <script>
 const CATEGORIES = [
@@ -4172,13 +4280,17 @@ let currentCategory = '';
 
 function buildCategories() {
   const grid = document.getElementById('cat-grid');
+  // Add iOS class for grid styling
+  grid.classList.add('ios-category-grid');
+  
   CATEGORIES.forEach(cat => {
     const count = cat.id === 'mixed' ? QUESTIONS.length : QUESTIONS.filter(q => q.cat === cat.id).length;
-    const card = document.createElement('div');
-    card.className = 'cat-card';
-    card.innerHTML = `<div class="cat-icon">${cat.icon}</div>
-      <div class="cat-name">${cat.name}</div>
-      <div class="cat-count">${count} Fragen</div>`;
+    const card = document.createElement('button');
+    card.className = 'ios-category-card';
+    card.innerHTML = `
+      <div class="ios-category-icon">${cat.icon}</div>
+      <div class="ios-category-name">${cat.name}</div>
+      <div class="ios-category-count">${count} Fragen</div>`;
     card.onclick = () => startQuiz(cat.id);
     grid.appendChild(card);
   });
@@ -4196,6 +4308,14 @@ function startQuiz(catId) {
   document.getElementById('result-screen').style.display = 'none';
   document.getElementById('quiz-screen').style.display = 'block';
   document.getElementById('q-total').textContent = currentQuestions.length;
+  
+  // Update iOS Nav Bar
+  const catInfo = CATEGORIES.find(c => c.id === catId);
+  updateIOSNavBar({
+    title: catInfo ? catInfo.name : 'Quiz',
+    showBack: true
+  });
+  
   renderQuestion();
 }
 
@@ -4216,10 +4336,12 @@ function renderQuestion() {
   const letters = ['A','B','C','D','E'];
   const container = document.getElementById('answers');
   container.innerHTML = '';
+  container.classList.add('ios-answer-list');
+  
   q.opts.forEach((opt, i) => {
     const btn = document.createElement('button');
-    btn.className = 'answer-btn';
-    btn.innerHTML = `<span class="letter">${letters[i]}</span><span>${opt}</span>`;
+    btn.className = 'ios-answer-btn';
+    btn.innerHTML = `<span class="ios-answer-letter">${letters[i]}</span><span class="ios-answer-text">${opt}</span>`;
     btn.onclick = () => selectAnswer(i);
     container.appendChild(btn);
   });
@@ -4229,20 +4351,20 @@ function selectAnswer(idx) {
   if (answered) return;
   answered = true;
   const q = currentQuestions[currentIndex];
-  const btns = document.querySelectorAll('.answer-btn');
+  const btns = document.querySelectorAll('.ios-answer-btn');
   btns.forEach(b => b.disabled = true);
   const expBox = document.getElementById('explanation');
 
   if (idx === q.ans) {
     score++;
     btns[idx].classList.add('correct');
-    expBox.className = 'explanation-box';
-    expBox.innerHTML = `<strong>✓ Richtig!</strong>${q.exp}`;
+    expBox.className = 'ios-explanation success';
+    expBox.innerHTML = `<div class="ios-explanation-title">✓ Richtig!</div><div class="ios-explanation-text">${q.exp}</div>`;
   } else {
     btns[idx].classList.add('wrong');
     btns[q.ans].classList.add('correct');
-    expBox.className = 'explanation-box wrong-exp';
-    expBox.innerHTML = `<strong>✗ Leider falsch.</strong>${q.exp}`;
+    expBox.className = 'ios-explanation error';
+    expBox.innerHTML = `<div class="ios-explanation-title">✗ Leider falsch</div><div class="ios-explanation-text">${q.exp}</div>`;
   }
   expBox.style.display = 'block';
   document.getElementById('score-display').textContent = '✓ ' + score;
@@ -4263,6 +4385,13 @@ function nextQuestion() {
 function showResult() {
   document.getElementById('quiz-screen').style.display = 'none';
   document.getElementById('result-screen').style.display = 'block';
+  
+  // Update iOS Nav Bar
+  updateIOSNavBar({
+    title: 'Ergebnis',
+    showBack: true
+  });
+  
   const total = currentQuestions.length;
   const pct = Math.round(score / total * 100);
   document.getElementById('res-right').textContent = score;
@@ -4270,7 +4399,7 @@ function showResult() {
   document.getElementById('res-total').textContent = total;
   const scoreEl = document.getElementById('res-score');
   scoreEl.textContent = pct + '%';
-  scoreEl.className = 'result-score ' + (pct >= 75 ? 'score-good' : pct >= 50 ? 'score-mid' : 'score-low');
+  scoreEl.className = 'ios-result-score ' + (pct >= 75 ? 'good' : pct >= 50 ? 'medium' : 'poor');
   let emoji, title, msg;
   if (pct >= 90) { emoji='🏆'; title='Ausgezeichnet!'; msg='Hervorragende Leistung! Du bist bestens für die Prüfung vorbereitet.'; }
   else if (pct >= 75) { emoji='🎓'; title='Sehr gut!'; msg='Solides Wissen! Noch ein wenig üben und du bist prüfungsbereit.'; }
@@ -4289,11 +4418,28 @@ function showCategories() {
   document.getElementById('quiz-screen').style.display = 'none';
   document.getElementById('result-screen').style.display = 'none';
   document.getElementById('category-screen').style.display = 'block';
+  
+  // Reset iOS Nav Bar
+  updateIOSNavBar({
+    title: 'Quiz',
+    showBack: false
+  });
 }
 
 // ═══════════════════════════════════════════════════════════════
 // MAIN TAB SWITCHING
 // ═══════════════════════════════════════════════════════════════
+
+// iOS Navigation Titles
+const iosNavTitles = {
+  quiz: 'Quiz',
+  wissen: 'Wissen',
+  terminologie: 'Glossar',
+  diagnose: 'Diagnose',
+  pruefung: 'Prüfung',
+  admin: 'Einstellungen'
+};
+
 function switchMainTab(tab) {
   const quizArea       = document.getElementById('quiz-area');
   const wissenArea     = document.getElementById('wissen-area');
@@ -4301,36 +4447,92 @@ function switchMainTab(tab) {
   const diagnoseArea   = document.getElementById('diagnose-area');
   const pruefungArea   = document.getElementById('pruefung-area');
   const adminArea      = document.getElementById('admin-area');
+  
+  // Update iOS Tab Bar
+  document.querySelectorAll('.ios-tab-item').forEach(t => t.classList.remove('active'));
+  const activeTab = document.querySelector(`.ios-tab-item[data-tab="${tab}"]`);
+  if (activeTab) activeTab.classList.add('active');
+  
+  // Update iOS Nav Title
+  const navTitle = document.getElementById('nav-title');
+  if (navTitle) navTitle.textContent = iosNavTitles[tab] || tab;
+  
+  // Legacy: Update old main-tab if present
   document.querySelectorAll('.main-tab').forEach(t => t.classList.remove('active'));
+  
+  // Hide all areas
   quizArea.style.display     = 'none';
   wissenArea.style.display   = 'none';
   termArea.style.display     = 'none';
   diagnoseArea.style.display = 'none';
   pruefungArea.style.display = 'none';
   adminArea.style.display    = 'none';
+  
+  // Show selected area
   if (tab === 'quiz') {
     quizArea.style.display = 'block';
-    document.querySelectorAll('.main-tab')[0].classList.add('active');
+    document.querySelectorAll('.main-tab')[0]?.classList.add('active');
   } else if (tab === 'wissen') {
     wissenArea.style.display = 'block';
-    document.querySelectorAll('.main-tab')[1].classList.add('active');
+    document.querySelectorAll('.main-tab')[1]?.classList.add('active');
     initWissen();
   } else if (tab === 'terminologie') {
     termArea.style.display = 'block';
-    document.querySelectorAll('.main-tab')[2].classList.add('active');
+    document.querySelectorAll('.main-tab')[2]?.classList.add('active');
     initTerminologie();
   } else if (tab === 'diagnose') {
     diagnoseArea.style.display = 'block';
-    document.querySelectorAll('.main-tab')[3].classList.add('active');
+    document.querySelectorAll('.main-tab')[3]?.classList.add('active');
     initDiagnoseSpiel();
   } else if (tab === 'pruefung') {
     pruefungArea.style.display = 'block';
-    document.querySelectorAll('.main-tab')[4].classList.add('active');
+    document.querySelectorAll('.main-tab')[4]?.classList.add('active');
     initPruefungstrainer();
   } else if (tab === 'admin') {
     adminArea.style.display = 'block';
-    document.querySelectorAll('.main-tab')[5].classList.add('active');
+    document.querySelectorAll('.main-tab')[5]?.classList.add('active');
     initAdmin();
+  }
+  
+  // Haptic feedback simulation (visual)
+  if (activeTab) {
+    activeTab.style.transform = 'scale(0.95)';
+    setTimeout(() => activeTab.style.transform = '', 100);
+  }
+  
+  // Re-initialize Lucide icons for dynamic content
+  if (typeof lucide !== 'undefined') {
+    setTimeout(() => lucide.createIcons(), 50);
+  }
+}
+
+// iOS Navigation Back Button Handler
+function iosNavBack() {
+  showCategories();
+}
+
+// Update Nav Bar for different states
+function updateIOSNavBar(options = {}) {
+  const navTitle = document.getElementById('nav-title');
+  const backBtn = document.getElementById('nav-back-btn');
+  const actionBtn = document.getElementById('nav-action-btn');
+  
+  if (options.title && navTitle) {
+    navTitle.textContent = options.title;
+  }
+  
+  if (backBtn) {
+    backBtn.style.visibility = options.showBack ? 'visible' : 'hidden';
+  }
+  
+  if (actionBtn) {
+    if (options.actionText) {
+      actionBtn.textContent = options.actionText;
+      actionBtn.style.visibility = 'visible';
+      actionBtn.onclick = options.actionHandler || null;
+    } else {
+      actionBtn.style.visibility = 'hidden';
+    }
   }
 }
 
@@ -4413,7 +4615,7 @@ async function openKarteikarten(deckId) {
           📚 Alle
         </button>
         <button class="kk-tool-btn" onclick="resetKarteikartenProgress('${deckId}')" title="Fortschritt zurücksetzen">
-          🔄 Reset
+          <i data-lucide="refresh-cw" style="width:16px;height:16px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i> Reset
         </button>
         <div class="kk-progress-display">
           <span id="kk-progress-text">0%</span> gelernt
@@ -4422,7 +4624,7 @@ async function openKarteikarten(deckId) {
       
       <div class="karteikarten-body">
         <button class="kk-nav-btn kk-prev" onclick="prevKarteikarte()" id="kk-prev-btn">
-          ◀
+          <i data-lucide="chevron-left" style="width:24px;height:24px;stroke-width:2;"></i>
         </button>
         
         <div class="karteikarten-card-wrapper" onclick="flipKarteikarte()">
@@ -4439,7 +4641,7 @@ async function openKarteikarten(deckId) {
         </div>
         
         <button class="kk-nav-btn kk-next" onclick="nextKarteikarte()" id="kk-next-btn">
-          ▶
+          <i data-lucide="chevron-right" style="width:24px;height:24px;stroke-width:2;"></i>
         </button>
       </div>
       
@@ -4447,10 +4649,10 @@ async function openKarteikarten(deckId) {
         <span class="kk-rating-label">Wie gut wusstest du es?</span>
         <div class="kk-rating-buttons">
           <button class="kk-rate-btn kk-rate-wrong" onclick="rateKarteikarte(false)">
-            ❌ Nicht gewusst
+            <i data-lucide="circle-x" style="width:18px;height:18px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i> Nicht gewusst
           </button>
           <button class="kk-rate-btn kk-rate-correct" onclick="rateKarteikarte(true)">
-            ✅ Gewusst
+            <i data-lucide="circle-check" style="width:18px;height:18px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i> Gewusst
           </button>
         </div>
       </div>
@@ -6986,7 +7188,7 @@ function renderDiagnoseResult() {
         <p>${message}</p>
         
         <div class="diagnose-summary">
-          <h3>📊 Deine Ergebnisse</h3>
+          <h3><i data-lucide="chart-line" style="width:18px;height:18px;stroke-width:1.8;vertical-align:middle;margin-right:6px;"></i>Deine Ergebnisse</h3>
           ${summaryHTML}
           <div class="diagnose-summary-item" style="border-top:2px solid #ddd;padding-top:0.8rem;margin-top:0.5rem;">
             <span class="diagnose-summary-label"><strong>Gesamt:</strong></span>
@@ -6995,7 +7197,7 @@ function renderDiagnoseResult() {
         </div>
 
         <div class="diagnose-hints">
-          <h4>💡 Lernhinweise</h4>
+          <h4><i data-lucide="info" style="width:16px;height:16px;stroke-width:1.8;vertical-align:middle;margin-right:6px;"></i>Lernhinweise</h4>
           <ul>${hintsHTML}</ul>
         </div>
 
@@ -7041,26 +7243,26 @@ function renderAdminCaseList(container) {
         </div>
       </div>
       <div class="admin-case-actions">
-        <button class="admin-btn admin-btn-edit" onclick="editDiagnoseCase('${c.id}')">✏️ Bearbeiten</button>
-        <button class="admin-btn admin-btn-delete" onclick="deleteDiagnoseCase('${c.id}')">🗑️ Löschen</button>
+        <button class="admin-btn admin-btn-edit" onclick="editDiagnoseCase('${c.id}')"><i data-lucide="pencil" style="width:14px;height:14px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i>Bearbeiten</button>
+        <button class="admin-btn admin-btn-delete" onclick="deleteDiagnoseCase('${c.id}')"><i data-lucide="trash-2" style="width:14px;height:14px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i>Löschen</button>
       </div>
     </div>
   `).join('');
   
   container.innerHTML = `
     <div class="admin-header">
-      <h2>⚙️ Admin-Bereich</h2>
+      <h2><i data-lucide="settings" style="width:22px;height:22px;stroke-width:1.8;vertical-align:middle;margin-right:8px;"></i>Admin-Bereich</h2>
       <p>Verwalte hier deine Diagnose-Fälle</p>
     </div>
     
     <div class="admin-toolbar">
-      <button class="admin-btn admin-btn-primary" onclick="createNewCase()">➕ Neuen Fall erstellen</button>
-      <button class="admin-btn" onclick="exportCasesToJSON()">📥 JSON exportieren</button>
+      <button class="admin-btn admin-btn-primary" onclick="createNewCase()"><i data-lucide="plus" style="width:16px;height:16px;stroke-width:2;vertical-align:middle;margin-right:4px;"></i>Neuen Fall erstellen</button>
+      <button class="admin-btn" onclick="exportCasesToJSON()"><i data-lucide="download" style="width:16px;height:16px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i>JSON exportieren</button>
       <label class="admin-btn admin-btn-import">
-        📤 JSON importieren
+        <i data-lucide="upload" style="width:16px;height:16px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i>JSON importieren
         <input type="file" accept=".json" onchange="importCasesFromJSON(this.files[0])" style="display:none">
       </label>
-      <button class="admin-btn admin-btn-reset" onclick="resetToDefaults()">🔄 Zurücksetzen</button>
+      <button class="admin-btn admin-btn-reset" onclick="resetToDefaults()"><i data-lucide="refresh-cw" style="width:16px;height:16px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i>Zurücksetzen</button>
     </div>
     
     <div class="admin-cases-list">
@@ -8004,15 +8206,15 @@ function renderPruefungsPhase() {
   if (phase.frageTyp === 'freetext') {
     inputAreaHTML = `
       <div class="pruefung-hint-box" id="hint-box">
-        <h4>💡 Hilfestellung</h4>
+        <h4><i data-lucide="info" style="width:16px;height:16px;stroke-width:1.8;vertical-align:middle;margin-right:6px;"></i>Hilfestellung</h4>
         <p>Denken Sie an: Strukturiertes Vorgehen, alle relevanten Aspekte abfragen, auf den Patienten eingehen.</p>
       </div>
       <p><strong>${phase.aufgabe}</strong></p>
       <textarea class="pruefung-textarea" id="pruefung-antwort" placeholder="Geben Sie Ihre Antwort ein..."></textarea>
       <div class="pruefung-actions">
-        <button class="pruefung-btn pruefung-btn-secondary" onclick="backToPruefungsfaelle()">← Abbrechen</button>
-        <button class="pruefung-btn pruefung-btn-hint" onclick="toggleHint()">💡 Tipp</button>
-        <button class="pruefung-btn pruefung-btn-primary" onclick="submitPruefungsAntwort()">Antwort abgeben →</button>
+        <button class="pruefung-btn pruefung-btn-secondary" onclick="backToPruefungsfaelle()"><i data-lucide="chevron-left" style="width:16px;height:16px;stroke-width:2;vertical-align:middle;"></i> Abbrechen</button>
+        <button class="pruefung-btn pruefung-btn-hint" onclick="toggleHint()"><i data-lucide="info" style="width:16px;height:16px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i>Tipp</button>
+        <button class="pruefung-btn pruefung-btn-primary" onclick="submitPruefungsAntwort()">Antwort abgeben <i data-lucide="chevron-right" style="width:16px;height:16px;stroke-width:2;vertical-align:middle;"></i></button>
       </div>
     `;
   } else if (phase.frageTyp === 'multiple' || phase.frageTyp === 'single') {
@@ -8215,13 +8417,13 @@ function showPruefungsErgebnis() {
       <p style="color: #666;">Zeit: ${minutes}:${seconds.toString().padStart(2, '0')} Minuten</p>
       
       <div class="pruefung-feedback-section">
-        <h4>📊 Ergebnis nach Prüfungsphasen</h4>
+        <h4><i data-lucide="chart-line" style="width:18px;height:18px;stroke-width:1.8;vertical-align:middle;margin-right:6px;"></i>Ergebnis nach Prüfungsphasen</h4>
         ${phasenFeedbackHTML}
       </div>
       
       <div style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
-        <button class="pruefung-btn pruefung-btn-secondary" onclick="backToPruefungsfaelle()">← Zur Fallauswahl</button>
-        <button class="pruefung-btn pruefung-btn-primary" onclick="startPruefung('${fall.id}')">🔄 Nochmal versuchen</button>
+        <button class="pruefung-btn pruefung-btn-secondary" onclick="backToPruefungsfaelle()"><i data-lucide="chevron-left" style="width:16px;height:16px;stroke-width:2;vertical-align:middle;"></i> Zur Fallauswahl</button>
+        <button class="pruefung-btn pruefung-btn-primary" onclick="startPruefung('${fall.id}')"><i data-lucide="refresh-cw" style="width:16px;height:16px;stroke-width:1.8;vertical-align:middle;margin-right:4px;"></i>Nochmal versuchen</button>
       </div>
     </div>
   `;
@@ -9073,6 +9275,11 @@ setInterval(async () => {
 loadExternalCases();
 
 buildCategories();
+
+// Lucide Icons initialisieren
+if (typeof lucide !== 'undefined') {
+  lucide.createIcons();
+}
 </script>
 </body>
 </html>
