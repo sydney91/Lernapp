@@ -1,0 +1,285 @@
+{
+  "id": "zelle-gewebe",
+  "title": "Zelle & Gewebe",
+  "subtitle": "Unterrichtsskript – Einführung in die Grundlagen des menschlichen Körpers",
+  "sections": [
+    {
+      "id": "grundlagen",
+      "title": "Die Zelle – Grundbaustein des Lebens",
+      "icon": "🧫",
+      "content": [
+        {
+          "type": "prose",
+          "text": "Zellen sind die kleinsten Bau- und Funktionseinheiten des Organismus. Der menschliche Körper besteht aus rund <strong>100 Billionen Zellen</strong>. Sie können Stoffe aufnehmen, umbauen und freisetzen (Stoffwechsel), wachsen, sich teilen und auf Reize reagieren."
+        },
+        {
+          "type": "defList",
+          "items": [
+            ["Protozoen", "Einzeller (Urtierchen) – bestehen aus nur einer Zelle"],
+            ["Metazoen", "Vielzeller – bestehen aus einer Vielzahl spezialisierter Zellen"],
+            ["Prokaryoten", "Zellen <em>ohne</em> Zellkern (z.B. Bakterien)"],
+            ["Eukaryoten", "Zellen <em>mit</em> Zellkern und Zellorganellen – alle menschlichen Zellen"]
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "<strong>Funktionelle Differenzierung:</strong> Aus der Spezialisierung der Zellen ergeben sich unterschiedliche Form, Gestalt und Größe je nach Aufgabe im Organismus."
+        }
+      ]
+    },
+    {
+      "id": "zellbestandteile",
+      "title": "Zellbestandteile",
+      "icon": "🔩",
+      "content": [
+        {
+          "type": "cards",
+          "items": [
+            { "label": "Hülle", "title": "Zellmembran", "body": "Hauchdünne, flexible Hülle. Schützt den Zellinhalt, grenzt die Zelle ab. Reguliert den Stoffdurchtritt → <strong>Semipermeabilität</strong>." },
+            { "label": "Grundsubstanz", "title": "Zytoplasma", "body": "Hauptmasse der Zelle. Arbeits- und Speichergebiet. Enthält alle Zellorganellen." },
+            { "label": "Organell", "title": "Endoplasmatisches Retikulum", "body": "Hohlraumsystem im Zellinneren. Zuständig für den Transport gelöster Stoffe." },
+            { "label": "Organell", "title": "Ribosomen", "body": "Kleine Kügelchen aus Proteinen und rRNA. Wichtig für die Herstellung körpereigener Eiweiße (Translation der mRNA)." },
+            { "label": "Organell", "title": "Mitochondrien", "body": "«Kraftwerk der Zelle.» Energiegewinnung durch Zellatmung. Energie wird als <strong>ATP</strong> gespeichert und abgegeben. Herzmuskelzellen sind besonders reich an Mitochondrien." },
+            { "label": "Organell", "title": "Zentrosomen (Zentriolen)", "body": "Steuern Zellteilungsvorgänge und regulieren Bewegungsprozesse in der Zelle." },
+            { "label": "Organell", "title": "Lysosomen", "body": "Zellorganellen mit Verdauungsenzymen. Lösen überflüssiges oder schadhaftes Material auf (Lysis = Lösung). Salopp: <em>«Die Polizei der Zelle»</em>." },
+            { "label": "Organell", "title": "Cytosomen", "body": "Kleine Speicherorgane. Speichern Stoffe wie Eisen, Melanin (Farbstoff) oder Fremdstoffe." },
+            { "label": "Steuerzentrale", "title": "Zellkern (Nukleus)", "body": "Gesamte Zellinformation (DNA) ist hier gespeichert. Steuert Zellteilung und Erbinformationsübertragung. <strong>Ausnahme ohne Zellkern: Erythrozyten (rote Blutkörperchen)</strong>." }
+          ]
+        },
+        {
+          "type": "merke",
+          "text": "Alle menschlichen Zellen besitzen einen Zellkern – <strong>außer den Erythrozyten (roten Blutkörperchen)</strong>, die ihn bei ihrer Reifung abwerfen."
+        }
+      ]
+    },
+    {
+      "id": "chromosomen",
+      "title": "Chromosomen & Vererbung",
+      "icon": "🧬",
+      "content": [
+        {
+          "type": "prose",
+          "text": "Chromosomen sind die Träger der Erbanlagen und wichtigster Bestandteil des Zellkerns."
+        },
+        {
+          "type": "defList",
+          "items": [
+            ["46 Chromosomen", "23 Chromosomenpaare in jeder menschlichen Körperzelle"],
+            ["22 Autosomen", "Geschlechtsunabhängige Chromosomenpaare – bestimmen Körpermerkmale"],
+            ["1 Gonosomenpaar", "Geschlechtschromosomen (XX = weiblich, XY = männlich)"],
+            ["Diploid (2n)", "Doppelter Chromosomensatz – in allen Körperzellen"],
+            ["Haploid (n)", "Einfacher Chromosomensatz – nur in Keimzellen (Ei- und Samenzelle)"]
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "<strong>Geschlechtsbestimmung:</strong> Das Spermium (entweder X oder Y) entscheidet über das Geschlecht des Kindes!"
+        }
+      ]
+    },
+    {
+      "id": "zellteilung",
+      "title": "Zellteilung – Mitose & Meiose",
+      "icon": "✂️",
+      "content": [
+        {
+          "type": "subheading",
+          "text": "Mitose – Zellteilung für Wachstum & Reparatur"
+        },
+        {
+          "type": "prose",
+          "text": "Die Mitose dient der Vermehrung von Körperzellen. Aus einer Mutterzelle entstehen zwei genetisch identische Tochterzellen mit diploidem Chromosomensatz."
+        },
+        {
+          "type": "phases",
+          "items": [
+            "Interphase – Zelle wächst, DNA wird verdoppelt",
+            "Prophase – Chromosomen verdichten sich, werden sichtbar",
+            "Metaphase – Chromosomen ordnen sich in der Zellmitte an (Äquatorialebene)",
+            "Anaphase – Chromatiden werden zu den Zellpolen gezogen",
+            "Telophase – Zwei neue Zellkerne entstehen, Zellteilung abgeschlossen"
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "Meiose – Reifeteilung für Keimzellen"
+        },
+        {
+          "type": "prose",
+          "text": "Die Meiose findet nur in den Keimdrüsen statt und erzeugt Keimzellen mit haploidem Chromosomensatz. Wichtig: Bei der Meiose erfolgt eine genetische Neukombination (Crossing-over)."
+        },
+        {
+          "type": "merke",
+          "text": "<strong>Mitose</strong> = 1 Teilung → 2 diploide Tochterzellen (2n)<br><strong>Meiose</strong> = 2 Teilungen → 4 haploide Keimzellen (n)"
+        }
+      ]
+    },
+    {
+      "id": "stofftransport",
+      "title": "Stofftransport durch Membranen",
+      "icon": "🔄",
+      "content": [
+        {
+          "type": "prose",
+          "text": "Die Zellmembran ist semipermeabel – sie lässt nur bestimmte Stoffe durch. Der Transport kann passiv (ohne Energieverbrauch) oder aktiv (mit Energieverbrauch) erfolgen."
+        },
+        {
+          "type": "defList",
+          "items": [
+            ["Diffusion", "Passiver Transport von Teilchen vom Ort höherer zum Ort niedrigerer Konzentration"],
+            ["Osmose", "Diffusion von Wasser durch eine semipermeable Membran"],
+            ["Filtration", "Transport durch Druckdifferenz (z.B. in der Niere)"],
+            ["Aktiver Transport", "Energieabhängiger Transport gegen das Konzentrationsgefälle (ATP-Verbrauch)"]
+          ]
+        },
+        {
+          "type": "callout",
+          "text": "<strong>Isoton, Hypoton, Hyperton:</strong> Haben zwei Lösungen die gleiche Konzentration, sind sie isoton. Ist eine verdünnter → hypoton; ist eine konzentrierter → hyperton."
+        }
+      ]
+    },
+    {
+      "id": "gewebe",
+      "title": "Gewebe – 4 Grundtypen",
+      "icon": "🧱",
+      "content": [
+        {
+          "type": "prose",
+          "text": "Gleichartige, spezialisierte Zellen schließen sich zu Geweben zusammen. Der menschliche Körper besitzt vier Grundgewebetypen:"
+        },
+        {
+          "type": "tissueChips",
+          "items": ["Epithelgewebe", "Binde- & Stützgewebe", "Muskelgewebe", "Nervengewebe"]
+        },
+        {
+          "type": "subheading",
+          "text": "1. Epithelgewebe (Deckgewebe)"
+        },
+        {
+          "type": "defList",
+          "items": [
+            ["Funktion", "Schutz, Abgrenzung, Sekretion, Resorption"],
+            ["Lage", "Äußere und innere Oberflächen (Haut, Schleimhäute, Drüsen)"],
+            ["Besonderheit", "Keine Blutgefäße – Versorgung durch Diffusion aus dem Bindegewebe"]
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "2. Binde- & Stützgewebe"
+        },
+        {
+          "type": "prose",
+          "text": "Verbindet, stützt und schützt andere Gewebe. Enthält viel Interzellularsubstanz."
+        },
+        {
+          "type": "defList",
+          "items": [
+            ["Lockeres Bindegewebe", "Füllgewebe, enthält Fibroblasten"],
+            ["Straffes Bindegewebe", "Sehnen, Bänder – hohe Zugfestigkeit"],
+            ["Fettgewebe", "Energiespeicher, Wärmeisolation, Polsterfunktion"],
+            ["Knorpelgewebe", "Stützfunktion, gefäßlos, druckelastisch"],
+            ["Knochengewebe", "Härtestes Gewebe, Kalzium- und Phosphatspeicher"]
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "3. Muskelgewebe"
+        },
+        {
+          "type": "defList",
+          "items": [
+            ["Glatte Muskulatur", "Unwillkürlich, in Hohlorganen und Gefäßen"],
+            ["Quergestreifte Skelettmuskulatur", "Willkürlich steuerbar, an Knochen befestigt"],
+            ["Herzmuskulatur", "Quergestreift aber unwillkürlich, rhythmische Kontraktion"]
+          ]
+        },
+        {
+          "type": "subheading",
+          "text": "4. Nervengewebe"
+        },
+        {
+          "type": "prose",
+          "text": "Spezialisiert auf Erregungsleitung und -verarbeitung. Besteht aus Neuronen (Nervenzellen) und Gliazellen (Stütz- und Versorgungszellen)."
+        },
+        {
+          "type": "nerveParts",
+          "items": [
+            { "icon": "🧠", "label": "Zellkörper (Soma)", "desc": "Enthält Zellkern, Stoffwechselzentrum" },
+            { "icon": "🌿", "label": "Dendriten", "desc": "Empfangen Signale von anderen Neuronen" },
+            { "icon": "⚡", "label": "Axon", "desc": "Leitet elektrische Impulse weiter, kann sehr lang sein" },
+            { "icon": "🔗", "label": "Synapse", "desc": "Kontaktstelle zur Signalübertragung (chemisch/elektrisch)" }
+          ]
+        }
+      ]
+    }
+  ],
+  "pruefungKompakt": {
+    "zahlen": [
+      { "label": "Körperzellen", "value": "~100 Billionen", "unit": "" },
+      { "label": "Chromosomen", "value": "46", "unit": "(23 Paare)" },
+      { "label": "Autosomen", "value": "22", "unit": "Paare" },
+      { "label": "Gonosomen", "value": "1", "unit": "Paar (XX/XY)" },
+      { "label": "DNA-Replikation", "value": "Interphase", "unit": "" },
+      { "label": "Zellkernlos", "value": "Erythrozyten", "unit": "" }
+    ],
+    "fallen": [
+      {
+        "wrong": "Mitose erzeugt 4 Tochterzellen",
+        "right": "Mitose erzeugt 2 diploide Tochterzellen – Meiose erzeugt 4 haploide"
+      },
+      {
+        "wrong": "Alle Körperzellen haben einen Zellkern",
+        "right": "Erythrozyten (rote Blutkörperchen) haben KEINEN Zellkern"
+      },
+      {
+        "wrong": "XX = männlich",
+        "right": "XX = weiblich, XY = männlich – das Y-Chromosom bestimmt männliches Geschlecht"
+      },
+      {
+        "wrong": "Osmose ist aktiver Transport",
+        "right": "Osmose ist PASSIV – Wasser diffundiert durch semipermeable Membran"
+      }
+    ],
+    "mnemonics": [
+      {
+        "title": "Mitose-Phasen",
+        "mnemonic": "IPMAT",
+        "meaning": "Interphase – Prophase – Metaphase – Anaphase – Telophase"
+      },
+      {
+        "title": "Die 4 Grundgewebe",
+        "mnemonic": "EBMN",
+        "meaning": "Epithel – Binde/Stütz – Muskel – Nerven"
+      }
+    ],
+    "tables": [
+      {
+        "title": "Mitose vs. Meiose",
+        "headers": ["Merkmal", "Mitose", "Meiose"],
+        "rows": [
+          ["Zweck", "Wachstum/Reparatur", "Keimzellenbildung"],
+          ["Ort", "Alle Körperzellen", "Nur Keimdrüsen"],
+          ["Teilungen", "1", "2"],
+          ["Ergebnis", "2 diploide Zellen", "4 haploide Zellen"],
+          ["Genetik", "Identisch zur Mutterzelle", "Genetische Variation"]
+        ]
+      }
+    ],
+    "vergleiche": [
+      {
+        "left": "Prokaryoten",
+        "right": "Eukaryoten",
+        "leftItems": ["Kein Zellkern", "DNA frei im Zytoplasma", "Bakterien"],
+        "rightItems": ["Echter Zellkern", "DNA im Kern geschützt", "Alle menschlichen Zellen"]
+      }
+    ],
+    "schnelltest": [
+      { "q": "Wie viele Chromosomen hat eine menschliche Körperzelle?", "a": "46 (23 Paare)" },
+      { "q": "Was bedeutet diploid?", "a": "Doppelter Chromosomensatz (2n)" },
+      { "q": "Welche Zellen haben keinen Zellkern?", "a": "Erythrozyten (rote Blutkörperchen)" },
+      { "q": "Was ist der Unterschied zwischen Mitose und Meiose?", "a": "Mitose: 2 diploide Zellen | Meiose: 4 haploide Keimzellen" },
+      { "q": "Nenne die 4 Grundgewebetypen!", "a": "Epithel-, Binde/Stütz-, Muskel-, Nervengewebe" },
+      { "q": "Was macht das Axon?", "a": "Leitet elektrische Impulse weiter" }
+    ]
+  }
+}
