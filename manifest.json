@@ -1,0 +1,21 @@
+{
+  "name": "Heilpraktiker Lernen",
+  "short_name": "HP Lernen",
+  "description": "Prüfungsvorbereitung für Heilpraktiker — Quiz, Glossar & mehr",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#4A90D9",
+  "lang": "de",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect width='192' height='192' rx='42' fill='%234A90D9'/><text x='96' y='140' font-size='120' text-anchor='middle'>🩺</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["education", "medical"]
+}
