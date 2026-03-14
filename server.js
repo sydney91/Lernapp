@@ -351,6 +351,173 @@ app.delete('/api/videos/:topicId/:videoId', (req, res) => {
 });
 
 // ═══════════════════════════════════════════════════════════════
+// WISSEN-TOPICS API (Drop-In Datenmodell)
+// ═══════════════════════════════════════════════════════════════
+
+const WISSEN_TOPICS_FILE = path.join(DATA_DIR, 'wissen-topics.json');
+const LERNKONTROLLE_FILE = path.join(DATA_DIR, 'lernkontrolle.json');
+
+function loadWissenTopics() {
+  if (fs.existsSync(WISSEN_TOPICS_FILE)) {
+    return JSON.parse(fs.readFileSync(WISSEN_TOPICS_FILE, 'utf-8'));
+  }
+  return [];
+}
+
+function saveWissenTopics(data) {
+  fs.writeFileSync(WISSEN_TOPICS_FILE, JSON.stringify(data, null, 2));
+}
+
+function loadLernkontrolle() {
+  if (fs.existsSync(LERNKONTROLLE_FILE)) {
+    return JSON.parse(fs.readFileSync(LERNKONTROLLE_FILE, 'utf-8'));
+  }
+  return {};
+}
+
+function saveLernkontrolle(data) {
+  fs.writeFileSync(LERNKONTROLLE_FILE, JSON.stringify(data, null, 2));
+}
+
+app.get('/api/wissen-topics', (req, res) => {
+  try {
+    const topics = loadWissenTopics();
+    res.json(topics);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/wissen-topics/:topicId', (req, res) => {
+  try {
+    const topics = loadWissenTopics();
+    const topic = topics.find(t => t.id === req.params.topicId);
+    if (!topic) return res.status(404).json({ error: 'Topic nicht gefunden' });
+    res.json(topic);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/wissen-topics', (req, res) => {
+  try {
+    const topics = loadWissenTopics();
+    const payload = req.body;
+    if (!payload || !payload.id || !payload.name) {
+      return res.status(400).json({ error: 'id und name erforderlich' });
+    }
+    const exists = topics.find(t => t.id === payload.id);
+    if (exists) return res.status(400).json({ error: 'Topic existiert bereits' });
+
+    const topic = {
+      id: payload.id,
+      name: payload.name,
+      status: payload.status || 'draft',
+      createdAt: new Date().toISOString(),
+      updatedAt: new Date().toISOString()
+    };
+    topics.push(topic);
+    saveWissenTopics(topics);
+    res.json({ success: true, topic });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.put('/api/wissen-topics/:topicId', (req, res) => {
+  try {
+    const topics = loadWissenTopics();
+    const topic = topics.find(t => t.id === req.params.topicId);
+    if (!topic) return res.status(404).json({ error: 'Topic nicht gefunden' });
+
+    Object.assign(topic, req.body, { updatedAt: new Date().toISOString() });
+    saveWissenTopics(topics);
+    res.json({ success: true, topic });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.delete('/api/wissen-topics/:topicId', (req, res) => {
+  try {
+    let topics = loadWissenTopics();
+    topics = topics.filter(t => t.id !== req.params.topicId);
+    saveWissenTopics(topics);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/lernkontrolle', (req, res) => {
+  try {
+    const data = loadLernkontrolle();
+    res.json(data);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get('/api/lernkontrolle/:topicId', (req, res) => {
+  try {
+    const data = loadLernkontrolle();
+    const q = data[req.params.topicId] || [];
+    res.json(q);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.post('/api/lernkontrolle/:topicId', (req, res) => {
+  try {
+    const data = loadLernkontrolle();
+    const topicId = req.params.topicId;
+    if (!data[topicId]) data[topicId] = [];
+    const question = req.body;
+    if (!question || !question.q || !Array.isArray(question.a) || question.a.length < 2) {
+      return res.status(400).json({ error: 'Ungültige Frage' });
+    }
+    data[topicId].push(question);
+    saveLernkontrolle(data);
+    res.json({ success: true, question });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.put('/api/lernkontrolle/:topicId/:index', (req, res) => {
+  try {
+    const data = loadLernkontrolle();
+    const topicId = req.params.topicId;
+    const idx = parseInt(req.params.index, 10);
+    if (!Array.isArray(data[topicId]) || isNaN(idx) || idx < 0 || idx >= data[topicId].length) {
+      return res.status(404).json({ error: 'Frage nicht gefunden' });
+    }
+    data[topicId][idx] = { ...data[topicId][idx], ...req.body };
+    saveLernkontrolle(data);
+    res.json({ success: true, question: data[topicId][idx] });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.delete('/api/lernkontrolle/:topicId/:index', (req, res) => {
+  try {
+    const data = loadLernkontrolle();
+    const topicId = req.params.topicId;
+    const idx = parseInt(req.params.index, 10);
+    if (!Array.isArray(data[topicId]) || isNaN(idx) || idx < 0 || idx >= data[topicId].length) {
+      return res.status(404).json({ error: 'Frage nicht gefunden' });
+    }
+    data[topicId].splice(idx, 1);
+    saveLernkontrolle(data);
+    res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════
 // WISSEN-INHALTE API (Artikel & Prüfungswichtig)
 // ═══════════════════════════════════════════════════════════════
 
@@ -992,6 +1159,46 @@ app.delete('/api/srs', (req, res) => {
   try {
     saveSRS({ version: '1.0', lastUpdated: new Date().toISOString(), questions: {} });
     res.json({ success: true });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// ═══════════════════════════════════════════════════════════════
+// WISSEN-CONTENT API
+// ═══════════════════════════════════════════════════════════════
+
+const WISSEN_CONTENT_DIR = path.join(DATA_DIR, 'wissen-content');
+
+// Wissen-Content für ein Thema laden
+app.get('/api/wissen-content/:topicId', (req, res) => {
+  try {
+    const { topicId } = req.params;
+    const filePath = path.join(WISSEN_CONTENT_DIR, `${topicId}.json`);
+    
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ error: `Wissen-Content für "${topicId}" nicht gefunden` });
+    }
+    
+    const content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    res.json(content);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+// Liste aller verfügbaren Wissen-Content-Themen
+app.get('/api/wissen-content', (req, res) => {
+  try {
+    if (!fs.existsSync(WISSEN_CONTENT_DIR)) {
+      return res.json([]);
+    }
+    
+    const files = fs.readdirSync(WISSEN_CONTENT_DIR)
+      .filter(f => f.endsWith('.json'))
+      .map(f => f.replace('.json', ''));
+    
+    res.json(files);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }

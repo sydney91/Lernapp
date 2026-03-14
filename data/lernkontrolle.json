@@ -1,0 +1,556 @@
+{
+  "zelle-gewebe": [
+    {
+      "q": "Was unterscheidet Prokaryoten von Eukaryoten?",
+      "a": [
+        "Prokaryoten haben keinen echten Zellkern; ihre DNA liegt frei im Zytoplasma",
+        "Prokaryoten sind immer vielzellig",
+        "Eukaryoten haben keine Mitochondrien",
+        "Prokaryoten besitzen eine Kernhülle"
+      ],
+      "c": 0,
+      "e": "Prokaryoten (z. B. Bakterien) besitzen KEINEN membranumhüllten Zellkern – die DNA liegt frei als Nukleoid vor. Eukaryoten (Tier, Pflanze, Pilze) haben einen echten Zellkern mit Doppelmembran."
+    },
+    {
+      "q": "Welche Aufgabe haben Mitochondrien?",
+      "a": [
+        "Proteinsynthese",
+        "Energiegewinnung (ATP) durch Zellatmung",
+        "Fettabbau im Lysosom",
+        "Zellkommunikation über gap junctions"
+      ],
+      "c": 1,
+      "e": "Mitochondrien sind die „Kraftwerke der Zelle\". Sie produzieren durch oxidative Phosphorylierung ATP – den universellen Energieträger des Körpers. Sie besitzen eigene DNA (Hinweis auf symbiotischen Ursprung)."
+    },
+    {
+      "q": "Welche Aufgabe hat der Golgi-Apparat?",
+      "a": [
+        "Energiegewinnung durch Oxidation",
+        "Verpacken, Modifizieren und Weiterleiten von Proteinen und Lipiden",
+        "Abbau körperfremder Substanzen",
+        "Synthese von ribosomaler RNA"
+      ],
+      "c": 1,
+      "e": "Der Golgi-Apparat ist die „Versandabteilung\" der Zelle: Er modifiziert Proteine aus dem rauem ER, verpackt sie in Vesikel und schickt sie ans Ziel (Sekretionsprodukte, Lysosomen, Zellmembran)."
+    },
+    {
+      "q": "Was sind Lysosomen und was passiert wenn sie platzen?",
+      "a": [
+        "Energiespeicher; beim Platzen wird ATP freigesetzt",
+        "Membranumhüllte Organellen mit Verdauungsenzymen; beim Platzen → Autolyse (Selbstverdauung der Zelle)",
+        "Ribosomen-Cluster; beim Platzen stoppt die Proteinsynthese",
+        "Zellkernfragmente; beim Platzen kommt es zur Mitose"
+      ],
+      "c": 1,
+      "e": "Lysosomen enthalten saure Hydrolasen (Verdauungsenzyme). Sie bauen zelleigenes Material (Autophagie) und phagozytierten Fremdmaterial ab. Wenn Lysosomen platzen, verdauen ihre Enzyme die eigene Zelle = Autolyse."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen rauem und glattem endoplasmatischem Retikulum?",
+      "a": [
+        "Raues ER produziert Lipide; glattes ER synthetisiert Proteine",
+        "Raues ER trägt Ribosomen und ist für Proteinsynthese/-transport zuständig; glattes ER ist ohne Ribosomen und zuständig für Lipidsynthese und Entgiftung",
+        "Raues ER ist nur in Nervenzellen; glattes ER in allen anderen Zellen",
+        "Kein funktioneller Unterschied, nur morphologisch"
+      ],
+      "c": 1,
+      "e": "Raues ER (mit Ribosomen): Synthese und Transport von Proteinen, v. a. Sekretions- und Membranproteine. Glattes ER (ohne Ribosomen): Lipid- und Steroidhormonsynthese, Entgiftung (besonders in Leberzellen), Ca²⁺-Speicherung in Muskelzellen."
+    },
+    {
+      "q": "Was versteht man unter Apoptose?",
+      "a": [
+        "Unkontrollierter Zelltod durch äußere Schädigung (Nekrose)",
+        "Programmierter, kontrollierter Zelltod – physiologischer Vorgang zur Gewebshomöostase",
+        "Zellteilung bei Mangel an Nährstoffen",
+        "Fusion zweier Zellen zu einer Riesenzelle"
+      ],
+      "c": 1,
+      "e": "Apoptose = programmierter Zelltod: Die Zelle „begeht geordneten Selbstmord\" ohne Entzündung (z. B. beim Abbau der Schwimmhäute, bei Immunselektion). Im Gegensatz dazu: Nekrose = ungeordneter Zelltod durch Schädigung mit Entzündungsreaktion."
+    },
+    {
+      "q": "Was versteht man unter Mitose?",
+      "a": [
+        "Redukteilung zur Bildung von Keimzellen mit haploidem Chromosomensatz",
+        "Gewöhnliche Zellteilung → 2 genetisch identische diploide Tochterzellen",
+        "Zelltod durch äußere Einwirkung",
+        "Fusion zweier haploider Zellen"
+      ],
+      "c": 1,
+      "e": "Die Mitose ist die normale Zellteilung: eine diploide (2n) Mutterzelle teilt sich in 2 diploide Tochterzellen mit identischem Erbgut. Phasen: Prophase, Metaphase, Anaphase, Telophase, Zytokinese. Gegenteil: Meiose = Keimzellenreifung (Ergebnis: haploid, 1n)."
+    },
+    {
+      "q": "Wie viele Chromosomenpaare hat der Mensch und was bestimmt das Geschlecht?",
+      "a": [
+        "46 Paare; Geschlecht durch das 23. Paar der Mutter",
+        "23 Paare (46 Chromosomen); Geschlecht durch das Y-Chromosom des Vaters (XX = ♀, XY = ♂)",
+        "46 Paare; Geschlecht durch Autosomen",
+        "23 Paare; Geschlecht durch das X-Chromosom der Mutter"
+      ],
+      "c": 1,
+      "e": "Der Mensch hat 23 Chromosomenpaare (46 Chromosomen). 22 Paare = Autosomen, 1 Paar = Gonosomen (Geschlechtschromosomen). XX = weiblich, XY = männlich. Das Geschlecht wird durch das Spermium des Vaters (X oder Y) bestimmt."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen DNA und RNA?",
+      "a": [
+        "DNA ist einzelsträngig und kurzlebig; RNA ist doppelsträngig und stabil",
+        "DNA ist doppelsträngig, stabil, im Zellkern; RNA ist einzelsträngig, kurzlebig, überträgt Erbinformation zur Proteinsynthese",
+        "Beide sind identisch aufgebaut, nur DNA enthält Uracil",
+        "RNA befindet sich ausschließlich im Zellkern"
+      ],
+      "c": 1,
+      "e": "DNA (Desoxyribonukleinsäure): doppelsträngige Doppelhelix, Basen A-T-G-C, stabil, im Zellkern (Träger der Erbinformation). RNA (Ribonukleinsäure): einzelsträngig, Basen A-U-G-C (Uracil statt Thymin), überträgt die Information aus dem Kern zu den Ribosomen (mRNA, tRNA, rRNA)."
+    },
+    {
+      "q": "In welche 4 Grundgewebe wird der menschliche Körper eingeteilt?",
+      "a": [
+        "Epithel-, Binde-/Stütz-, Muskel- und Nervengewebe",
+        "Epithel-, Fett-, Blut- und Knochengewebe",
+        "Knorpel-, Muskel-, Nerven- und Drüsengewebe",
+        "Epithel-, Lymph-, Muskel- und Organgewebe"
+      ],
+      "c": 0,
+      "e": "Die 4 Grundgewebe: 1. Epithelgewebe (Oberflächen & Drüsen), 2. Binde- und Stützgewebe (Bindegewebe, Knorpel, Knochen, Blut), 3. Muskelgewebe (quer gestreift, glatt, Herz), 4. Nervengewebe (Neuronen, Gliazellen)."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen einschichtigem und mehrschichtigem Epithel?",
+      "a": [
+        "Einschichtiges Epithel hat mehr Schichten als mehrschichtiges",
+        "Einschichtig: alle Zellen berühren die Basalmembran (Resorption/Filtration/Sekretion); mehrschichtig: nur unterste Schicht berührt Basalmembran (Schutzfunktion, z. B. Haut)",
+        "Mehrschichtiges Epithel kommt nur im Darm vor",
+        "Kein funktioneller Unterschied"
+      ],
+      "c": 1,
+      "e": "Einschichtiges Epithel: eine Zellschicht, alle Zellen auf Basalmembran → Resorption (Darm), Filtration (Niere), Sekretion (Drüsen). Mehrschichtiges Epithel: mehrere Zelllagen, nur unterste Schicht auf Basalmembran → mechanischer Schutz (Plattenepithel der Haut, Mundschleimhaut)."
+    },
+    {
+      "q": "Welche 3 Arten von Knorpelgewebe gibt es und wo kommen sie vor?",
+      "a": [
+        "Weich-, Hart- und Faserknorpel",
+        "Hyalin- (Gelenkflächen, Rippen), Faser- (Bandscheiben, Symphyse) und elastischer Knorpel (Ohrmuschel, Epiglottis)",
+        "Roten, weißen und gelben Knorpel",
+        "Kompakt-, Spongiosa- und Epiphysenknorpel"
+      ],
+      "c": 1,
+      "e": "Hyalinknorpel: glashell, wenig Fasern, an Gelenkflächen, Rippenknorpel, Trachea. Faserknorpel: viele Kollagenfasern, hohe Druckfestigkeit, in Bandscheiben und Schambeinfuge. Elastischer Knorpel: elastische Fasern, biegsam, in Ohrmuschel und Kehldeckel (Epiglottis)."
+    },
+    {
+      "q": "Was unterscheidet Osteoblasten von Osteoklasten?",
+      "a": [
+        "Osteoblasten bauen Knochen ab; Osteoklasten bauen auf",
+        "Osteoblasten bilden neue Knochensubstanz; Osteoklasten resorbieren (bauen ab) Knochen – beide sind für das Knochenremodeling verantwortlich",
+        "Osteoblasten sind nur im Embryo aktiv",
+        "Osteoklasten sind Knorpelzellen"
+      ],
+      "c": 1,
+      "e": "Osteoblasten = knochenbildende Zellen (synthetisieren Kollagen und mineralisieren die Matrix). Osteoklasten = knochenabbauende Zellen (mehrkernige Riesenzellen, resorbieren Knochenmatrix durch Säuren und Enzyme). Das dynamische Gleichgewicht beider ermöglicht Knochenremodeling."
+    },
+    {
+      "q": "Was versteht man unter Hyalinknorpel und wo kommt er vor?",
+      "a": [
+        "Faserknorpel in Bandscheiben und Symphyse",
+        "Glasheller Knorpel an Gelenkflächen, Rippenknorpel und Trachea",
+        "Elastischer Knorpel in Ohrmuschel und Kehldeckel",
+        "Knochenartiger Knorpel in der Schilddrüse"
+      ],
+      "c": 1,
+      "e": "Hyalinknorpel = glashell, glatt, wenig sichtbare Fasern, mit Chondrozyten in Lakunen. Vorkommen: Gelenkflächen, Rippenknorpel, Nasen- und Trachealknorpel, Wachstumsfugen. Er ist der häufigste Knorpeltyp."
+    },
+    {
+      "q": "Was unterscheidet quergestreiften vom glatten Muskel?",
+      "a": [
+        "Quergestreifte Muskeln sind unwillkürlich; glatte Muskeln willkürlich steuerbar",
+        "Quergestreifte Muskeln (Skelettmuskel) sind willkürlich, schnell; glatte Muskeln arbeiten unwillkürlich in Hohlorganen (Darm, Blutgefäße)",
+        "Beide Typen sind willkürlich steuerbar",
+        "Glatter Muskel hat mehr Mitochondrien"
+      ],
+      "c": 1,
+      "e": "Quergestreifter Skelettmuskel: willkürlich, viele Mitochondrien, schnell ermüdend. Glatter Muskel: unwillkürlich (vegetativ), in Hohlorganen (Darm, Uterus, Blutgefäßwände), ausdauernd. Herzmuskel: quergestreift aber unwillkürlich – autonomer Rhythmus."
+    },
+    {
+      "q": "Welche Besonderheit hat der Herzmuskel im Vergleich zu Skelett- und glattem Muskel?",
+      "a": [
+        "Der Herzmuskel ist glatt und willkürlich steuerbar",
+        "Der Herzmuskel ist quergestreift wie Skelettmuskel, aber unwillkürlich und besitzt Glanzstreifen (Disci intercalares) für elektrische Kopplung",
+        "Der Herzmuskel hat keine Mitochondrien",
+        "Der Herzmuskel regeneriert vollständig nach Verletzung"
+      ],
+      "c": 1,
+      "e": "Herzmuskel: quergestreift (wie Skelettmuskel) aber UNWILLKÜRLICH. Besonderheit: Glanzstreifen (Disci intercalares) = Zell-Zell-Verbindungen mit Gap Junctions → elektrische Kopplung → alle Herzmuskelzellen kontrahieren synchron (funktionelles Syncytium)."
+    },
+    {
+      "q": "Was ist ein Neuron und welche Teile hat es?",
+      "a": [
+        "Muskelzelle mit T-Tubuli und Sarkomeren",
+        "Nervenzelle mit Perikaryon (Zellkörper), Dendriten (Eingang) und Axon/Neurit (Ausgang)",
+        "Bindegewebszelle mit Kollagenfasern und Fibroblasten",
+        "Epithelzelle mit Mikrovilli und Basalmembran"
+      ],
+      "c": 1,
+      "e": "Das Neuron = funktionelle Einheit des Nervengewebes. Perikaryon = Zellkörper mit Kern und Nissl-Körperchen. Dendriten = baumartige Fortsätze, empfangen Impulse. Axon (Neurit) = langer Fortsatz, leitet Impulse vom Perikaryon weg. Terminal = Synapse."
+    },
+    {
+      "q": "Was ist saltatorische Erregungsleitung?",
+      "a": [
+        "Langsame, kontinuierliche Weiterleitung entlang markloser Fasern",
+        "Sprunghafte Weiterleitung von Ranvierschem Schnürring zu Schnürring bei markhaltigen Fasern – sehr schnell",
+        "Chemische Übertragung über die Synapse mittels Neurotransmitter",
+        "Rückwärtsleitung eines Impulses zum Zellkörper"
+      ],
+      "c": 1,
+      "e": "Markhaltige (myelinisierte) Nervenfasern leiten den Impuls saltatorisch = springend von Ranvierschem Schnürring zu Schnürring (die Stellen ohne Myelinscheide). Dadurch ist die Leitung bis zu 100× schneller als bei marklosen Fasern (kontinuierliche Leitung)."
+    },
+    {
+      "q": "Was ist eine Synapse und wie funktioniert die Signalübertragung?",
+      "a": [
+        "Direkter Zell-Zell-Kontakt ohne chemische Botenstoffe",
+        "Kontaktstelle zwischen zwei Neuronen: elektrischer Impuls → Vesikel setzen Neurotransmitter frei → binden an Rezeptoren der Nachbarzelle → neues elektrisches Signal",
+        "Mechanische Verbindung zwischen Nerv und Muskel ohne Chemikalien",
+        "Synapse leitet nur von Muskel zum Nerv (retrograd)"
+      ],
+      "c": 1,
+      "e": "Synapse: präsynaptische Membran (Endknöpfchen mit Vesikeln) → synaptischer Spalt → postsynaptische Membran. Ablauf: Aktionspotential → Ca²⁺-Einstrom → Vesikelfusion → Neurotransmitter-Ausschüttung (z. B. Acetylcholin) → Bindung an Rezeptoren → Depolarisation der Zielzelle."
+    },
+    {
+      "q": "Was unterscheidet afferente von efferenten Nervenfasern?",
+      "a": [
+        "Afferent = vom Gehirn zur Peripherie; efferent = von der Peripherie zum Gehirn",
+        "Afferent = sensorisch, leiten Reize VON der Peripherie ZUM ZNS; efferent = motorisch, leiten Impulse VOM ZNS zur Peripherie",
+        "Kein Unterschied, nur verschiedene Bezeichnungen",
+        "Afferent sind nur im Rückenmark; efferent nur im Gehirn"
+      ],
+      "c": 1,
+      "e": "Merkhilfe: Afferent = „Ankommen\" (kommen im ZNS an) = sensorisch/sensibel. Efferent = „Entlassen\" (verlassen das ZNS) = motorisch. Afferente Fasern: Sinnesorgane, Haut, Propriozeptoren → Gehirn. Efferente Fasern: Gehirn/Rückenmark → Muskeln, Drüsen."
+    },
+    {
+      "q": "Was ist Phagozytose und welche Zellen sind dazu besonders fähig?",
+      "a": [
+        "Aufnahme kleiner Moleküle durch die Zellmembran; alle Körperzellen",
+        "Aktive Aufnahme großer Partikel (Bakterien, Zelltrümmer) durch Umfließen; v. a. neutrophile Granulozyten und Makrophagen",
+        "Ausschleusung von Substanzen; Epithelzellen",
+        "Signalübertragung zwischen Zellen; Nervenzellen"
+      ],
+      "c": 1,
+      "e": "Phagozytose = „Zellfressen\": Die Zelle umfließt den Partikel mit Pseudopodien → bildet ein Phagosom → Fusion mit Lysosom → enzymatischer Abbau. Hauptphagozytoren: neutrophile Granulozyten (erste Linie bei Bakterien) und Makrophagen (entstehen aus Monozyten)."
+    },
+    {
+      "q": "Was versteht man unter Zellmembran-Permeabilität und was ist der Unterschied zwischen aktiver und passiver Transport?",
+      "a": [
+        "Beide Transportarten benötigen ATP",
+        "Passiver Transport: Konzentrationsgefälle, kein ATP nötig (z. B. Diffusion, Osmose); aktiver Transport: gegen das Konzentrationsgefälle, benötigt ATP (z. B. Na⁺/K⁺-Pumpe)",
+        "Aktiver Transport läuft immer schneller als passiver",
+        "Osmose ist ein aktiver Transportvorgang"
+      ],
+      "c": 1,
+      "e": "Passiver Transport: entlang dem Konzentrationsgefälle, kein Energieverbrauch. Arten: einfache Diffusion (lipophile Moleküle), erleichterte Diffusion (Kanalproteine), Osmose (Wasser). Aktiver Transport: gegen das Konzentrationsgefälle, benötigt ATP. Wichtigstes Beispiel: Na⁺/K⁺-ATPase (hält Ruhemembranpotential aufrecht)."
+    },
+    {
+      "q": "Was sind Gliazellen und welche Funktion haben sie?",
+      "a": [
+        "Sie sind identisch mit Neuronen und leiten Impulse",
+        "Stützzellen des Nervensystems: ernähren, stützen und isolieren Neuronen; bilden die Myelinscheide (Oligodendrozyten/Schwann-Zellen)",
+        "Sie sind nur im peripheren Nervensystem vorhanden",
+        "Sie sind Immunzellen des Blutes"
+      ],
+      "c": 1,
+      "e": "Gliazellen = Stütz- und Versorgungszellen des Nervensystems (10× häufiger als Neuronen). Oligodendrozyten (ZNS) und Schwann-Zellen (PNS) bilden die Myelinscheide. Astrozyten: Stütz- und Stoffwechselfunktion. Mikroglia: Immunzellen des ZNS (phagozytierende Funktion)."
+    },
+    {
+      "q": "Was versteht man unter Gewebe-Regeneration und welches Gewebe regeneriert schlecht?",
+      "a": [
+        "Alle Gewebe regenerieren gleich gut",
+        "Epithelien und Bindegewebe regenerieren gut; Herzmuskel- und Nervengewebe regenerieren kaum oder gar nicht",
+        "Nervengewebe regeneriert am besten",
+        "Knochengewebe kann sich nicht regenerieren"
+      ],
+      "c": 1,
+      "e": "Regenerationsfähigkeit: Sehr gut: Epithel (Haut, Darm), Knochenmark, Leber. Mäßig: Knochen, Bindegewebe. Schlecht bis keine: Herzmuskelzellen (kaum Teilungsfähigkeit) und Neuronen des ZNS (praktisch keine Regeneration → daher bleibende Schäden nach Schlaganfall/Rückenmarksverletzung)."
+    },
+    {
+      "q": "Was sind Mikrovilli und Zilien und wo kommen sie vor?",
+      "a": [
+        "Mikrovilli und Zilien sind dasselbe",
+        "Mikrovilli: fingerförmige Ausstülpungen zur Oberflächenvergrößerung (Dünndarm, Niere); Zilien: bewegliche Fortsätze zum Antransport von Substanzen (Atemwege, Eileiter)",
+        "Mikrovilli kommen nur in Muskelzellen vor",
+        "Zilien produzieren Enzyme"
+      ],
+      "c": 1,
+      "e": "Mikrovilli (= Bürstensaum): unbewegliche, fingerförmige Ausstülpungen der Zellmembran → Oberflächenvergrößerung für Resorption (Dünndarm: 600-fache Vergrößerung, Nierentubuli). Zilien (Kinozilien): bewegliche Fortsätze mit Axonem (9+2 Mikrotubuli-Muster) → schlagen rhythmisch → Schleim/Eizell-Transport (Bronchien, Eileiter)."
+    }
+  ],
+  "blut": [
+    {
+      "q": "Wie viel Prozent des Körpergewichts macht das Blut aus und wie viel Liter sind das?",
+      "a": [
+        "3–4 %, ca. 2–3 Liter",
+        "7–8 %, ca. 4–6 Liter",
+        "10–12 %, ca. 7–9 Liter",
+        "5–6 %, ca. 3–4 Liter"
+      ],
+      "c": 1,
+      "e": "Das Blut macht ca. 7–8 % des Körpergewichts aus – beim Erwachsenen etwa 4–6 Liter. 80 % zirkulieren im großen Körperkreislauf, 20 % im kleinen Lungenkreislauf."
+    },
+    {
+      "q": "Welche 5 Hauptaufgaben hat das Blut?",
+      "a": [
+        "Atmung, Verdauung, Hormonproduktion, Immunabwehr, Blutdruck",
+        "Transportfunktion, Abwehrfunktion, Wärmeregulation, Blutgerinnung/-stillung, Pufferfunktion",
+        "Nährstoffproduktion, Enzymbildung, Knochenbildung, Nervenleitung, Zellteilung",
+        "Sauerstoffproduktion, Antikörperbildung, Blutdruckregulation, Entgiftung, Wachstum"
+      ],
+      "c": 1,
+      "e": "5 Aufgaben des Blutes: 1. Transport (O₂/CO₂, Nährstoffe, Hormone, Abbauprodukte), 2. Abwehr (Leukozyten, Immunglobuline), 3. Wärmeregulation (konstant 36,5°C), 4. Blutgerinnung/-stillung (Thrombozyten, Gerinnungsfaktoren), 5. Pufferfunktion (pH 7,38–7,42)."
+    },
+    {
+      "q": "Wo werden alle Blutzellen beim Erwachsenen gebildet?",
+      "a": [
+        "In der Leber und Milz",
+        "Im roten Knochenmark der kurzen und platten Knochen sowie in den Epiphysen der Röhrenknochen, aus der pluripotenten Stammzelle",
+        "Im Thymus und den Lymphknoten",
+        "Im Dottersack und der Plazenta"
+      ],
+      "c": 1,
+      "e": "Bildungsort: pluripotente Stammzelle im ROTEN Knochenmark der kurzen und platten Knochen (Sternum, Becken, Schulterblatt) sowie in den Epiphysen der Röhrenknochen. Beim Fetus: zuerst Dottersack, dann Leber und Milz, ab 5. SSM Knochenmark."
+    },
+    {
+      "q": "Welches Hormon regt das Knochenmark zur Bildung von Erythrozyten an und wo wird es gebildet?",
+      "a": [
+        "Insulin, in der Bauchspeicheldrüse",
+        "Erythropoetin, in der Niere",
+        "Thrombopoietin, in der Leber",
+        "Cortisol, in der Nebenniere"
+      ],
+      "c": 1,
+      "e": "Bei O₂-Mangel im Gewebe schüttet die Niere das Hormon Erythropoetin aus. Dieses regt das Knochenmark zur verstärkten Erythropoese an. Daher bilden Menschen im Hochgebirge mehr Erythrozyten (Polyglobulie)."
+    },
+    {
+      "q": "Welche 4 Stoffe benötigt der Körper für die Erythropoese?",
+      "a": [
+        "Kalzium, Magnesium, Vitamin D, Protein",
+        "Vitamin B12, Folsäure, Eisen (Fe) und Erythropoetin",
+        "Vitamin C, Zink, Kupfer und Selen",
+        "Thyroxin, Cortisol, Testosteron und Insulin"
+      ],
+      "c": 1,
+      "e": "Für die Bildung ausreichend funktionsfähiger Erythrozyten benötigt der Körper: Vitamin B12 (Zellteilung/-reifung, Intrinsic Factor nötig), Folsäure (Zellteilung/-reifung, im Jejunum resorbiert), Eisen/Fe (O₂-Bindung, im Duodenum resorbiert) und Erythropoetin (Stimulation der Knochenmarksproduktion)."
+    },
+    {
+      "q": "Wo wird Vitamin B12 resorbiert und was ist dafür nötig?",
+      "a": [
+        "Im Magen, mit Hilfe von Pepsin",
+        "Im terminalen Ileum, nur mit Hilfe des Intrinsic Factors (gebildet von Belegzellen des Magens)",
+        "Im Duodenum, unabhängig von anderen Faktoren",
+        "Im Jejunum, mit Hilfe von Gallensäuren"
+      ],
+      "c": 1,
+      "e": "Vitamin B12 wird im terminalen Ileum resorbiert – aber NUR mit Hilfe des Intrinsic Factors (= ein Glykoprotein, das von den Belegzellen der Magenschleimhaut produziert wird). Fehlt der Intrinsic Factor (z. B. nach Magenresektion, Autoimmungastritis) → perniziöse Anämie."
+    },
+    {
+      "q": "Was sagt der MCV-Wert aus und welche Anämieform zeigt ein makrozytärer MCV?",
+      "a": [
+        "Mittlerer Hb-Gehalt; makrozytär → Eisenmangel",
+        "Mittleres Zellvolumen eines Erythrozyten; makrozytär (>98 fl) → Hinweis auf B12- oder Folsäuremangel-Anämie",
+        "Gesamthämoglobinmenge; makrozytär → hämolytische Anämie",
+        "Blutkörperchensenkung; makrozytär → chronische Entzündung"
+      ],
+      "c": 1,
+      "e": "MCV = mittleres korpuskuläres Zellvolumen. Normozytär: 78–98 fl. Makrozytär (zu groß, >98 fl) → megaloblastäre Anämie durch B12- oder Folsäuremangel (Zellen können sich nicht richtig teilen → zu groß). Mikrozytär (zu klein, <78 fl) → Eisenmangel-Anämie."
+    },
+    {
+      "q": "Was sagt der MCH-Wert aus und welche Anämieform zeigt ein hypochromer MCH?",
+      "a": [
+        "Gesamthämoglobinmenge; hypochrom → B12-Mangel",
+        "Mittlerer Hb-Gehalt eines einzelnen Erythrozyten; hypochrom (<26 pg) → Hinweis auf Eisenmangel-Anämie",
+        "Mittleres Zellvolumen; hypochrom → megaloblastäre Anämie",
+        "Senkungsgeschwindigkeit; hypochrom → hämolytische Anämie"
+      ],
+      "c": 1,
+      "e": "MCH = mittlerer korpuskulärer Hämoglobingehalt. Normochrom: 26–32 pg. Hypochrom (zu wenig Hb geladen, <26 pg) → Hinweis auf Eisenmangel-Anämie. Hyperchrom (zu viel Hb, >32 pg) → Hinweis auf B12-Mangel-Anämie."
+    },
+    {
+      "q": "Was passiert beim Abbau der Erythrozyten in der Milz mit dem Hämoglobin?",
+      "a": [
+        "Hämoglobin wird komplett im Urin ausgeschieden",
+        "Häm und Globin werden getrennt: Fe wird recycelt; eisenfreies Häm → Biliverdin → Bilirubin → Gallenwege/Leber oder Urobilinogen über Niere",
+        "Hämoglobin wird direkt zu neuen Erythrozyten recycelt",
+        "Hämoglobin wird in der Leber zu Glykogen umgewandelt"
+      ],
+      "c": 1,
+      "e": "Blutmauserung (Milz): Erythrozyten → Häm + Globin getrennt. Fe wird sofort von Transferrin aufgenommen (Recycling). Eisenfreies Häm → Biliverdin → Bilirubin → Galle/Leber → Stuhlfarbe (Sterkobilin). Teil davon → Urobilinogen → Niere → Urinfarbe."
+    },
+    {
+      "q": "Was sind neutrophile Granulozyten und wofür sind sie bekannt?",
+      "a": [
+        "Seltene Zellen bei Parasitenbefall und Allergien",
+        "Häufigste Immunzellen (50–70 %); unspezifische Abwehr bei bakteriellen Infekten; phagozytieren Bakterien und zerfallen zu Eiter",
+        "Zellen der spezifischen humoralen Abwehr",
+        "Zellen die Histamin und Heparin enthalten"
+      ],
+      "c": 1,
+      "e": "Neutrophile Granulozyten: 50–70 % der Leukozyten, häufigste Immunzellen. Phagozytieren Bakterien, Antigen-Antikörper-Komplexe und tote Zellen. Sterben danach ab → Eiter (Gewebstrümmer + Granulozytenreste). Linksverschiebung = viele junge Stabkernige → akute Bakterieninfektion."
+    },
+    {
+      "q": "Wann sind eosinophile Granulozyten erhöht und was ist die „Morgenröte der Genesung\"?",
+      "a": [
+        "Bei bakteriellen Infekten; Morgenröte = Beginn der Infektion",
+        "Bei Parasitenbefall und Allergien Typ I; am Ende einer bakteriellen Erkrankung erhöht = „Morgenröte der Genesung\"",
+        "Bei viralen Infekten; Morgenröte = Beginn der Genesung nach Viren",
+        "Bei Autoimmunerkrankungen; Morgenröte = Remission"
+      ],
+      "c": 1,
+      "e": "Eosinophile Granulozyten (1–5 %): rot einfärbbar. Erhöht bei Parasitenbefall (Würmer) und Allergien Typ I sowie bei chronischen Hauterkrankungen. Wichtig: Am Ende einer bakteriellen Erkrankung steigen sie an → Signal, dass die Bakterien besiegt sind = „Morgenröte der Genesung\"."
+    },
+    {
+      "q": "Was sind basophile Granulozyten und welche Substanzen enthalten sie?",
+      "a": [
+        "Häufigste Granulozyten; enthalten Lysozym und Peroxidase",
+        "Seltenste Granulozyten (0–1 %); enthalten Heparin, Histamin und Serotonin; nach Diapedese = Mastzellen; beteiligt an Allergie Typ I",
+        "Bilden nach Antigenkontakt Antikörper",
+        "Phagozytieren hauptsächlich Viren"
+      ],
+      "c": 1,
+      "e": "Basophile Granulozyten (0–1 %): blau einfärbbar, seltenste Granulozyten. Enthalten Heparin (antikoagulatorisch), Histamin (vasodilatierend) und Serotonin. Nach Diapedese ins Gewebe: Mastzellen. Beteiligt an allergischen Reaktionen Typ I (Soforttyp, z. B. Anaphylaxie)."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen B- und T-Lymphozyten?",
+      "a": [
+        "B-Lymphozyten werden im Thymus geprägt; T-Lymphozyten im Knochenmark",
+        "B-Lymphozyten: Prägung im Knochenmark → humorale spezifische Abwehr (Antikörper). T-Lymphozyten: Prägung im Thymus → zelluläre spezifische Abwehr",
+        "Beide für unspezifische Abwehr",
+        "B bekämpfen Viren; T Bakterien"
+      ],
+      "c": 1,
+      "e": "B-Lymphozyten (bone = Knochenmark): humorale Abwehr → werden zu Plasmazellen (produzieren Antikörper) und Gedächtniszellen. T-Lymphozyten (Thymus): zelluläre Abwehr → T-Killer-, T-Helfer-, T-Suppressor-, T-Gedächtniszellen. Wichtig bei Viren, Tumoren, Transplantatabstoßung."
+    },
+    {
+      "q": "Welche Immunglobulinklasse ist für den Nestschutz des Neugeborenen verantwortlich?",
+      "a": [
+        "IgM – als Frühantikörper plazentagängig",
+        "IgG – ab 18. SSW plazentagängig, schützt Neugeborenes ca. 6 Monate",
+        "IgA – schützt Schleimhäute und kommt in der Muttermilch vor",
+        "IgE – löst allergische Reaktionen aus"
+      ],
+      "c": 1,
+      "e": "IgG: 75 % aller Immunglobuline, einzige Klasse die die Plazenta durchquert (ab 18. SSW) → Nestschutz 6 Monate. IgA: Schleimhautschutz und in der Muttermilch (passiver Schutz durch Stillen). IgM: Frühantikörper. IgE: Allergie Typ I."
+    },
+    {
+      "q": "Was ist die Rolle von Monozyten/Makrophagen im Immunsystem?",
+      "a": [
+        "Nur spezifische humorale Abwehr durch Antikörperproduktion",
+        "Bindeglied zwischen unspezifischer und spezifischer Abwehr: phagozytieren Erreger UND präsentieren Antigene den T-Lymphozyten (Antigenpräsentation)",
+        "Nur Blutstillung und Gerinnung",
+        "Nur Wärmeregulation"
+      ],
+      "c": 1,
+      "e": "Monozyten (größte Leukozyten): verlassen nach 20–30 Stunden die Blutbahn → werden im Gewebe zu Makrophagen. Makrophagen: phagozytieren Bakterien, Pilze, Parasiten, Zellfragmente UND präsentieren Antigene den T-Lymphozyten → Bindeglied zwischen unspezifischer und spezifischer Abwehr. Im Gewebe: Histiozyten (Bindegewebe), Kupffersche Sternzellen (Leber)."
+    },
+    {
+      "q": "Aus was entstehen Thrombozyten und wie lange leben sie?",
+      "a": [
+        "Aus Lymphoblasten; Lebensdauer 120 Tage",
+        "Aus Megakaryozyten (im Knochenmark); Lebensdauer 5–10 Tage, Abbau in der Milz",
+        "Aus Monozyten; Lebensdauer 20–30 Stunden",
+        "Aus Erythroblasten; Lebensdauer 30 Tage"
+      ],
+      "c": 1,
+      "e": "Thrombozyten entstehen durch Zerfall von Megakaryozyten (= Riesenzellen im Knochenmark). Sie sind kernlos, ca. 1–4 µm groß, leben 5–10 Tage und werden dann in der Milz abgebaut. Normalwert: 150.000–400.000/µl."
+    },
+    {
+      "q": "Welche Phasen der Hämostase gibt es?",
+      "a": [
+        "Nur Vasokonstriktion, dann direkt Fibrinbildung",
+        "Primäre Hämostase (1–3 Min): Vasokonstriktion → Thrombozytenaggregation → instabiler Propf; Sekundäre Hämostase (5–7 Min): Gerinnungskaskade → Fibrin → stabiler Thrombus",
+        "Primär: Fibrinolyse; Sekundär: Thrombozytenaggregation",
+        "Nur Thrombozytenanlagerung"
+      ],
+      "c": 1,
+      "e": "Primäre Hämostase (Blutstillung, 1–3 Min): Verletzung → Vasokonstriktion → Thrombozyten lagern sich an → Thrombozytenaggregation = instabiler Propf + Einleitung der Kaskade. Sekundäre Hämostase (Blutgerinnung, 5–7 Min): 13 Gerinnungsfaktoren → Prothrombin→Thrombin→Fibrinogen→Fibrin → stabiler Thrombus."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen dem intrinsischen und dem extrinsischen Gerinnungsweg?",
+      "a": [
+        "Intrinsisch = außerhalb des Gefäßes; extrinsisch = innerhalb",
+        "Intrinsisch: Kontakt mit Fremdoberfläche (innerhalb der Gefäße, Faktoren XII→XI→IX→VIII); Extrinsisch: Gewebsverletzung mit Freisetzung von Gewebsthromboplastin (Faktor III/VII)",
+        "Beide Wege sind identisch",
+        "Intrinsisch wird durch Vitamin K gesteuert; extrinsisch durch Calcium"
+      ],
+      "c": 1,
+      "e": "Intrinsisches System (endogener Weg): Aktivierung durch Kontakt mit Fremdoberfläche (z. B. Kollagen) innerhalb von Minuten. Faktoren: XII→XI→IX→VIII. Extrinsisches System (exogener Weg): Aktivierung durch Freisetzung von Gewebsthromboplastin (Faktor III) bei Gewebsverletzung. Beide münden im gemeinsamen Weg: Faktor X→V→Thrombin→Fibrin."
+    },
+    {
+      "q": "Wie wirkt Heparin als Gerinnungshemmer?",
+      "a": [
+        "Heparin bindet Calcium-Ionen und verhindert so Faktor X",
+        "Heparin hemmt die Umwandlung von Fibrinogen zu Fibrin (und aktiviert Antithrombin III)",
+        "Heparin ist ein Vitamin-K-Antagonist",
+        "Heparin verhindert die Thrombozytenaggregation"
+      ],
+      "c": 1,
+      "e": "Heparin hemmt die Gerinnung, indem es Antithrombin III aktiviert, das dann Thrombin und andere Gerinnungsfaktoren inaktiviert → Fibrinogen wird nicht zu Fibrin. Heparin wird auch natürlich von basophilen Granulozyten/Mastzellen produziert. Klinisch: sofort wirksam (parenteral), zur Thromboseprophylaxe/-therapie."
+    },
+    {
+      "q": "Was bedeutet \"Blutgruppe 0 ist Universalspender\"?",
+      "a": [
+        "Blutgruppe 0 hat Anti-A und Anti-B, daher kann sie an alle spenden",
+        "Blutgruppe 0 hat keine A- oder B-Antigene auf den Erythrozyten → keine Antigen-Antikörper-Reaktion beim Empfänger möglich → kann an alle spenden",
+        "Blutgruppe 0 hat keine Antikörper im Plasma",
+        "Blutgruppe 0 ist in Europa am häufigsten"
+      ],
+      "c": 1,
+      "e": "Blutgruppe 0: Keine Antigene A oder B auf den Erythrozyten → der Empfänger hat keine passenden Antikörper dagegen → keine Agglutination → kann an alle Blutgruppen gespendet werden. Blutgruppe AB: keine Antikörper im Plasma → Universalempfänger. In Europa sind A und 0 mit je 40 % am häufigsten."
+    },
+    {
+      "q": "Was ist der Morbus haemolyticus neonatorum und wie wird er verhindert?",
+      "a": [
+        "ABO-Unverträglichkeit; verhindert durch Transfusion beim Kind",
+        "Rh-Inkompatibilität: Rh-negative Mutter bildet nach 1. Geburt Anti-D (IgG); bei 2. Schwangerschaft greift IgG das Rh-positive Kind an → Hämolyse; Prophylaxe: Anti-D-Immunglobuline nach jeder Geburt/Abbruch",
+        "Infektionskrankheit; verhindert durch Antibiotika",
+        "Eisenmangelanämie in der Schwangerschaft"
+      ],
+      "c": 1,
+      "e": "Rh-negative Mutter + Rh-positives Kind: Bei der Geburt gelangen kindliche Erys ins Mutterblut → 1. Kontakt → Mutter bildet Anti-D-AK (IgG). Bei 2. Schwangerschaft: IgG ist plazentagängig → greift kindliche Erys an → Hämolyse → schwere fetale Anämie (oft tödlich). Prophylaxe: Anti-D-Immunglobuline (Anti-D-Prophylaxe) innerhalb von 72 h nach Geburt/Abbruch."
+    },
+    {
+      "q": "Was ist der Unterschied zwischen Blutplasma und Blutserum?",
+      "a": [
+        "Blutserum enthält Fibrinogen; Blutplasma nicht",
+        "Blutplasma = Blutserum + Fibrinogen; Blutserum = Blutplasma ohne Fibrinogen (nach abgelaufener Gerinnung)",
+        "Blutplasma ist der zelluläre Anteil",
+        "Blutserum und Blutplasma sind identisch"
+      ],
+      "c": 1,
+      "e": "Merksatz: Blut-PLASMA = Blutserum PLUS Fibrinogen. Wenn das Blut gerinnt, wird Fibrinogen zu Fibrin verbraucht → übrig bleibt das Serum (ohne Gerinnungsproteine). Serum enthält noch alle anderen Plasmaproteine (Albumine, Globuline, Antikörper) und wird z. B. für serologische Tests verwendet."
+    },
+    {
+      "q": "Was sind die Puffersysteme des Blutes und welchen pH-Wert muss das Blut konstant halten?",
+      "a": [
+        "Phosphat und Chlorid; pH 7,0–7,2",
+        "Hydrogencarbonat (Bicarbonat) und Phosphat; pH 7,38–7,42; CO₂ wird über die Lunge abgeatmet, H⁺ über die Niere ausgeschieden",
+        "Albumine und Globuline; pH 6,8–7,0",
+        "Nur Hämoglobin; pH 7,5–8,0"
+      ],
+      "c": 1,
+      "e": "Der pH des Blutes liegt streng bei 7,38–7,42. Puffersysteme: Bicarbonatpuffer (HCO₃⁻/H₂CO₃), Phosphatpuffer, Hämoglobin. Regulation: Lunge (CO₂-Abatmung bei Azidose) und Niere (H⁺-Ausscheidung, HCO₃⁻-Rückresorption). Azidose = pH↓ (<7,38); Alkalose = pH↑ (>7,42)."
+    },
+    {
+      "q": "Wie wirkt Acetylsalicylsäure (ASS) auf die Gerinnung und wann ist es geeignet?",
+      "a": [
+        "ASS aktiviert die Thrombozytenaggregation; geeignet bei Thrombosen",
+        "ASS hemmt irreversibel die Thrombozytenaggregation → verhindert Blutstillung; geeignet zur Behandlung arterieller Verschlüsse (Herzinfarkt, Schlaganfall), NICHT bei venösen Thrombosen",
+        "ASS ist ein Vitamin-K-Antagonist wie Marcumar",
+        "ASS aktiviert die Fibrinolyse direkt"
+      ],
+      "c": 1,
+      "e": "ASS hemmt die Cyclooxygenase (COX) → irreversible Hemmung der Thromboxan-A₂-Synthese → Thrombozyten können nicht mehr aggregieren → Blutstillung gestört. Daher nur für ARTERIELLE Erkrankungen geeignet (Herzinfarkt, TIA/Schlaganfallprophylaxe). NW: Magenblutungen, Asthma, Allergien. NICHT geeignet für venöse Thrombosen (dafür: Heparin/Marcumar)."
+    },
+    {
+      "q": "Was ist die BSG (Blutkörperchensenkungsgeschwindigkeit) und welche Normwerte gelten?",
+      "a": [
+        "Test auf Gerinnungszeit; Männer 1–3 Min, Frauen 1–2 Min",
+        "Unspezifischer Suchtest: Erythrozyten sinken im verdünnten Blut ab; Normwert Männer 3–15 mm/h, Frauen 6–20 mm/h; erhöht bei Entzündungen, Infektionen, Tumoren",
+        "Messung des Hämoglobingehalts; Männer >13 g/dl, Frauen >12 g/dl",
+        "Bestimmung der Thrombozytenzahl; Normwert 150.000–400.000/µl"
+      ],
+      "c": 1,
+      "e": "Die BSG (Westergren-Methode) ist ein unspezifischer Entzündungsmarker: Blut 1:4 mit Natriumcitrat verdünnen → in Pipette senkrecht aufstellen → nach 1 h und 2 h Plasmaüberstand ablesen. Normwert: Männer 3–15 mm, Frauen 6–20 mm/h. Erhöht bei Entzündungen, Infektionen, Autoimmunerkrankungen, Tumoren."
+    }
+  ]
+}
